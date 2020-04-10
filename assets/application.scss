@@ -3,9 +3,12 @@
 // VARIABLES
 
 $lazo-red: #DE4939;
+$lazo-light-red: #EEA78E;
 $lazo-green: #79CADD;
 $lazo-yellow: #FEE399;
+$lazo-dark-yellow: #FFCD67;
 $lazo-black: #1a1919;
+$lazo-blue: #79CADD;
 
 
 
@@ -103,101 +106,26 @@ body {
             }
         }
     }
-
-    #homepage-book {
-        background-color: $lazo-yellow;
-        padding: 120px 64px;
-        position: relative;
-        overflow: hidden;
-        .homepage-book_banner {
-            display: flex;
-            max-width: 1280px;
-            margin: 0 auto;
-           
-        }
-        .homepage-banner-left {
-            text-align: center;
-            width: 50%;
-            h2 {
-                font-family: neue-haas-unica, sans-serif;
-                font-weight: 500;
-                font-size: 66px;
-                line-height: 72px;  
-                color: $lazo-black;
-            }
-            p {
-                font-family: neue-haas-unica, sans-serif;
-                font-size: 17px;
-                line-height: 29px;  
-                color: $lazo-black;
-                margin-top: 32px;
-            }
-            .banner-links {
-                display: flex;
-                margin-top: 32px;
-                padding: 0 64px;
-            }
-            .banner-link-leer {
-                width: 200px;
-            }
-            .banner-link-comprar {
-                width: 200px;
-                height: 48px;
-                background-color: $lazo-black;
-                color: white;
-                padding: 12px 0 0;
-                display: block;
-            }
-            .banner-destino {
-                margin: 48px auto 0;
-                padding: 6px 0 0;
-                width: 320px;
-                height: 40px;
-                border: 1px $lazo-black solid;
-            }
-        }
-        .homepage-banner-right {
-            width: 50%;
-            img {
-                width: 100%;
-                object-fit: contain;
-            }
-        }
-        .homepage-banner-circle {
-            width: 200px;
-            height: 200px;
-            position: absolute;
-            right: -5%;
-            bottom: 50%;
-        }
-        .homepage-book_quote {
-            max-width: 1280px;
-            margin: 0 auto;
-            p {
-                text-align: center;
-                font-family: neue-haas-unica, sans-serif;
-                font-size: 40px;
-                font-weight: 500;
-                line-height: 48px;  
-                color: $lazo-black;
-                margin: 120px auto 0;
-                width: 70%;
-            }
-        }
-    }
-
     #homepage-video {
-        padding: 0 64px 240px;
+        padding: 120px 64px 40px;
         background-color: $lazo-green;
+        overflow: hidden;
+        position: relative;
+        margin-top: -10px;
+    }
+    .homepage-bg {
+        max-width: 1280px;
+        margin: 0 auto;
+
     }
     .homepage-video-container {
-        padding-bottom: 56.25%;
-        max-width: 1280px;
-        height: 0;
-        position: relative;
-        top: 100px;
         width: 100%;
-        margin: 0 auto;
+        max-width: 1200px;
+        position: relative;
+        padding-bottom: 56.25%;
+        max-width: 1650px;
+        height: 0;
+        z-index: 100;
     }
     iframe {
         position: absolute;
@@ -325,6 +253,385 @@ body {
 } 
 
 
+
+
+/////////////////////////////////////
+//                            NOSOTROS
+
+
+#nosotros {
+    #nosotros-hero {
+        width: 100%;
+        background-color: $lazo-dark-yellow;
+    }
+    .nosotros-hero-content {
+        width: 100%;
+        height: 100vh;
+        padding: 0 64px;
+        max-height: 960px;
+        position: relative;
+        max-width: 1280px;
+        margin: 0 auto;
+        h1 {
+            color: white;
+            font-family: neue-haas-unica, sans-serif;
+            font-weight: 500;
+            width: 50%;
+            font-size: 56px;
+            line-height: 64px;
+            padding-top: 15%;
+        }
+        .hero-link {
+            position: absolute;
+            left: 64px;
+            bottom: 64px;
+            span {
+               font-size: 15px; 
+               position: absolute;
+               top: 4px;
+               display: block;
+               left: 32px;
+            }
+        }
+    }
+    #nosotros-sections {
+        width: 100%;
+        background-color: $lazo-dark-yellow;
+        padding-top: 120px;
+    }
+    .nosotros-sections-content {
+        width: 100%;
+        height: auto;
+        padding: 0 64px 80px;
+        position: relative;
+        margin: 0 auto;
+        max-width: 1280px;
+
+    }
+    .nosotros-single {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 120px;
+    }
+    .nosotros-left {
+        border-top: 2px #ffffff solid;
+        width: 40%;
+    }
+    h2 {
+        font-family: neue-haas-unica, sans-serif;
+        font-weight: 500;
+        font-size: 48px;
+        line-height: 56px;
+        color: white;
+        padding-top: 24px;
+    }
+    .nosotros-single-image {
+        width: 100%;
+        padding-top: 40px;
+    }
+    img {
+        width: 100%;
+        object-fit: contain;
+    }
+    .nosotros-right {
+        width: 45%;
+    }
+    p {
+        font-family: neue-haas-unica, sans-serif;
+        font-weight: 400;
+        font-size: 34px;
+        line-height: 48px;
+        color: white;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+
+#libros {
+    #libros-hero {
+        width: 100%;
+        background-color: $lazo-light-red;
+    }
+    .libros-hero-content {
+        width: 100%;
+        height: 80vh;
+        padding: 0 64px;
+        max-height: 600px;
+        position: relative;
+        max-width: 1280px;
+        margin: 0 auto;
+        h1 {
+            color: white;
+            font-family: neue-haas-unica, sans-serif;
+            font-weight: 500;
+            width: 70%;
+            font-size: 40px;
+            line-height: 48px;
+            padding-top: 15%;
+        }
+    }
+    #libros-mas {
+        width: 100%;
+        min-height: 70vh;
+        position: relative;
+        background-image: url(https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Mask_Group_13_2x_bafe93ca-42c9-430d-9366-bb1e453b3941.png?v=1586474222);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      
+    }
+    .libros-mas-content {
+        width: 50%;
+        max-width: 800px;
+        position: absolute;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100px;
+        p {
+            color: #1A1919;
+            font-family: neue-haas-unica, sans-serif;
+            font-weight: 500;
+            text-align: center;
+            font-size: 40px;
+            line-height: 44px;
+        }
+    }
+}
+
+
+#blog {
+    #blog-hero {
+        width: 100%;
+        background-color: $lazo-blue;
+    }
+    .blog-hero-content {
+        width: 100%;
+        height: 80vh;
+        padding: 50px 64px 0;
+        max-height: 800px;
+        position: relative;
+        max-width: 1280px;
+        margin: 0 auto;
+        display: flex;
+        .blog-hero-left {
+            width: 55%;
+            img {
+                width: 100%;
+                object-fit: contain;
+            }
+        }
+        .blog-hero-right {
+            width: 45%;
+            padding-left: 40px;
+        }
+        h2 {
+            color: #1A1919;
+            font-family: neue-haas-unica, sans-serif;
+            font-weight: 500;
+            
+            font-size: 32px;
+            line-height: 39px;
+            
+        }
+        p {
+            color: #1A1919;
+            font-family: neue-haas-unica, sans-serif;
+            font-weight: normal;
+            margin-top: 20px;
+            font-size: 20px;
+            line-height: 30px;
+        }
+        .blog-post-link {
+            margin-top: 24px;
+            a {
+                color: black;
+                text-decoration: none;
+                font-size: 15px;
+            }
+        }
+        .hero-link {
+            position: absolute;
+            left: 64px;
+            bottom: 64px;
+            span {
+               font-size: 15px; 
+               position: absolute;
+               top: 4px;
+               display: block;
+               left: 32px;
+            }
+        }
+    }
+
+    #blog-content {
+        width: 100%;
+        background-color: $lazo-blue;
+    }
+    #blog-bg {
+        width: 100%;
+        padding: 120px 64px 120px;
+        position: relative;
+        max-width: 1280px;
+        margin: 0 auto;
+
+        .blog-entries {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    .blog-singular {
+        width: calc( 33.3333% - 20px );
+    }
+
+    .singular-image {
+        position: relative;
+        margin-bottom: 24px;
+        a {
+            width: 100%;
+        }
+        img {
+            width: 100%;
+        }
+        span {
+            position: absolute;
+            top: 16px;
+            background-color: white;
+            border: 1px #000000 solid;
+            font-size: 13px;
+            left: 16px;
+            font-family: neue-haas-unica, sans-serif;
+            padding: 4px 12px;
+            border-radius: 16px;
+        }
+    }
+    h2 > a {
+        font-family: neue-haas-unica, sans-serif;
+        font-size: 27px;
+        color: #000000;
+        font-weight: 500;
+        text-decoration: none;
+    }
+    p {
+        margin-top: 16px;
+        font-family: neue-haas-unica, sans-serif;
+        font-size: 17px;
+        line-height: 29px;
+    }
+    .blog-singular-link {
+        margin-top: 16px;
+        a {
+            color: black;
+            text-decoration: none;
+            font-size: 15px;
+        }
+    }
+}
+
+/////////////////////////////////////
+//                            MODULES
+
+
+#module-book {
+    background-color: $lazo-yellow;
+    padding: 120px 64px;
+    position: relative;
+    overflow: hidden;
+    margin-top: -10px;
+    .module-book_banner {
+        display: flex;
+        max-width: 1280px;
+        margin: 0 auto;
+       
+    }
+    .module-banner-left {
+        text-align: center;
+        width: 50%;
+        h2 {
+            font-family: neue-haas-unica, sans-serif;
+            font-weight: 500;
+            font-size: 66px;
+            line-height: 72px;  
+            color: $lazo-black;
+        }
+        p {
+            font-family: neue-haas-unica, sans-serif;
+            font-size: 17px;
+            line-height: 29px;  
+            color: $lazo-black;
+            //margin-top: 32px;
+            width: 75%;
+            margin: 32px auto 0;
+        }
+        .banner-links {
+            display: flex;
+            margin-top: 32px;
+            padding: 0 64px;
+            justify-content: center;
+        }
+        .banner-link-leer {
+            width: 200px;
+        }
+        .banner-link-comprar {
+            width: 200px;
+            height: 48px;
+            background-color: $lazo-black;
+            color: white;
+            padding: 12px 0 0;
+            display: block;
+        }
+        .banner-destino {
+            margin: 48px auto 0;
+            padding: 6px 0 0;
+            width: 320px;
+            height: 40px;
+            border: 1px $lazo-black solid;
+        }
+    }
+    .module-banner-right {
+        width: 50%;
+        img {
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+    .module-banner-circle {
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        right: -5%;
+        bottom: 50%;
+        animation: rotate 10s linear infinite;
+        img {
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+  
+
+    .module-book_quote {
+        max-width: 1280px;
+        margin: 0 auto;
+        p {
+            text-align: center;
+            font-family: neue-haas-unica, sans-serif;
+            font-size: 40px;
+            font-weight: 500;
+            line-height: 48px;  
+            color: $lazo-black;
+            margin: 120px auto 0;
+            width: 75%;
+        }
+    }
+}
+
+
+/////////////////////////////////////
+//                              FOOTER
+
 #boletin {
     background-color: $lazo-black;
     padding: 120px 64px;
@@ -368,6 +675,7 @@ body {
         opacity: 1;
         padding-left: 12px;
     }
+    input::placeholder,
     input::-webkit-input-placeholder,
     input:-ms-input-placeholder {
         color: white !important;
@@ -384,4 +692,109 @@ body {
         font-family: neue-haas-unica, sans-serif;
         font-size: 15px;
     }
+}
+
+#footer {
+    background-color: white;
+    padding: 120px 64px 40px;
+    .footer-content {
+        max-width: 1280px;
+        margin: 0 auto;
+    }
+
+    .footer-top {
+        position: relative;
+        margin-bottom: 48px;
+        display: flex;
+    }
+    .footer-img {}
+    .footer-social {
+        position: absolute;
+        right: 0;
+        a {
+            margin: 24px 0 0 24px;
+        }
+    }
+
+    .footer-links {
+        display: flex;
+    }
+    .footer-col {
+        width: 33.33333%;
+    }
+    h4 {
+        font-family: neue-haas-unica, sans-serif;
+        font-weight: 500;
+        font-size: 18px;
+        margin-bottom: 40px;
+    }
+    ul {
+
+    }
+    li {
+        list-style-type: none;
+        margin: 16px 0;
+        font-family: neue-haas-unica, sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+    } 
+    a {
+        text-decoration: none;
+        color: black;
+        font-family: neue-haas-unica, sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+    }
+    .footer-bottom {
+        margin-top: 32px;
+        border-top: 1px #707070 solid;
+        padding: 32px 0 0;
+        position: relative;
+        span {
+            opacity: 0.5;
+            font-family: neue-haas-unica, sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+        }
+        .bottom-right {
+            position: absolute;
+            right: 0px;
+            margin: auto;
+        }
+    }
+}
+
+
+
+/////////////////////////////////////
+//                         ANIMATIONS
+
+@keyframes rotate {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+
+/////////////////////////////////////
+//                             WAVES
+
+.wave-one-container {
+    background-color: $lazo-green;
+    margin: 0;
+    padding: 0;
+}
+.wave-two-container {
+    background-color: $lazo-yellow;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.wave-active {
+    visibility: visible;
 }

@@ -9,8 +9,8 @@
   </div>
 {% endfor %} {% endcomment %}
 
-
-<div id="homepage">
+<div data-barba="wrapper">
+<div id="homepage" data-barba="container" data-barba-namespace="home">
   <div id="homepage-content">
 
     <div id="homepage-background">
@@ -24,39 +24,19 @@
             <span>SCROLL</span>
           </div>
       </div>
-  </div>
-
-    <div id="homepage-book">
-      <div class="homepage-book_banner">
-        <div class="homepage-banner-left">
-          <h2>El vuelo de las jorobadas</h2>
-          <p>Conoce nuestro primer libro sobre el fascinante 
-            viaje que hacen todos los años las ballenas jorobadas de la Antártida al Pacífico colombiano.</p>
-          <div class="banner-links">
-            <a class="banner-link-leer"><span>LEER MÁS</span></a>
-            <a class="banner-link-comprar"><span>LO QUIERO!</span></a>
-          </div>
-          <div class="banner-destino">
-            <div class="banner-destino-icon"></div>
-            <div class="banner-destino-text">Destino: Costa Pacífica Colombiana</div>
-          </div>
-        </div>
-        <div class="homepage-banner-right">
-          <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/libro-portada-home_2x_31708fa1-aad0-4bca-8191-556965a20b15.png?v=1585456702" alt="">
-        </div>
-        <div class="homepage-banner-circle">
-          <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/nuevo-libro.svg?v=1585457252" alt="">
-        </div>
-      </div>
-      <div class="homepage-book_quote">
-        <p>“Hace falta tener esas alas, o aletas, para volar como lo hacen las jorobadas, las más acrobáticas de las ballenas. Están de fiesta. Se darán un último banquete antes del gran viaje al lugar donde nacieron y donde habrán de nacer sus hijos y nietos”.</p>
-      </div>
     </div>
+  <svg class="wave-one-container" width="100%" height="200px" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs></defs><path class="wave-one" d=""/></svg>
+
+   {% include 'module-book' %}
+
+  <svg class="wave-two-container" width="100%" height="200px" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs></defs><path class="wave-two" d=""/></svg>
 
 
     <div id="homepage-video">
-      <div class="homepage-video-container">
-        <iframe width="640" height="320" frameborder="0" src="https://player.vimeo.com/video/225434434?"></iframe>
+      <div class="homepage-bg">
+        <div class="homepage-video-container">
+          <iframe width="640" height="320" frameborder="0" src="https://player.vimeo.com/video/225434434?"></iframe>
+        </div>
       </div>
     </div>
 
@@ -122,21 +102,4 @@
 
   </div>
 </div>
-
-<div id="boletin">
-  <div class="boletin-content">
-    <div class="boletin-left">
-      <span class="boletin-eyebrow">INSCRÍBETE AL BOLETÍN</span>
-      <h3 class="boletin-title">
-        Formemos juntos un lazo de experiencia.
-      </h3>
-    </div>
-    <div class="boletin-right">
-      <input type="text" placeholder="Tu correo electrónico">
-      <button> INSCRIBIRME</button>
-    </div>
-  </div>
-</div>
-<div id="footer">
-
 </div>

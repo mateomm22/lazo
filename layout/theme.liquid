@@ -10,7 +10,19 @@
   <link rel="stylesheet" href="https://use.typekit.net/szl1ndf.css">
   {{ content_for_header }} <!-- Header hook for plugins -->
   {{ 'application.scss.css' | asset_url | stylesheet_tag }}
-  {{ 'application.js' | asset_url | script_tag }}
+
+
+
+ 
+ 
+
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/@barba/core"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/wavify@1.0.0/wavify.min.js"></script>
+
+
 </head>
 <body>
 
@@ -23,11 +35,11 @@
     </div>
     <div class="main-nav_menu">
       <ul>
-        <li><a href="">Inicio</a></li>
-        <li><a href="">Nosotros</a></li>
-        <li><a href="">Libros</a></li>
-        <li><a href="">Blog</a></li>
-        <li><a href="">Contacto</a></li>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/pages/nosotros">Nosotros</a></li>
+        <li><a href="/pages/libros">Libros</a></li>
+        <li><a href="/blogs/lazo-blog">Blog</a></li>
+        <li><a href="/pages/contacto">Contacto</a></li>
       </ul>
     </div>
     <div class="main-nav_cart">
@@ -37,32 +49,97 @@
     </div>
   </nav>
 
-  {% comment %} {% for link in linklists.main-menu.links %}
-    {% assign child_list_handle = link.title | handleize %}
-    {% if linklists[child_list_handle].links != blank %}
-      <a href="{{ link.url }}">{{ link.title }}</a>
-      [{% for childlink in linklists[child_list_handle].links %}
-        <a href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
-      {% endfor %}]
-    {% else %}
-      <a href="{{ link.url }}">{{ link.title }}</a>
-    {% endif %}
-  {% endfor %}
-
-  
-
-  {% if shop.customer_accounts_enabled %}
-    {% if customer %}
-      <a href="/account">account</a>
-      {{ 'log out'  | customer_logout_link }}
-    {% else %}
-      {{ 'log in ' | customer_login_link }}
-      {{ 'register' | customer_register_link }}
-    {% endif %}
-  {% endif %} {% endcomment %}
+ 
 
   <main role="main">
     {{ content_for_layout }}
   </main>
+
+
+
+  <div id="boletin">
+  <div class="boletin-content">
+    <div class="boletin-left">
+      <span class="boletin-eyebrow">INSCRÍBETE AL BOLETÍN</span>
+      <h3 class="boletin-title">
+        Formemos juntos un lazo de experiencia.
+      </h3>
+    </div>
+    <div class="boletin-right">
+      <input type="text" placeholder="Tu correo electrónico">
+      <button> INSCRIBIRME</button>
+    </div>
+  </div>
+</div>
+<div id="footer">
+  <div class="footer-content">
+    <div class="footer-top">
+      <div class="footer-img">
+        <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/footer-logo.svg?v=1585887136" alt="">
+      </div>
+      <div class="footer-social">
+        <a href="">
+          <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/instagram.svg?v=1585887136" alt="">
+        </a>
+        <a href="">
+          <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/youtube.svg?v=1585887135" alt="">
+        </a>
+      </div>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>LAZO LIBROS</h4>
+        <ul>
+          <li>
+            <a href="">Inicio</a>
+          </li>
+          <li>
+            <a href="">Nosotros</a>
+          </li>
+          <li>
+            <a href="">Libros</a>
+          </li>
+          <li>
+            <a href="">Blog</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>CONTACTO</h4>
+        <ul>
+          <li>
+            <a href="">pguerra@lazolibros.com</a>
+          </li>
+          <li>+(57) 316 527 3114</li>
+          <li>Bogotá - CO</li>
+          <li>Hablemos</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>SOPORTE</h4>
+        <ul>
+          <li>
+            <a href="">Envíos y devoluciones</a>
+          </li>
+          <li>
+            <a href="">Privacidad</a>
+          </li>
+          <li>
+            <a href="">Términos y condiciones</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="bottom-left">© Lazo libros 2020</span>
+      <span class="bottom-right">Website por @contra</span>
+    </div>
+  </div>
+</div>
+
+
+
+{{ 'application.js' | asset_url | script_tag }}
+
 </body>
 </html>
