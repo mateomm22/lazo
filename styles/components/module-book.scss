@@ -1,0 +1,107 @@
+#module-book {
+  background-color: $lazo-yellow;
+  padding: 120px 0;
+  position: relative;
+  overflow: hidden;
+  margin-top: -10px;
+
+  .module-banner-left {
+    text-align: center;
+
+    p {
+      margin: 32px auto 0;
+      font-family: neue-haas-unica, sans-serif;
+      font-size: 17px;
+      line-height: 29px;
+      color: $lazo-black;
+      
+      @include m768 {
+        width: 75%;
+      }
+    }
+
+    .banner-links {
+      display: flex;
+      margin-top: 32px;
+      justify-content: center;
+
+      .banner-link-leer {
+        width: 200px;
+      }
+
+      .banner-link-comprar {
+        width: 200px;
+        height: 48px;
+        background-color: $lazo-black;
+        padding: 12px 0 0;
+        display: block;
+        
+        span {
+          color: white;
+        }
+      }
+    }
+
+    .banner-destino {
+      margin: 48px auto 0;
+      padding: 6px 0 0;
+      width: 100%;
+      max-width: 320px;
+      height: 40px;
+      border: 1px $lazo-black solid;
+    }
+  }
+
+  .module-banner-right {
+    width: 85%;
+
+    @include m576 {
+      width: 75%;
+    }
+    @include m768 {
+      width: 100%;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .module-banner-circle {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    right: -70px;
+    top: 60%;
+    animation: rotate 10s linear infinite;
+    
+    @include m576 {
+      right: -10%;
+      width: 200px;
+      height: 200px;
+    }
+    @include m768 {
+      top: 90%;
+    }
+    @include m1400 {
+      top: 80%;
+      right: -15%;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .module-book_quote {
+    p {
+      text-align: center;
+      margin: 120px auto 0;
+      
+      @include m768 {
+        width: 75%;
+      }
+    }
+  }
+}
+

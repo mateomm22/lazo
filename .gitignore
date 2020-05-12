@@ -1,0 +1,13 @@
+._*
+.DS_Store
+node_modules
+package-lock.json
+yarn.lock
+shrinkwrap.yaml
+pnpm-debug.log
+
+*.tmp
+*.tmp.*
+*.*tmp
+*hpi*.zip
+*lock*

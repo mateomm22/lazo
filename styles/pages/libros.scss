@@ -1,0 +1,34 @@
+#libros-hero {
+  background-color: $lazo-light-red;
+  width: 100%;
+  position: relative;
+  height: 100%;
+
+  .container {
+    position: relative;
+    padding: 20vh 20px;
+  }
+}
+
+#libros-mas {
+  background-image: url('https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Mask_Group_13_2x_bafe93ca-42c9-430d-9366-bb1e453b3941.png?v=1586474222');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.libros-mas-content {
+  width: 85%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 150px 0;
+  text-align: center;
+
+  @include m768 {
+    padding: 30% 0;
+  }
+}
+
+.marquee--libros {
+  background-color: $lazo-blue;
+}

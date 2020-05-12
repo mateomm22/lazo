@@ -1,0 +1,46 @@
+.main-nav {
+  width: 100%;
+  height: 88px;
+  padding: 24px 0 0;
+  position: relative;
+
+  .row {
+    margin: 0;
+  }
+
+  .main-nav_logo {
+    position: relative;
+
+    a {
+      display: block;
+    }
+  }
+
+  .main-nav_menu {
+    position: relative;
+    right: 0;
+    left: 0;
+    margin: 8px auto 0;
+
+    ul {
+      list-style-type: none;
+    }
+
+    li {
+      display: inline-block;
+      padding: 0 8px;
+    }
+
+    a {
+      text-decoration: none;
+      font-size: 1em;
+      color: $lazo-red;
+    }
+  }
+
+  .main-nav_cart {
+    position: relative;
+    right: 0px;
+    margin-top: 8px;
+  }
+}

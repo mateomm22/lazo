@@ -1,0 +1,40 @@
+.wrap-marquee {
+  padding: 60px 0;
+  position: relative;
+  overflow: hidden;
+
+  .marquee-line {
+    margin: 24px auto;
+    max-width: 1280px;
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    overflow: hidden;
+    display: block;
+    box-sizing: border-box;
+  }
+
+  .marquee-text {
+    position: relative;
+    left: 0;
+    white-space: nowrap;
+    transform: translateX(0);
+    animation: scroll-left 15s linear infinite;
+  }
+
+  p {
+    display: inline-block;
+    text-transform: uppercase;
+    height: 100%;
+    font-family: neue-haas-unica, sans-serif;
+    font-size: 40px;
+  }
+
+  span {
+    display: inline-block;
+    margin: 0 10px;
+    position: relative;
+    font-size: 20px;
+    top: -6px;
+  }
+}

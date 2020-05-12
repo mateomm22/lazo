@@ -12,14 +12,7 @@
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css">
 
-
-  {{ 'application.scss.css' | asset_url | stylesheet_tag }}
-
-
-
- 
- 
-
+  {{ 'main.min.css' | asset_url | stylesheet_tag }}
     
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://unpkg.com/@barba/core"></script>
@@ -32,25 +25,29 @@
 <body>
 
 
-  <nav id="main-nav">
-    <div class="main-nav_logo">
-      <a href="/">
-        <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/lazo-logo.svg?v=1585452340" alt="">
-      </a>
-    </div>
-    <div class="main-nav_menu">
-      <ul>
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/pages/nosotros">Nosotros</a></li>
-        <li><a href="/pages/libros">Libros</a></li>
-        <li><a href="/blogs/lazo-blog">Blog</a></li>
-        <li><a href="/pages/contacto">Contacto</a></li>
-      </ul>
-    </div>
-    <div class="main-nav_cart">
-      <a href="/cart">
-        <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/shopping-cart.svg?v=1585453527" alt="">
-      </a>
+  <nav class="main-nav">
+    <div class="container">
+      <div class="row">
+        <div class="main-nav_logo">
+          <a href="/">
+            <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/lazo-logo.svg?v=1585452340" alt="">
+          </a>
+        </div>
+        <div class="main-nav_menu">
+          <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/pages/nosotros">Nosotros</a></li>
+            <li><a href="/pages/libros">Libros</a></li>
+            <li><a href="/blogs/lazo-blog">Blog</a></li>
+            <li><a href="/pages/contacto">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="main-nav_cart">
+          <a href="/cart">
+            <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/shopping-cart.svg?v=1585453527" alt="">
+          </a>
+        </div>
+      </div>
     </div>
   </nav>
 
@@ -62,85 +59,100 @@
 
 
 
-  <div id="boletin">
-  <div class="boletin-content">
-    <div class="boletin-left">
-      <span class="boletin-eyebrow">INSCRÍBETE AL BOLETÍN</span>
-      <h3 class="boletin-title">
-        Formemos juntos un lazo de experiencia.
-      </h3>
-    </div>
-    <div class="boletin-right">
-      <input type="text" placeholder="Tu correo electrónico">
-      <button> INSCRIBIRME</button>
+  <div class="boletin">
+    <div class="container">
+      <div class="row v-center">
+        <div class="col-lg-6">
+          <div class="boletin-left">
+            <span class="boletin-eyebrow">INSCRÍBETE AL BOLETÍN</span>
+            <h3 class="boletin-title">
+              Formemos juntos un lazo de experiencia.
+            </h3>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="boletin-right">
+            <input type="text" placeholder="Tu correo electrónico">
+            <button> INSCRIBIRME</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-<div id="footer">
-  <div class="footer-content">
-    <div class="footer-top">
-      <div class="footer-img">
-        <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/footer-logo.svg?v=1585887136" alt="">
+
+  <div class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-img">
+          <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/footer-logo.svg?v=1585887136" alt="">
+        </div>
+        <div class="footer-social">
+          <a href="">
+            <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/instagram.svg?v=1585887136" alt="">
+          </a>
+          <a href="">
+            <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/youtube.svg?v=1585887135" alt="">
+          </a>
+        </div>
       </div>
-      <div class="footer-social">
-        <a href="">
-          <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/instagram.svg?v=1585887136" alt="">
-        </a>
-        <a href="">
-          <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/youtube.svg?v=1585887135" alt="">
-        </a>
+      <div class="footer-links">
+        <div class="row">
+          <div class="col-sm-6 col-md-4">
+            <div class="footer-col">
+              <h4>LAZO LIBROS</h4>
+              <ul>
+                <li>
+                  <a href="">Inicio</a>
+                </li>
+                <li>
+                  <a href="">Nosotros</a>
+                </li>
+                <li>
+                  <a href="">Libros</a>
+                </li>
+                <li>
+                  <a href="">Blog</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <div class="footer-col">
+              <h4>CONTACTO</h4>
+              <ul>
+                <li>
+                  <a href="">pguerra@lazolibros.com</a>
+                </li>
+                <li>+(57) 316 527 3114</li>
+                <li>Bogotá - CO</li>
+                <li>Hablemos</li>
+            </div>
+            </ul>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <div class="footer-col">
+              <h4>SOPORTE</h4>
+              <ul>
+                <li>
+                  <a href="">Envíos y devoluciones</a>
+                </li>
+                <li>
+                  <a href="">Privacidad</a>
+                </li>
+                <li>
+                  <a href="">Términos y condiciones</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="footer-links">
-      <div class="footer-col">
-        <h4>LAZO LIBROS</h4>
-        <ul>
-          <li>
-            <a href="">Inicio</a>
-          </li>
-          <li>
-            <a href="">Nosotros</a>
-          </li>
-          <li>
-            <a href="">Libros</a>
-          </li>
-          <li>
-            <a href="">Blog</a>
-          </li>
-        </ul>
+      <div class="footer-bottom">
+        <span class="bottom-left">© Lazo libros 2020</span>
+        <span class="bottom-right">Website por @contra</span>
       </div>
-      <div class="footer-col">
-        <h4>CONTACTO</h4>
-        <ul>
-          <li>
-            <a href="">pguerra@lazolibros.com</a>
-          </li>
-          <li>+(57) 316 527 3114</li>
-          <li>Bogotá - CO</li>
-          <li>Hablemos</li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>SOPORTE</h4>
-        <ul>
-          <li>
-            <a href="">Envíos y devoluciones</a>
-          </li>
-          <li>
-            <a href="">Privacidad</a>
-          </li>
-          <li>
-            <a href="">Términos y condiciones</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span class="bottom-left">© Lazo libros 2020</span>
-      <span class="bottom-right">Website por @contra</span>
     </div>
   </div>
-</div>
 
 
 

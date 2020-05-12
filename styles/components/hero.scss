@@ -1,0 +1,31 @@
+.main-hero {
+  width: 100%;
+  position: relative;
+  height: 100%;
+
+  .container {
+    position: relative;
+    min-height: calc(100vh - 88px);
+    padding-top: 15vh;
+  }
+
+  .hero-link {
+    display: none;
+    position: absolute;
+    left: 20px;
+    bottom: 0;
+
+    @include m768 {
+      display: block;
+      bottom: 20px;
+    }
+
+    span {
+      font-size: 15px;
+      position: absolute;
+      top: 4px;
+      display: block;
+      left: 32px;
+    }
+  }
+}

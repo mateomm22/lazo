@@ -1,0 +1,104 @@
+.hero--contacto {
+  background-color: $lazo-dark-yellow;
+}
+
+#wrap-contacto-form {
+  background-color: $lazo-dark-yellow;
+  padding: 120px 0;
+}
+
+.form-social {
+  margin-top: 40px;
+
+  h3 {
+    color: $lazo-black;
+    font-family: neue-haas-unica, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .form-social-icons {
+    margin-top: 16px;
+    a {
+      text-decoration: none;
+      margin-right: 24px;
+    }
+  }
+}
+
+.contacto-form {
+  padding-top: 20px;
+  
+  input, 
+  textarea {
+    display: block;
+    width: 100%;
+    height: 60px;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px $lazo-black solid;
+    padding: 0 16px;
+    font-family: neue-haas-unica, sans-serif;
+    font-size: 14px;
+    margin-bottom: 15px;
+  
+    &::placeholder {
+      font-family: neue-haas-unica, sans-serif;
+      font-size: 14px;
+      letter-spacing: 2px;
+      color: rgba($lazo-black, 0.5);
+    }
+  }
+
+  textarea {
+    padding-top: 10px;
+    min-height: 120px;
+    max-height: 170px;
+    resize: vertical;
+  }
+
+  button {
+    margin-top: 24px;
+    border: none;
+    background-color: black;
+    width: 200px;
+    height: 50px;
+    color: white;
+    font-family: neue-haas-unica, sans-serif;
+    font-size: 14px;
+  }
+} 
+
+#contacto-info {
+  padding: 120px 0;
+}
+
+.contacto-info-right {
+  span {
+    font-family: neue-haas-unica, sans-serif;
+    font-size: 16px;
+  }
+
+  .title {
+    margin-bottom: 30px;
+  }
+
+  p {
+    font-family: neue-haas-unica, sans-serif;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 400;
+    padding-top: 24px;
+  }
+  
+  a {
+    font-family: neue-haas-unica, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    padding-top: 24px; 
+    display: block;
+    color: $lazo-black;
+    text-decoration: underline;
+  }
+  
+}

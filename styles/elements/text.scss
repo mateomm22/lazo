@@ -1,0 +1,102 @@
+/*************************
+******* Titles 
+**************************/
+.title {
+	color: $lazo-black;
+	font-family: neue-haas-unica, sans-serif;
+	font-weight: 500;
+	font-size: 32px;
+	line-height: 1.15;
+
+	@include m768 {
+		font-size: 40px;
+	}
+
+	@include m992 {
+		font-size: 48px;
+	}
+}
+
+//Title sizes
+.title--xbig {
+	font-size: 60px;
+	
+	@include m768 {
+		font-size: 72px;
+	}
+	
+	@include m992 {
+		font-size: 88px;
+	}
+}
+
+.title--big {
+	font-size: 38px;
+	
+	@include m768 {
+    font-size: 42px;
+  }
+  
+  @include m992 {
+    font-size: 56px;
+  }
+}
+
+.title--small {
+	font-size: 18px;
+	
+	@include m768 {
+		font-size: 20px;
+	}
+	
+	@include m992 {
+		font-size: 24px;
+	}
+}
+
+//Title colors
+.title--white {
+	color: white;
+}
+
+/*************************
+******* Links
+**************************/
+.cta {
+  display: inline-block;
+  position: relative;
+  color: $lazo-black;
+  text-decoration: none;
+  cursor: pointer;
+
+  span {
+    display: inline-block;
+    padding: 10px 0;
+  }
+
+  svg {
+    display: block;
+    position: absolute;
+    top: 45%;
+    left: -25%;
+    width: 150%;
+    transform: translateY(-50%);
+  }
+
+  .st0 {
+    fill: none;
+    stroke: $lazo-black;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    transition: all 0.5s ease-out;
+  }
+
+  &:hover {
+    .st0 {
+      stroke-dashoffset: 0;
+      transition-duration: 1.5s;
+    }
+  }
+}

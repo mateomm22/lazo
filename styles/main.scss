@@ -1,0 +1,25 @@
+@import "./_mixins.scss";
+@import "./_base.scss";
+@import "./_grid.scss";
+@import "./_animations.scss";
+
+@import "./elements/text.scss";
+
+// Global components
+@import "./components/header.scss";
+@import "./components/footer.scss";
+@import "./components/hero.scss";
+@import "./components/marquee.scss";
+
+@import "./components/boletin.scss";
+@import "./components/module-book.scss";
+
+// Blog cards
+@import "./components/blog-card.scss";
+
+@import "./pages/home.scss";
+@import "./pages/nosotros.scss";
+@import "./pages/libros.scss";
+@import "./pages/blog.scss";
+@import "./pages/contacto.scss";
+@import "./pages/producto.scss";

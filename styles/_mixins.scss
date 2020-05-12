@@ -1,0 +1,19 @@
+// VARIABLES
+$lazo-red: #DE4939;
+$lazo-light-red: #EEA78E;
+$lazo-yellow: #FEE399;
+$lazo-dark-yellow: #FFCD67;
+$lazo-black: #1a1919;
+$lazo-blue: #79CADD;
+
+// Media queries
+@mixin m450  { @media (min-width: 450px)  { @content; } };
+@mixin m576  { @media (min-width: 575px)  { @content; } };
+@mixin m600  { @media (min-width: 600px)  { @content; } };
+@mixin m768  { @media (min-width: 767px)  { @content; } };
+@mixin m992  { @media (min-width: 991px)  { @content; } };
+@mixin m1200 { @media (min-width: 1199px) { @content; } };
+@mixin m1400 { @media (min-width: 1399px) { @content; } };
+@mixin m1800 { @media (min-width: 1800px) { @content; } };
+@mixin m2200 { @media (min-width: 2200px) { @content; } };
+@mixin media($size) { @media (min-width: $size) { @content; } };

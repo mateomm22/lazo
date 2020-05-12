@@ -1,0 +1,46 @@
+.hero--nosotros {
+  background-color: $lazo-dark-yellow;
+}
+
+#nosotros-sections {
+  width: 100%;
+  background-color: $lazo-dark-yellow;
+  padding: 120px 0 1px;
+}
+
+.nosotros-single {
+  margin-bottom: 120px;
+  
+  .title {
+    border-top: 2px #ffffff solid;
+    padding-top: 24px;
+  }
+  
+  .nosotros-single-image {
+    width: 100%;
+    padding-top: 40px;
+  
+    img {
+      width: 100%;
+    }
+  }
+
+  p {
+    font-family: neue-haas-unica, sans-serif;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 1.4;
+    color: white;
+    padding: 0;
+    margin: 0;
+
+    @include m768 {
+      font-size: 34px;
+    }
+  }
+}
+
+.marquee--nosotros {
+  background-color: $lazo-light-red;
+}
+

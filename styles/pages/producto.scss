@@ -1,0 +1,304 @@
+.producto-buy-bar {
+  width: 100%;
+  height: 50px;
+  background-color: $lazo-black;
+  position: fixed;
+  bottom: 0;
+  z-index: 100;
+  color: white;
+  text-align: center;
+  font-family: neue-haas-unica, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  padding-top: 12px;
+  text-decoration: none;
+}
+
+#producto-hero {
+  width: 100%;
+  height: 100%;
+  background-image: url('https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Group_120_2x_30c5a5c3-e850-4151-8203-2ba0569e5ed8.png?v=1586539257');
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  text-align: center;
+
+  .container {
+    position: relative;
+    min-height: calc(100vh - 138px);
+    padding-top: 20vh;
+
+    .title {
+      max-width: 650px;
+      margin: 0 auto 40px;
+    }
+
+    span {
+      width: 100%;
+      display: block;
+      color: white;
+      font-size: 16px;
+      font-family: neue-haas-unica, sans-serif;
+      margin-bottom: 8px;
+    }
+  }
+
+  .hero-link {
+    position: absolute;
+    left: 20px;
+    bottom: 0;
+    @include m768 {
+      bottom: 20px;
+    }
+
+    span {
+      font-size: 15px;
+      position: absolute;
+      top: 4px;
+      display: block;
+      left: 32px;
+    }
+  }
+}
+
+#producto-info {
+  padding: 120px 0;
+}
+
+.producto-info-left {
+  .title {
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  .producto-line {
+    width: 120px;
+    height: 1px;
+    background-color: black;
+    display: block;
+    margin: 30px 0;
+  }
+
+  .producto-detail {
+    margin-bottom: 24px;
+
+    h4,
+    span {
+      font-family: neue-haas-unica, sans-serif;
+      font-size: 16px;
+      color: $lazo-black;
+      font-weight: 500;
+    }
+
+    span {
+      font-weight: 400;
+    }
+  }
+
+  .module-banner-circle {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    margin: 70px 0;
+    animation: rotate 10s linear infinite;
+    @include m576 {
+      width: 150px;
+      height: 150px;
+    }
+    @include m576 {
+      margin-bottom: 0;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+#producto-slider {
+  padding: 100px 0;
+
+  .producto-info-right {
+    p {
+      font-family: neue-haas-unica, sans-serif;
+      font-size: 25px;
+      line-height: 37px;
+      color: $lazo-black;
+      font-weight: 400;
+    }
+  }
+
+  .producto-slider-right {
+    .slick-track {
+      display: flex;
+      flex-direction: column;
+
+      .slick-slide {
+        width: 100% !important;
+      }
+    }
+  }
+
+  .slick-arrow {
+    display: none !important;
+  }
+
+  .slide {
+    width: 100%;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+#producto-pictures {
+  max-width: 1500px;
+  margin: 0 auto;
+
+  img {
+    width: 100%;
+  }
+}
+
+#producto-video {
+  padding: 120px 0;
+}
+
+.producto-video-container {
+  width: 100%;
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  z-index: 10;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+#producto-banner {
+  max-width: 1500px;
+  margin: 0 auto;
+
+  img {
+    width: 100%;
+  }
+}
+
+.autores-title {
+  padding-top: 120px;
+}
+
+.single-autor {
+  padding: 60px 0;
+}
+
+.single-autor-left {
+  img {
+    width: 100%;
+  }
+}
+
+.single-autor-right {
+  span {
+    font-family: neue-haas-unica, sans-serif;
+    font-size: 16px;
+  }
+
+  p {
+    font-family: neue-haas-unica, sans-serif;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 400;
+    padding-top: 24px;
+  }
+
+  a {
+    font-family: neue-haas-unica, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    padding-top: 24px;
+    display: block;
+    color: $lazo-black;
+    text-decoration: underline;
+  }
+}
+
+#producto-colaboradores {
+  span {
+    display: block;
+    margin-bottom: 20px;
+    font-family: neue-haas-unica, sans-serif;
+    font-size: 16px;
+  }
+}
+
+.colaboradores-content {
+  padding-bottom: 40px;
+}
+
+.colaborador {
+  padding: 24px 20px 0 0;
+  margin-bottom: 30px;
+
+  img {
+    width: 85%;
+    max-width: 250px;
+
+    @include m576 {
+      width: 75%;
+    }
+
+    @include m768 {
+      width: 50%;
+    }
+  }
+
+  h4 {
+    font-family: neue-haas-unica, sans-serif;
+    font-size: 27px;
+    line-height: 30px;
+    font-weight: 500;
+    padding-top: 24px;
+  }
+
+  p {
+    font-family: neue-haas-unica, sans-serif;
+    font-size: 17px;
+    line-height: 30px;
+    font-weight: 400;
+    padding-top: 8px;
+  }
+}
+
+#producto-blog {
+  background-color: white;
+  padding-bottom: 120px;
+  position: relative;
+  overflow: hidden;
+}
+
+.producto-blog-top {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+
+  a {
+    font-family: neue-haas-unica, sans-serif;
+    font-size: 15px;
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.marquee--producto {
+  background-color: $lazo-dark-yellow;
+}
