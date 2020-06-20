@@ -4,6 +4,9 @@
 @import "./_animations.scss";
 
 @import "./elements/text.scss";
+@import "./elements/cta.scss";
+@import "./elements/animated-bar.scss";
+@import "./elements/wave.scss";
 
 // Global components
 @import "./components/header.scss";
@@ -13,8 +16,6 @@
 
 @import "./components/boletin.scss";
 @import "./components/module-book.scss";
-
-// Blog cards
 @import "./components/blog-card.scss";
 
 @import "./pages/home.scss";
