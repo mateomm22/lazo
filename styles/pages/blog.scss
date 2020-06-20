@@ -2,7 +2,7 @@
   background-color: $lazo-blue;
 }
 
-.blog-hero-left {
+.main-hero-img {
   img {
     width: 100%;
   }
@@ -23,4 +23,17 @@
 #blog-entries {
   background-color: $lazo-blue;
   padding: 100px 0;
+}
+
+.marquee--blog {
+  background-color: $lazo-light-red;
+}
+
+
+/**
+* Single Blog Styles
+*/
+
+.marquee--single-blog {
+  background-color: $lazo-blue;
 }

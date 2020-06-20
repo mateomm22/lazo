@@ -1,6 +1,12 @@
 .blog-card {
   position: relative;
+  margin: 0 auto;
   margin-bottom: 70px;
+  max-width: 350px;
+
+  @include m768 {
+    margin-bottom: 20px;
+  }
 
   a {
     text-decoration: none;

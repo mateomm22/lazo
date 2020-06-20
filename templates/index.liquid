@@ -9,8 +9,8 @@
   </div>
 {% endfor %} {% endcomment %}
 
-<div data-barba="wrapper">
 <div id="homepage" data-barba="container" data-barba-namespace="home">
+    <div class="animated"></div>
     <div class="main-hero hero--home">
         <div class="container">
             <div class="row v-center">
@@ -35,14 +35,11 @@
                 <span>SCROLL</span>
             </div>
         </div>
+        <div class="wave wave-1">
+        </div>
     </div>
 
-    <svg class="wave-one-container" width="100%" height="200px" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs></defs><path class="wave-one" d=""/></svg>
-
     {% include 'module-book' %}
-
-    <svg class="wave-two-container" width="100%" height="200px" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs></defs><path class="wave-two" d=""/></svg>
-
 
     <div id="homepage-video">
         <div class="container">
@@ -65,7 +62,27 @@
             </div>
             <div class="homepage-blog-content">
                 <div class="row">
-                    <div class="col-sm-6 col-md-4">
+                    <div class="col-md-4">
+                        <div class="blog-card">
+                            <a href="">
+                                <div class="blog-card__image">
+                                    <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/homepage-blog.png?v=1585619013" alt="">
+                                </div>
+                                <div class="blog-card__tag">EDITORIAL</div>
+                                <div class="blog-card__text">
+                                    <h3 class="title title--small">¿Quién escribió el libro?</h3>
+                                    <p>Aliquam in bibendum mauris. Sed vitae erat vel velit blandit pharetra vitae nec ante. Cras at est augue. Cras ut interdum elit. Ut malesuada.</p>
+                                    <div class="blog-card__link">
+                                        <div class="cta">
+                                            <span>LEER MÁS</span>
+                                            {% include 'cta-line-2' %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
                         <div class="blog-card">
                             <a href="">
                                 <div class="blog-card__image">
@@ -85,7 +102,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-4">
+                    <div class="col-md-4">
                         <div class="blog-card">
                             <a href="">
                                 <div class="blog-card__image">
@@ -98,27 +115,7 @@
                                     <div class="blog-card__link">
                                         <div class="cta">
                                             <span>LEER MÁS</span>
-                                            {% include 'cta-line' %}
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4">
-                        <div class="blog-card">
-                            <a href="">
-                                <div class="blog-card__image">
-                                    <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/homepage-blog.png?v=1585619013" alt="">
-                                </div>
-                                <div class="blog-card__tag">EDITORIAL</div>
-                                <div class="blog-card__text">
-                                    <h3 class="title title--small">¿Quién escribió el libro?</h3>
-                                    <p>Aliquam in bibendum mauris. Sed vitae erat vel velit blandit pharetra vitae nec ante. Cras at est augue. Cras ut interdum elit. Ut malesuada.</p>
-                                    <div class="blog-card__link">
-                                        <div class="cta">
-                                            <span>LEER MÁS</span>
-                                            {% include 'cta-line' %}
+                                            {% include 'cta-line-2' %}
                                         </div>
                                     </div>
                                 </div>
@@ -147,8 +144,11 @@
             <span>&bull;</span>
             <p>SOBRE LAZO LIBROS</p>
             <span>&bull;</span>
+            <p>SOBRE LAZO LIBROS</p>
+            <span>&bull;</span>
+            <p>SOBRE LAZO LIBROS</p>
+            <span>&bull;</span>
         </div>
         <div class="marquee-line"></div>
     </div>
-</div>
 </div>

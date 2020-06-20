@@ -1,0 +1,25 @@
+.wave {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 20px;
+  background-position: 0 0;
+  background-repeat: repeat-x;
+  z-index: 2;
+}
+
+.wave-1 {
+  background-image: url('https://cdn.shopify.com/s/files/1/0367/2417/9081/files/wave-1.svg?v=1589652970');
+  animation: wave-animation 8.7s infinite linear;
+}
+
+@keyframes wave-animation {
+  0% { 
+    background-position: 0 0; 
+  }
+  
+  100% {
+    background-position: 1601px 0;
+  }
+}

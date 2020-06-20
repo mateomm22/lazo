@@ -1,13 +1,9 @@
-#libros-hero {
+.hero--libros {
   background-color: $lazo-light-red;
   width: 100%;
   position: relative;
-  height: 100%;
-
-  .container {
-    position: relative;
-    padding: 20vh 20px;
-  }
+  padding: 10vh 20px;
+  min-height: auto;
 }
 
 #libros-mas {

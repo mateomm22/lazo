@@ -1,0 +1,50 @@
+
+/*************************
+******* Links
+**************************/
+.cta {
+  display: inline-block;
+  position: relative;
+  color: $lazo-black;
+  text-decoration: none;
+  cursor: pointer;
+
+  span {
+    display: inline-block;
+    padding: 10px 0;
+  }
+
+  .hover-1 {
+    display: block;
+    position: absolute;
+    top: 45%;
+    left: -25%;
+    width: 150%;
+    transform: translateY(-50%);
+  }
+
+  .hover-2 {
+    display: block;
+    position: absolute;
+    bottom: -5px;
+    left: -5%;
+    width: 110%;
+  }
+
+  .st0 {
+    fill: none;
+    stroke: $lazo-black;
+    stroke-width: 1;
+    stroke-linecap: round;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    transition: all 0.5s ease-out;
+  }
+
+  &:hover {
+    .st0 {
+      stroke-dashoffset: 0;
+      transition-duration: 1.5s;
+    }
+  }
+}

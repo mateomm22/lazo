@@ -8,23 +8,86 @@
   padding: 120px 0 1px;
 }
 
+.wrap-nosotros {
+  position: relative;
+}
+
 .nosotros-single {
   margin-bottom: 120px;
+  overflow: hidden;
   
+  @include m768 {
+    min-height: 90vh;
+  }
+  
+  &--abs {
+    @include m768 {
+      position: absolute;
+      top: 0;
+    }
+    
+    .nosotros-single__title,
+    .nosotros-single__image,
+    .nosotros-single__text {
+      opacity: 1;
+
+      @include m768 {
+        opacity: 0;
+      }
+    }
+
+    .nosotros-single__title,
+    .nosotros-single__image {
+      left: 0;
+
+      @include m768 {
+        left: -100%;
+      }
+    }
+
+    .nosotros-single__text {
+      right: 0;
+
+      @include m768 {
+        right: -100%;
+      }
+    }
+  }
+}
+
+.nosotros-single__title,
+.nosotros-single__image,
+.nosotros-single__text {
+  position: relative;
+}
+
+.nosotros-single__title {
   .title {
     border-top: 2px #ffffff solid;
     padding-top: 24px;
-  }
-  
-  .nosotros-single-image {
-    width: 100%;
-    padding-top: 40px;
-  
-    img {
-      width: 100%;
+    margin-bottom: 25px;
+
+    @include m768 {
+      margin-bottom: 0;
     }
   }
+}
 
+.nosotros-single__image {
+  display: none;
+  width: 100%;
+  padding-top: 40px;
+
+  @include m768 {
+    display: block;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.nosotros-single__text {
   p {
     font-family: neue-haas-unica, sans-serif;
     font-weight: 400;
@@ -35,6 +98,10 @@
     margin: 0;
 
     @include m768 {
+      font-size: 30px;
+    }
+
+    @include m992 {
       font-size: 34px;
     }
   }

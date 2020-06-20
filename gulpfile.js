@@ -6,10 +6,12 @@
 const {
   src,
   dest,
+  parallel,
   series,
   watch
 } = require('gulp');
 const babel = require('gulp-babel');
+const browserSync = require('browser-sync');
 const cssmin = require('gulp-csso');
 const plumber = require('gulp-plumber');
 const prefixer = require('gulp-autoprefixer');
@@ -43,8 +45,8 @@ function styles() {
  **/
 function scripts() {
   return src([
-    './assets/js/*.js',
-    '!./assets/js/*.min.js'
+    './assets/*.js',
+    '!./assets/*.min.js'
   ])
     .pipe(plumber())
     .pipe(babel({
@@ -52,9 +54,25 @@ function scripts() {
     }))
     .pipe(uglify())
     .pipe(rename({suffix:".min"}))
-    .pipe(dest('./assets/js'))
+    .pipe(dest('./assets'))
 }
 
+function serverHtml () {
+  browserSync.init({
+    port: 8888,
+    ui: false,
+    open: true,
+    server: {
+      baseDir: './',
+      directory: true
+    }
+  });
+}
+
+function reload (done) {
+  browserSync.reload();
+  done();
+}
 
 /**
  * ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
@@ -63,10 +81,9 @@ function scripts() {
  **/
 
 function watchFiles () {
-  watch(['./assets/js/*.js', '!./assets/js/*.min.js'], series(scripts));
-  watch('./styles/**/*.scss', series(styles));
+  watch(['./assets/*.js', '!./assets/*.min.js'], series(scripts, reload));
+  watch('./styles/**/*.scss', series(styles, reload));
 }
-
 
 
 /**
@@ -75,7 +92,7 @@ function watchFiles () {
  * ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
  **/
 
-const dev = series(styles, scripts, watchFiles);
+const dev = series(styles, scripts, parallel(serverHtml, watchFiles));
 
 exports.styles = styles;
 exports.scripts = scripts;
