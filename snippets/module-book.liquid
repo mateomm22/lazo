@@ -33,6 +33,7 @@
       </div>
       
     </div>
+    
     {% if template == 'index' %}
 
       <div class="module-book_quote">
@@ -41,4 +42,13 @@
 
     {% endif %}
   </div>
+
+  {% if template == 'index' %}
+    <div class="wave wave--blue"></div>
+  {% endif %}
+
+  {% if template == 'page.libros' %}
+    <div class="wave wave--white"></div>
+  {% endif %}
+
 </div>

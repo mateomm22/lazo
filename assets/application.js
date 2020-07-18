@@ -133,8 +133,32 @@ function initScripts() {
       allSliderTabs.removeClass('active');
       $('.js-slider-tab[data-slide-to="' + current + '"]').addClass('active');
     });
-  
   }
+  
+  /**
+   * ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+   * ·······  Libros bubble effect
+   * ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+   **/
+  gsap.timeline()
+  .to('.path', {
+    rotate: '20deg',
+    duration: 12,
+    transformOrigin:"50% 50%",
+    yoyo : true,
+    repeat: -1,
+    yoyoEase: "linear",
+  });
+
+  gsap.timeline()
+  .to('.path-2', {
+    rotate: '-10deg',
+    duration: 12,
+    transformOrigin:"50% 50%",
+    yoyo : true,
+    repeat: -1,
+    yoyoEase: "linear",
+  });
 }
 
 
@@ -269,6 +293,10 @@ barba.init({
     }
   
   }]
+});
+
+barba.hooks.beforeEnter(() => {
+  window.scrollTo(0, 0);
 });
 
 barba.hooks.after(() => {

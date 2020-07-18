@@ -67,6 +67,7 @@
 
     <main role="main">
         {{ content_for_layout }}
+        <div class="wave wave--black"></div>
     </main>
 
     <div class="boletin">
@@ -88,6 +89,7 @@
                 </div>
             </div>
         </div>
+        <div class="wave wave--white"></div>
     </div>
 
     <div class="footer">
@@ -163,7 +165,6 @@
             </div>
         </div>
     </div>
-
 
 
 {{ 'application.min.js' | asset_url | script_tag }}

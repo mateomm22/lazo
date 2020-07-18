@@ -1,19 +1,46 @@
 .wave {
   position: absolute;
   left: 0;
-  bottom: 0;
   width: 100%;
+  bottom: -3px;
   height: 20px;
   background-position: 0 0;
   background-repeat: repeat-x;
+  background-size: cover;
   z-index: 2;
-}
-
-.wave--yellow {
-  background-image: url('https://cdn.shopify.com/s/files/1/0367/2417/9081/files/wave-yellow.svg?v=1592685201');
   animation: wave-animation 8.7s infinite linear;
 }
 
+.wave--yellow {
+  background-image: url('https://cdn.shopify.com/s/files/1/0367/2417/9081/files/wave-yellow.svg?v=1592689432');
+  animation-delay: .7s;
+}
+
+.wave--yellow2 {
+  background-image: url('https://cdn.shopify.com/s/files/1/0367/2417/9081/files/wave-yellow2.svg?v=1592689432');
+  animation-delay: .7s;
+}
+
+.wave--black {
+  background-image: url('https://cdn.shopify.com/s/files/1/0367/2417/9081/files/wave-black.svg?v=1592689432');
+  animation-delay: .5s;
+}
+
+.wave--red {
+  background-image: url('https://cdn.shopify.com/s/files/1/0367/2417/9081/files/wave-red.svg?v=1592689432');
+  animation-delay: .3s;
+}
+
+.wave--white {
+  background-image: url('https://cdn.shopify.com/s/files/1/0367/2417/9081/files/wave-white.svg?v=1592689432');
+  animation-delay: .2s;
+}
+
+.wave--blue {
+  background-image: url('https://cdn.shopify.com/s/files/1/0367/2417/9081/files/wave-blue.svg?v=1592689432');
+}
+
+// Animations
 @keyframes wave-animation {
   0% { 
     background-position: 0 0; 
