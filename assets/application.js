@@ -106,15 +106,15 @@ function initScripts() {
     window.onload = initScroll;
   }
   
-  
+    
   /**
    * ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-   * ·······  Producto page
+   * ·······  Destacado  page
    * ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
    **/
-  
-  if ( $('.js-producto-slider').length ) {
-    const productoSlider = $('.js-producto-slider');
+
+  if ( $('.js-destacado-slider').length ) {
+    const productoSlider = $('.js-destacado-slider');
     const allSliderTabs = $('.js-slider-tab');
   
     productoSlider.slick({
@@ -134,6 +134,35 @@ function initScripts() {
       $('.js-slider-tab[data-slide-to="' + current + '"]').addClass('active');
     });
   }
+
+  
+  /**
+   * ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+   * ·······  Product page
+   * ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+   **/
+  let productQuantity = 1;
+
+  function updateQuantity() {
+    $('.js-quantity').text(productQuantity);
+  }
+
+  $('.js-add').click(function() {
+    productQuantity += 1;
+    updateQuantity();
+  });
+
+  $('.js-remove').click(function() {
+    if (productQuantity > 0) {
+      productQuantity -= 1;
+    }
+    updateQuantity();
+  });
+  
+  $('.js-add-to-cart').click() {
+    document.getElementById("quantity").value = productQuantity;
+  }
+
   
   /**
    * ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
@@ -161,7 +190,12 @@ function initScripts() {
   });
 }
 
-
+   
+/**
+ * ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+ * ·······  Reload if resize
+ * ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+ **/
 $(window).on('load resize', function () {
   var isReloaded = localStorage.getItem('reloaded');
   $windowWidth = $(this).width() + 15;

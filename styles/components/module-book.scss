@@ -32,12 +32,14 @@
         width: 200px;
         height: 48px;
         background-color: $lazo-black;
-        padding: 12px 0 0;
+        padding: 10px;
         display: block;
-        
-        span {
-          color: white;
-        }
+        border: 0;
+        font-size: 16px;
+        color: white;
+        cursor: pointer;
+
+        @include font;
       }
     }
 

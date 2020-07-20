@@ -75,6 +75,15 @@
   padding: 120px 0;
 }
 
+.contacto-info-left {
+  max-width: 550px;
+  margin-bottom: 50px;
+
+  @include m768 {
+    margin-bottom: 0;
+  }
+}
+
 .contacto-info-right {
   span {
     font-family: neue-haas-unica, sans-serif;
@@ -83,6 +92,14 @@
 
   .title {
     margin-bottom: 30px;
+
+    br {
+      display: none;
+
+      @include m768 {
+        display: block;
+      }
+    }
   }
 
   p {

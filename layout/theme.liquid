@@ -55,6 +55,13 @@
                     <a href="/cart">
                         <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/shopping-cart.svg?v=1585453527" alt="">
                     </a>
+                    <span>
+                      {% if cart.item_count > 0 %}
+                          {{ cart.item_count }}
+                      {% else %}
+                        El carrito está vacío
+                      {% endif %}
+                    </span>
                 </div>
                 <div class="main-nav__icon">
                     <button class="hamburger js-open-menu">

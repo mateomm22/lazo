@@ -1,0 +1,426 @@
+<div id="destacado" data-barba="container" data-barba-namespace="destacado">
+    <div class="animated"></div>
+    
+    {% assign destacado = page.metafields.destacado %}
+
+    <a href="{{ shop.url }}/products/{{ destacado.producto }}" class="destacado-buy-bar">
+        COMPRAR LIBRO
+    </a>
+    <div id="destacado-hero">
+        <div class="container">
+            <h1 class="title title--xbig title--white">{{ page.title }}</h1>
+
+            {% for author in destacado['author'] %}
+                <span>
+                    {{ author }}
+                </span>
+            {% endfor %}
+
+            <div class="hero-link">
+                <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/hero-arrow.svg?v=1585454452" alt="">
+                <span>SCROLL</span>
+            </div>
+        </div>
+        
+        <div class="wave wave--white"></div>  
+    </div>
+
+    <div id="destacado-info">
+        <div class="container">
+            <div class="row between">
+                <div class="col-md-5">
+                    <div class="destacado-info-left">
+                        <h3 class="title title--small">
+                            El fascinante viaje que hacen todos los años las ballenas jorobadas de la Antártida al Pacífico colombiano.
+                        </h3>
+                        <div class="destacado-line"></div>
+                        {% for caracteristica in destacado['caracteristicas'] %}
+                            <div class="destacado-detail">
+                                {{ caracteristica }}
+                            </div>
+                        {% endfor %}
+                        <div class="module-banner-circle">
+                            <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/nuevo-libro.svg?v=1585457252" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="destacado-info-right">
+                        <p>
+                            “Esta es una invitación para que hagamos un viaje. No necesitamos morral ni zapatos. Tan solo los ojos bien abiertos. Veremos a las acróbatas más gigantescas del océano y con ellas llegaremos a donde todo comenzó, a donde ellas nacieron y quizá nosotros también. Ellas nadan lento, nunca tienen afán. De igual forma podemos pasar las páginas de este libro: tomarnos el tiempo que sea necesario para ir desde las glaciares aguas de la Antártida hasta las cálidas costas del Pacífico. Aquí empieza la fascinante migración de las yubartas. El vuelo de las jorobadas”.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="destacado-slider">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="destacado-slider__slider js-destacado-slider">
+                        <div class="slide">
+                            <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Image_4_2x_144f1779-b9fc-4b72-b832-f62aafa86e31.png?v=1586558243" alt="" class="img-responsive">
+                        </div>
+                        <div class="slide">
+                            <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Image_4_2x_144f1779-b9fc-4b72-b832-f62aafa86e31.png?v=1586558243" alt="" class="img-responsive">
+                        </div>
+                        <div class="slide">
+                            <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Image_4_2x_144f1779-b9fc-4b72-b832-f62aafa86e31.png?v=1586558243" alt="" class="img-responsive">
+                        </div>
+                        <div class="slide">
+                            <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Image_4_2x_144f1779-b9fc-4b72-b832-f62aafa86e31.png?v=1586558243" alt="" class="img-responsive">
+                        </div>
+                        <div class="slide">
+                            <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Image_4_2x_144f1779-b9fc-4b72-b832-f62aafa86e31.png?v=1586558243" alt="" class="img-responsive">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="destacado-slider__tabs">
+                        <div class="single-slider-tab js-slider-tab active" data-slide-to="0">
+                            <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Image_4_2x_144f1779-b9fc-4b72-b832-f62aafa86e31.png?v=1586558243" alt="" class="img-responsive">
+                        </div>
+                        <div class="single-slider-tab js-slider-tab" data-slide-to="1">
+                            <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Image_4_2x_144f1779-b9fc-4b72-b832-f62aafa86e31.png?v=1586558243" alt="" class="img-responsive">
+                        </div>
+                        <div class="single-slider-tab js-slider-tab" data-slide-to="2">
+                            <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Image_4_2x_144f1779-b9fc-4b72-b832-f62aafa86e31.png?v=1586558243" alt="" class="img-responsive">
+                        </div>
+                        <div class="single-slider-tab js-slider-tab" data-slide-to="3">
+                            <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Image_4_2x_144f1779-b9fc-4b72-b832-f62aafa86e31.png?v=1586558243" alt="" class="img-responsive">
+                        </div>
+                        <div class="single-slider-tab js-slider-tab" data-slide-to="4">
+                            <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Image_4_2x_144f1779-b9fc-4b72-b832-f62aafa86e31.png?v=1586558243" alt="" class="img-responsive">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="destacado-pictures">
+        <div class="single-picture">
+            <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Group_65_2x_c4234d71-e134-4175-9802-432335800787.png?v=1586646721" alt="">
+        </div>
+        <div class="single-picture">
+            <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Group_120as_2x_ca467ebb-edda-47fb-9be7-bc5d97a1dac5.png?v=1586646840" alt="">
+        </div>
+        <div class="single-picture">
+            <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Ciclo-vida_2x_b6b593a1-f69f-4d1c-94ca-b01d6bee9e1f.png?v=1586646788" alt="">
+        </div>
+    </div>
+
+    <div id="destacado-video">
+        <div class="container">
+            <div class="destacado-video-container">
+                <iframe width="640" height="320" frameborder="0" src="https://player.vimeo.com/video/225434434?"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div id="destacado-banner">
+        <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Mask_Group_16_2x_450d93c8-631d-4485-ba8a-3fe14e77420f.png?v=1586647609" alt="">
+    </div>
+
+    <div id="destacado-autores">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-10 col-md-6">
+                    <div class="autores-title">
+                        <h2 class="title title--big">
+                            Este libro fue hecho por un grupo de personas que aman a las ballenas.
+                        </h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="single-autor">
+                <div class="row v-center">
+                    <div class="col-md-4 col-lg-5">
+                        <div class="single-autor-left">
+                            <svg class="svg-1" x="0px" y="0px" viewBox="0 0 467 488">
+                                <mask id="shape-mask-2">
+                                    <g id="Grupo_94" transform="translate(6581.892 -10135.987)">
+                                        <path class="path-2" fill="#D3D3D3" d="M-6159.6,10462.3c0,0-113.1,150.2-21.1,153.8C-6082.4,10611.7-6126.5,10408.4-6159.6,10462.3z"/>
+                                        <path class="path-2" fill="#D3D3D3" d="M-6319.9,10143.9c0,0-238.4-22.5-227.1,159.9c-14.2,93.1-62,213.4,0,264.1s110.7,31.1,210.6,36.4
+                                            c66,0,95.9-26,114.5-148.6C-6186.1,10387.2-6142.9,10159-6319.9,10143.9z"/>
+                                    </g>
+                                </mask>
+                                <image width="100%" height="100%" preserveAspectRatio="xMidYMid slice" xlink:href="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/juliana.jpg?v=1594255611" mask="url(#shape-mask-2)"></image>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="col-md-7 col-lg-6">
+                        <div class="single-autor-right">
+                            <span class="role">
+                                LO ESCRIBIÓ
+                            </span>
+                            <h3 class="title title--big">
+                                Juliana Muñoz Toro
+                            </h3>
+                            <p>
+                                Vivimos obsesionados. Investigamos y transformamos información y datos en narraciones y libros ilustrados. Le damos un lugar a la información escondida y acompañamos a los lectores en su descubrimiento del mundo. 
+                                <br /><br />
+                                Nos emociona nacer en Colombia y tener ante nosotros universos infinitos por explorar y enlazar. Cada libro representa un viaje a un lugar distinto y en cada uno buscamos responder diversas preguntas sobre nuestro país. 
+                            </p>
+                            <a href="">@juliana.mt</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="single-autor">
+                <div class="row v-center">
+                    <div class="col-md-4 col-lg-5">
+                        <div class="single-autor-left">
+                            <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Group_94_2x_17f835fa-5aca-48e5-a60b-8ad9117a652d.png?v=1586648997" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-7 col-lg-6">
+                        <div class="single-autor-right">
+                            <span class="role">
+                                LO ILUSTRÓ
+                            </span>
+                            <h3 class="title title--big">
+                                Dipacho
+                            </h3>
+                            <p>
+                                Trabaja como autor e ilustrador de libros infantiles, su trabajo ha sido publicado por editoriales del mundo hispano y en Francia, Italia y Brasil. Ha obtenido reconocimientos como el premio «A la orilla del viento» del FCE, mención de honor en la bienal de ilustración de Bratislava, premio CJ de Korea, White Ravens de Alemania, Mención de honor del Banco del libro, lista de honor de la IBBY, Seleccionado para exposición en feria de Bolonia, entre otros. Si fuera una ballena…
+                            </p>
+                            <a href="">@dipacho</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="destacado-colaboradores">
+        <div class="container">
+            <div class="colaboradores-investigadores">
+                <span>INVESTIGADORES</span>
+                <div class="colaboradores-content">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <div class="colaborador">
+                                <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Group_93_2x_aa1707ac-03de-434f-8530-2869c07ed064.png?v=1586537641" alt="">
+                                <h4>Natalia Botero</h4>
+                                <p>(Bióloga, profesora de la Universidad Javeriana y directora de la Fundación Macuáticos dedicada a la investigación y conservación de cetáeos en el Golfo de Tribugá). </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <div class="colaborador">
+                                <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Group_93_2x_aa1707ac-03de-434f-8530-2869c07ed064.png?v=1586537641" alt="">
+                                <h4>Susana Caballero</h4>
+                                <p>Bióloga, profesora e investigador de la Universidad de los Andes</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <div class="colaborador">
+                                <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Group_93_2x_aa1707ac-03de-434f-8530-2869c07ed064.png?v=1586537641" alt="">
+                                <h4>Lilián Flórez</h4>
+                                <p>Bióloga, investigadora y directora y fundadora de la Fundación Yubarta, dedicada al estudio y la conservación de las ballenas en Colombia
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="colaboradores-editorial">
+                <span>EQUIPO EDITORIAL</span>
+                <div class="colaboradores-content">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <div class="colaborador">
+                                <svg class="svg-1" x="0px" y="0px" viewBox="0 0 519 480">
+                                    <mask id="shape-mask">
+                                        <path class="path" fill="#D3D3D3" d="M355.8,53.1c0,0-130.5-53.6-196.1,45.9c-19,30-35,54-52,84C91,212.4,31.3,259.2,87.5,346s126.7,100.5,214.6,105.1c58.1,0,170.3,7.4,208.5-103.1C517.2,318.7,546.1,154.6,355.8,53.1z"/>
+                                        <path class="path" fill="#D3D3D3" d="M36.6,128.3c47.6,5.4,64.1-10.6,79-33.7c8.5-16,28.3-47.3-16.3-84.5C18.3-19.6-10.9,122.8,36.6,128.3z"/>
+                                    </mask>
+                                    <image width="100%" height="100%" preserveAspectRatio="xMidYMid slice" xlink:href="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/paula-guerra-arjona.jpg?v=1594255611" mask="url(#shape-mask)"></image>
+                                </svg>
+                                <h4>Paula Guerra</h4>
+                                <p>Editora</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <div class="colaborador">
+                                <svg class="svg-1" x="0px" y="0px" viewBox="0 0 519 480">
+                                    <mask id="shape-mask">
+                                        <path class="path" fill="#D3D3D3" d="M355.8,53.1c0,0-130.5-53.6-196.1,45.9c-19,30-35,54-52,84C91,212.4,31.3,259.2,87.5,346s126.7,100.5,214.6,105.1c58.1,0,170.3,7.4,208.5-103.1C517.2,318.7,546.1,154.6,355.8,53.1z"/>
+                                        <path class="path" fill="#D3D3D3" d="M36.6,128.3c47.6,5.4,64.1-10.6,79-33.7c8.5-16,28.3-47.3-16.3-84.5C18.3-19.6-10.9,122.8,36.6,128.3z"/>
+                                    </mask>
+                                    <image width="100%" height="100%" preserveAspectRatio="xMidYMid slice" xlink:href="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/natalia-mustafa.jpg?v=1594255607" mask="url(#shape-mask)"></image>
+                                </svg>
+                                <h4>Natalia Mustafá</h4>
+                                <p>Directora de Arte</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <div class="colaborador">
+                                <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Group_93_2x_aa1707ac-03de-434f-8530-2869c07ed064.png?v=1586537641" alt="">
+                                <h4>Andrés Álvarez</h4>
+                                <p>Diagramador</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <div class="colaborador">
+                                <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Group_93_2x_aa1707ac-03de-434f-8530-2869c07ed064.png?v=1586537641" alt="">
+                                <h4>Inés Rocha</h4>
+                                <p>Correctora de estilo</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="destacado-blog">
+        <div class="container">
+            <div class="destacado-blog-top">
+                <h2 class="title title--big">Artículos relacionados</h2>
+                <a href="" class="cta">
+                    <span>VER MÁS</span>
+                    {% include 'cta-line' %}
+                </a>
+            </div>
+            <div class="destacado-blog-content">
+                <div class="row">
+                    <div class="col-sm-6 col-md-4">
+                        <div class="blog-card">
+                            <a href="">
+                                <div class="blog-card__image">
+                                    <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/homepage-blog.png?v=1585619013" alt="">
+                                </div>
+                                <div class="blog-card__tag">EDITORIAL</div>
+                                <div class="blog-card__text">
+                                    <h3 class="title title--small">¿Quién escribió el libro?</h3>
+                                    <p>Aliquam in bibendum mauris. Sed vitae erat vel velit blandit pharetra vitae nec ante. Cras at est augue. Cras ut interdum elit. Ut malesuada.</p>
+                                    <div class="blog-card__link">
+                                        <div class="cta">
+                                            <span>LEER MÁS</span>
+                                            {% include 'cta-line' %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="blog-card">
+                            <a href="">
+                                <div class="blog-card__image">
+                                    <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/homepage-blog.png?v=1585619013" alt="">
+                                </div>
+                                <div class="blog-card__tag">EDITORIAL</div>
+                                <div class="blog-card__text">
+                                    <h3 class="title title--small">¿Quién escribió el libro?</h3>
+                                    <p>Aliquam in bibendum mauris. Sed vitae erat vel velit blandit pharetra vitae nec ante. Cras at est augue. Cras ut interdum elit. Ut malesuada.</p>
+                                    <div class="blog-card__link">
+                                        <div class="cta">
+                                            <span>LEER MÁS</span>
+                                            {% include 'cta-line' %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="blog-card">
+                            <a href="">
+                                <div class="blog-card__image">
+                                    <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/homepage-blog.png?v=1585619013" alt="">
+                                </div>
+                                <div class="blog-card__tag">EDITORIAL</div>
+                                <div class="blog-card__text">
+                                    <h3 class="title title--small">¿Quién escribió el libro?</h3>
+                                    <p>Aliquam in bibendum mauris. Sed vitae erat vel velit blandit pharetra vitae nec ante. Cras at est augue. Cras ut interdum elit. Ut malesuada.</p>
+                                    <div class="blog-card__link">
+                                        <div class="cta">
+                                            <span>LEER MÁS</span>
+                                            {% include 'cta-line' %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="wave wave--yellow2"></div>  
+    </div>
+
+    <div class="wrap-marquee marquee--destacado">
+        <div class="marquee-line"></div>
+        <div class="marquee-text">
+            <p>NOSOTROS</p>
+            <span>&bull;</span>
+            <p>SOMOS LAZO</p>
+            <span>&bull;</span>
+            <p>NOSOTROS</p>
+            <span>&bull;</span>
+            <p>SOMOS LAZO</p>
+            <span>&bull;</span>
+            <p>NOSOTROS</p>
+            <span>&bull;</span>
+            <p>SOMOS LAZO</p>
+            <span>&bull;</span>
+            <p>NOSOTROS</p>
+            <span>&bull;</span>
+            <p>SOMOS LAZO</p>
+            <span>&bull;</span>
+            <p>NOSOTROS</p>
+            <span>&bull;</span>
+            <p>SOMOS LAZO</p>
+            <span>&bull;</span>
+            <p>NOSOTROS</p>
+            <span>&bull;</span>
+            <p>SOMOS LAZO</p>
+            <span>&bull;</span>
+        </div>
+        <div class="marquee-line"></div>
+    </div>
+
+</div>
+
+
+{% comment %} {% assign current_variant = product.selected_or_first_available_variant %}
+{% assign featured_image = current_variant.featured_image | default: product.featured_image %}
+<img src="{{ featured_image | img_url: 'large' }}" alt="{{ featured_image.alt | escape }}" id="ProductPhotoImg">
+{% for image in product.images %}
+  <a href="{{ image.src | img_url: 'large' }}">
+    <img src="{{ image.src | img_url: 'compact' }}" alt="{{ image.alt | escape }}">
+  </a>
+{% endfor %}
+<h1>{{ product.title }}</h1>
+<form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
+  <select name="id" id="productSelect">
+    {% for variant in product.variants %}
+      {% if variant.available %}
+        <option value="{{ variant.id }}">
+          {{ variant.title }} - {{ variant.price | money_with_currency }}
+        </option>
+      {% else %}
+        <option disabled="disabled">
+          {{ variant.title }} - sold out
+        </option>
+      {% endif %}
+    {% endfor %}
+  </select>
+  {{ current_variant.price | money }}
+  <label for="Quantity">quantity</label>
+  <input type="number" id="Quantity" name="quantity" value="1" min="1">
+  <button type="submit" name="add" id="AddToCart">Add to cart</button>
+</form>
+<div>{{ product.description }}</div>
+ {% endcomment %}
+
+
+
+
