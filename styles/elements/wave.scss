@@ -1,43 +1,55 @@
+
+
 .wave {
   position: absolute;
+  bottom: -1px;
   left: 0;
   width: 100%;
-  bottom: -3px;
-  height: 20px;
-  background-position: 0 0;
-  background-repeat: repeat-x;
-  background-size: cover;
+  height: 70px;
+  overflow: hidden;
   z-index: 2;
-  animation: wave-animation 8.7s infinite linear;
+
+  path {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 }
 
 .wave--yellow {
-  background-image: url('https://cdn.shopify.com/s/files/1/0367/2417/9081/files/wave-yellow.svg?v=1592689432');
-  animation-delay: .7s;
+  path {
+    fill: $lazo-yellow;
+  }
 }
 
 .wave--yellow2 {
-  background-image: url('https://cdn.shopify.com/s/files/1/0367/2417/9081/files/wave-yellow2.svg?v=1592689432');
-  animation-delay: .7s;
+  path {
+    fill: $lazo-dark-yellow;
+  }
 }
 
 .wave--black {
-  background-image: url('https://cdn.shopify.com/s/files/1/0367/2417/9081/files/wave-black.svg?v=1592689432');
-  animation-delay: .5s;
+  path {
+    fill: $lazo-black;
+  }
 }
 
 .wave--red {
-  background-image: url('https://cdn.shopify.com/s/files/1/0367/2417/9081/files/wave-red.svg?v=1592689432');
-  animation-delay: .3s;
+  path {
+    fill: $lazo-light-red;
+  }
 }
 
 .wave--white {
-  background-image: url('https://cdn.shopify.com/s/files/1/0367/2417/9081/files/wave-white.svg?v=1592689432');
-  animation-delay: .2s;
+  path {
+    fill: white;
+  }
 }
 
 .wave--blue {
-  background-image: url('https://cdn.shopify.com/s/files/1/0367/2417/9081/files/wave-blue.svg?v=1592689432');
+  path {
+    fill: $lazo-blue;
+  }
 }
 
 // Animations

@@ -5,6 +5,7 @@
   max-width: 350px;
 
   @include m768 {
+    max-width: none;
     margin-bottom: 20px;
   }
 

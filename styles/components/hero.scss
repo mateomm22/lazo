@@ -21,21 +21,24 @@
 
   .hero-link {
     display: none;
-    position: absolute;
-    left: 20px;
-    bottom: -40px;
+    position: relative;
+    left: 15px;
+    margin-top: 30px;
     opacity: 1;
 
     @include m768 {
-      display: block;
+      display: flex;
+      align-items: center;
+    }
+
+    i {
+      display: inline-block;
+      font-size: 32px;
+      margin-right: 8px;
     }
 
     span {
       font-size: 15px;
-      position: absolute;
-      top: 4px;
-      display: block;
-      left: 32px;
     }
   }
 }

@@ -6,12 +6,14 @@
   min-height: auto;
 }
 
+.wave--libros {
+  height: 20px;
+}
+
 #libros-mas {
   position: relative;
-  background-image: url('https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Mask_Group_13_2x_bafe93ca-42c9-430d-9366-bb1e453b3941.png?v=1586474222');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: url('https://cdn.shopify.com/s/files/1/0367/2417/9081/files/lazo-pattern-negro.png?v=1596494214') no-repeat center;
+  box-shadow: inset 9999px 9999px 9999px rgba(white, 0.85);
 }
 
 .libros-mas-content {
@@ -22,7 +24,7 @@
   text-align: center;
 
   @include m768 {
-    padding: 30% 0;
+    padding: 20% 0 25%;
   }
 }
 

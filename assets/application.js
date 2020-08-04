@@ -6,7 +6,6 @@ function initScripts() {
    * ·······  Open Menu
    * ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
    **/ 
-  
   const $menuTl = gsap.timeline().add(
     gsap.to(".js-nav-item", {
       duration: 0.4,
@@ -41,8 +40,142 @@ function initScripts() {
   
   /**
    * ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-   * ·······  Nosotros scroll Effect
+   * ·······  Waves
    * ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+   **/
+
+  if($('.js-wave').length > 0) {
+    $('.js-wave').wavify({
+      height: 20,
+      bones: 4,
+      amplitude: 30,
+      speed: .15
+    });
+  }
+  
+  if($('.js-wave2').length > 0) {
+    $('.js-wave2').wavify({
+      height: 20,
+      bones: 5,
+      amplitude: 25,
+      speed: .13
+    });
+  }
+
+  if($('.js-wave--small').length > 0) {
+    $('.js-wave--small').wavify({
+      height: 5,
+      bones: 7,
+      amplitude: 8,
+      speed: .13
+    });
+  }  
+    
+  /**
+   * ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+   * ·······  Destacado  page
+   * ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+   **/
+
+  if ( $('.js-destacado-slider').length ) {
+    const productoSlider = $('.js-destacado-slider');
+    const allSliderTabs = $('.js-slider-tab');
+  
+    productoSlider.slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: true,
+    });
+  
+  
+    allSliderTabs.click(function() {
+      const targetSlide = $(this).data('slide-to');
+      productoSlider.slick('slickGoTo', targetSlide);
+    })
+  
+    productoSlider.on('afterChange', function(e, slick, current, next){
+      allSliderTabs.removeClass('active');
+      $('.js-slider-tab[data-slide-to="' + current + '"]').addClass('active');
+    });
+  }
+
+  
+  /**
+   * ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+   * ·······  Product page
+   * ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+   **/
+  let productQuantity = 1;
+
+  function updateQuantity() {
+    $('.js-quantity').text(productQuantity);
+  }
+
+  $('.js-add').click(function() {
+    productQuantity += 1;
+    updateQuantity();
+  });
+
+  $('.js-remove').click(function() {
+    if (productQuantity > 0) {
+      productQuantity -= 1;
+    }
+    updateQuantity();
+  });
+  
+  $('.js-add-to-cart').click(function() {
+    document.getElementById("quantity").value = productQuantity;
+  });
+
+  
+  /**
+   * ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+   * ·······  Mask svg effect
+   * ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+   **/
+  gsap.timeline()
+  .to('.mask-path', {
+    rotate: '30deg',
+    scale: 1.02,
+    duration: 12,
+    transformOrigin:"50% 50%",
+    yoyo : true,
+    repeat: -1,
+    yoyoEase: "linear",
+  });
+
+  gsap.timeline()
+  .to('.mask-path-2', {
+    rotate: '-10deg',
+    scale: 1.02,
+    duration: 12,
+    transformOrigin:"50% 50%",
+    yoyo : true,
+    repeat: -1,
+    yoyoEase: "linear",
+  });
+
+  gsap.timeline()
+  .to('.mask-path-2a', {
+    rotate: '-15deg',
+    scale: 1.02,
+    duration: 10,
+    transformOrigin:"50% 50%",
+    yoyo : true,
+    repeat: -1,
+    yoyoEase: "linear",
+  });
+}
+
+/**
+ * ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+ * ·······  Nosotros Scripts
+ * ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+ **/
+function initNosotros() {  
+  gsap.registerPlugin(ScrollTrigger);
+  /**
+   *Nosotros scroll Effect
    **/
   function animateEl ($element, $action, $direction) {
     const $opacity = ($action === 'show') ? 1 : 0;
@@ -104,93 +237,9 @@ function initScripts() {
   
     window.onresize = initScroll;
     window.onload = initScroll;
-  }
-  
-    
-  /**
-   * ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-   * ·······  Destacado  page
-   * ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-   **/
-
-  if ( $('.js-destacado-slider').length ) {
-    const productoSlider = $('.js-destacado-slider');
-    const allSliderTabs = $('.js-slider-tab');
-  
-    productoSlider.slick({
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      arrows: true,
-    });
-  
-  
-    allSliderTabs.click(function() {
-      const targetSlide = $(this).data('slide-to');
-      productoSlider.slick('slickGoTo', targetSlide);
-    })
-  
-    productoSlider.on('afterChange', function(e, slick, current, next){
-      allSliderTabs.removeClass('active');
-      $('.js-slider-tab[data-slide-to="' + current + '"]').addClass('active');
-    });
-  }
-
-  
-  /**
-   * ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-   * ·······  Product page
-   * ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-   **/
-  let productQuantity = 1;
-
-  function updateQuantity() {
-    $('.js-quantity').text(productQuantity);
-  }
-
-  $('.js-add').click(function() {
-    productQuantity += 1;
-    updateQuantity();
-  });
-
-  $('.js-remove').click(function() {
-    if (productQuantity > 0) {
-      productQuantity -= 1;
-    }
-    updateQuantity();
-  });
-  
-  $('.js-add-to-cart').click() {
-    document.getElementById("quantity").value = productQuantity;
-  }
-
-  
-  /**
-   * ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-   * ·······  Libros bubble effect
-   * ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-   **/
-  gsap.timeline()
-  .to('.path', {
-    rotate: '20deg',
-    duration: 12,
-    transformOrigin:"50% 50%",
-    yoyo : true,
-    repeat: -1,
-    yoyoEase: "linear",
-  });
-
-  gsap.timeline()
-  .to('.path-2', {
-    rotate: '-10deg',
-    duration: 12,
-    transformOrigin:"50% 50%",
-    yoyo : true,
-    repeat: -1,
-    yoyoEase: "linear",
-  });
+  }    
 }
 
-   
 /**
  * ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
  * ·······  Reload if resize
@@ -225,9 +274,9 @@ function overlay(bgColor) {
     backgroundColor: bgColor
   })
   .to('.animated', {
-    duration: 1,
+    duration: 0.75,
     scaleY: 1,
-    ease: 'bounce.out'
+    ease: 'power2.out'
   });
 }
 
@@ -267,6 +316,13 @@ function delay(n = 2000) {
   });
 }
 
+function setActiveMenu(page) {
+  $('.js-nav-item a').removeClass('current');
+
+  if($(`.js-nav-item a[data-page="${page}"]`).length > 0)
+    $(`.js-nav-item a[data-page="${page}"]`).addClass('current');
+}
+
 barba.init({
   transitions: [{
 
@@ -282,9 +338,9 @@ barba.init({
 
     afterLeave(data) {
       const done = this.async();
-      console.log(data.next.namespace);
-      let bgColor;
+      setActiveMenu(data.next.namespace);
 
+      let bgColor;
       switch (data.next.namespace) {
         case 'home':
         case 'blog':
@@ -302,9 +358,13 @@ barba.init({
           // Red
           bgColor = '#eea78e';
           gsap.timeline()
-          .set('.animated', {
-            height: '60vh'
-          })
+            .set('.animated', {
+              height: '60vh'
+            });
+          break;
+
+        case 'single-blog':
+          setActiveMenu('blog');
           break;
 
         default:
@@ -333,10 +393,26 @@ barba.hooks.beforeEnter(() => {
   window.scrollTo(0, 0);
 });
 
-barba.hooks.after(() => {
-  initScripts();
+barba.hooks.after((data) => {
+  switch (data.next.namespace) {
+    case 'nosotros':
+      initNosotros();
+      initScripts();
+      break;
+    default:
+      initScripts();
+      break;
+  }
 });
 
-barba.hooks.afterOnce(() => {
-  initScripts();
+barba.hooks.afterOnce((data) => {
+  switch (data.next.namespace) {
+    case 'nosotros':
+      initNosotros();
+      initScripts();
+      break;
+    default:
+      initScripts();
+      break;
+  }
 });

@@ -1,7 +1,8 @@
-@import "./_mixins.scss";
-@import "./_base.scss";
-@import "./_grid.scss";
-@import "./_animations.scss";
+@import "./base/_mixins.scss";
+@import "./base/_fonts.scss";
+@import "./base/_base.scss";
+@import "./base/_grid.scss";
+@import "./base/_animations.scss";
 
 @import "./elements/text.scss";
 @import "./elements/cta.scss";
@@ -26,3 +27,4 @@
 @import "./pages/blog.scss";
 @import "./pages/contacto.scss";
 @import "./pages/producto.scss";
+@import "./pages/cart.scss";

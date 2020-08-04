@@ -9,7 +9,7 @@
   </div>
 {% endfor %} {% endcomment %}
 
-<div id="homepage" data-barba="container" data-barba-namespace="home">
+<div id="homepage" data-barba="container" data-barba-namespace="inicio">
     <div class="animated"></div>
     <div class="main-hero hero--home">
         <div class="container">
@@ -26,16 +26,18 @@
                 </div>
                 <div class="col-md-6">
                     <div class="main-hero-img">
-                        <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/1-rojo_2x_74e7879c-0055-4419-b13a-0d486940c511.png?v=1586025255" alt="">
+                        <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/home-color.gif?v=1596403703" alt="Home Lazo Libros">
                     </div>
                 </div>
-            </div>
-            <div class="hero-link">
-                <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/hero-arrow.svg?v=1585454452" alt="">
-                <span>SCROLL</span>
+
+                <div class="hero-link">
+                    <i class="icon-arrow-down"></i>
+                    <span>SCROLL</span>
+                </div>
             </div>
         </div>
-        <div class="wave wave--yellow"></div>
+        
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="wave wave--yellow"><path class="js-wave" d=""/></svg>
     </div>
 
     {% include 'module-book' %}
@@ -124,7 +126,8 @@
                 </div>
             </div>
         </div>
-        <div class="wave wave--yellow"></div>
+
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="wave wave--yellow"><path class="js-wave2" d=""/></svg>
     </div>
 
     <div class="wrap-marquee marquee--home">

@@ -1,13 +1,19 @@
 .boletin {
   position: relative;
   background-color: $lazo-black;
-  padding: 120px 0;
+  padding: 80px 0 160px;
+  
+  @include m768 {
+    padding: 100px 0 200px;
+  }
 
   .boletin-left {
     margin-bottom: 40px;
+
     @include m768 {
       padding-right: 15%;
     }
+
     @include m992 {
       margin-bottom: 0;
     }
@@ -19,18 +25,19 @@
 
   .boletin-eyebrow {
     color: white;
-    font-family: neue-haas-unica, sans-serif;
     font-size: 13px;
-    letter-spacing: 1px;
-  }
+    letter-spacing: 2px;
 
+    @include font;
+  }
+  
   .boletin-title {
-    font-family: neue-haas-unica, sans-serif;
     font-size: 40px;
-    font-weight: 400;
     line-height: 45px;
     color: white;
     margin-top: 16px;
+    
+    @include font;
   }
 
   input {
@@ -41,19 +48,21 @@
     color: white !important;
     border: 0px;
     border-bottom: 1px white solid;
-    font-family: neue-haas-unica, sans-serif;
     font-size: 20px;
     opacity: 1;
     padding-left: 12px;
+
+    @include font;
   }
 
   input::placeholder,
   input::-webkit-input-placeholder,
   input:-ms-input-placeholder {
     color: white !important;
-    font-family: neue-haas-unica, sans-serif;
     font-size: 20px;
     opacity: 1;
+
+    @include font;
   }
 
   button {
@@ -61,7 +70,8 @@
     display: inline-block;
     height: 50px;
     margin-left: 40px;
-    font-family: neue-haas-unica, sans-serif;
     font-size: 15px;
+
+    @include font;
   }
 }
