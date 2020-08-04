@@ -5,19 +5,19 @@ function initScripts() {
    * ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
    * ·······  Open Menu
    * ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-   **/ 
+   **/
   const $menuTl = gsap.timeline().add(
     gsap.to(".js-nav-item", {
       duration: 0.4,
       left: 0,
       stagger: 0.12,
       ease: "back.out(1.4)"
-    })  
-  ).pause();  
-  
-  
+    })
+  ).pause();
+
+
   $('.js-open-menu').click(function() {
-    
+
     $(this).toggleClass('active');
     if ($(this).hasClass('active')) {
       $('.js-main-menu').fadeIn('fast');
@@ -25,19 +25,19 @@ function initScripts() {
     } else {
       $menuTl.reverse().then(function() {
         $('.js-main-menu').fadeOut('fast')
-      });  
-    }  
-  });  
-  
+      });
+    }
+  });
+
   $('.js-main-menu a').click(function() {
     $menuTl.reverse().then(function() {
       $('.js-main-menu').fadeOut('fast')
       $('.js-open-menu').removeClass('active');
-    });  
-  });  
-  
-  
-  
+    });
+  });
+
+
+
   /**
    * ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
    * ·······  Waves
@@ -52,7 +52,7 @@ function initScripts() {
       speed: .15
     });
   }
-  
+
   if($('.js-wave2').length > 0) {
     $('.js-wave2').wavify({
       height: 20,
@@ -69,8 +69,8 @@ function initScripts() {
       amplitude: 8,
       speed: .13
     });
-  }  
-    
+  }
+
   /**
    * ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
    * ·······  Destacado  page
@@ -80,26 +80,26 @@ function initScripts() {
   if ( $('.js-destacado-slider').length ) {
     const productoSlider = $('.js-destacado-slider');
     const allSliderTabs = $('.js-slider-tab');
-  
+
     productoSlider.slick({
       slidesToShow: 1,
       slidesToScroll: 1,
       arrows: true,
     });
-  
-  
+
+
     allSliderTabs.click(function() {
       const targetSlide = $(this).data('slide-to');
       productoSlider.slick('slickGoTo', targetSlide);
     })
-  
+
     productoSlider.on('afterChange', function(e, slick, current, next){
       allSliderTabs.removeClass('active');
       $('.js-slider-tab[data-slide-to="' + current + '"]').addClass('active');
     });
   }
 
-  
+
   /**
    * ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
    * ·······  Product page
@@ -122,12 +122,12 @@ function initScripts() {
     }
     updateQuantity();
   });
-  
+
   $('.js-add-to-cart').click(function() {
     document.getElementById("quantity").value = productQuantity;
   });
 
-  
+
   /**
    * ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
    * ·······  Mask svg effect
@@ -172,72 +172,64 @@ function initScripts() {
  * ·······  Nosotros Scripts
  * ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
  **/
-function initNosotros() {  
+function initNosotros() {
   gsap.registerPlugin(ScrollTrigger);
-  /**
-   *Nosotros scroll Effect
-   **/
-  function animateEl ($element, $action, $direction) {
-    const $opacity = ($action === 'show') ? 1 : 0;
-    const $movement = ($action === 'show') ? 0 : '-100%';
-  
-    return gsap.timeline().to($element, {
-      duration: 0.5,
-      [$direction]: $movement,
-      opacity: $opacity,
-      ease: 'Power2.in',
-    });
-  }
-  
-  
-  if ( $('.js-nosotros-trigger').length ) {
-    const nosotrosTl = gsap.timeline()
-      .add(animateEl('.js-title-1', 'hide', 'left'), 1)
-      .add(animateEl('.js-image-1', 'hide', 'left'), '-=0.3')
-      .add(animateEl('.js-text-1', 'hide', 'right'), '-=0.3')
-      .add(animateEl('.js-title-2', 'show', 'left'))
-      .add(animateEl('.js-image-2', 'show', 'left'), '-=0.3')
-      .add(animateEl('.js-text-2', 'show', 'right'), '-=0.3')
-      .add(animateEl('.js-title-2', 'hide', 'left'), '<2')
-      .add(animateEl('.js-image-2', 'hide', 'left'), '-=0.3')
-      .add(animateEl('.js-text-2', 'hide', 'right'), '-=0.3')
-      .add(animateEl('.js-title-3', 'show', 'left'))
-      .add(animateEl('.js-image-3', 'show', 'left'), '-=0.3')
-      .add(animateEl('.js-text-3', 'show', 'right'), '-=0.3')
-      .add(animateEl('.js-title-3', 'show', 'left'))
-      .add(animateEl('.js-image-3', 'show', 'left'))
-      .add(animateEl('.js-text-3', 'show', 'right'));
-  
-    // init controller
-    var controller = new ScrollMagic.Controller();
-  
-    function initScene() {
-      return new ScrollMagic.Scene()
-      .triggerElement('.js-nosotros-trigger')
-      .duration('300%')
-      .triggerHook(0)
-      .offset(-70)
-      .setPin('.js-wrap-nosotros')
-      .setTween(nosotrosTl)
-      .addTo(controller);
-    }
-  
-    var scrollScene = initScene();
-  
-    const initScroll = function(event) {
-      $windowWidth = $(window).width() + 15;
-      
-      if ($windowWidth < 768) {
-        scrollScene.destroy(true);
-      } else if (!document.querySelector('[data-scrollmagic-pin-spacer]')) {
-        nosotrosTl.progress(0);
-        scrollScene = initScene();
-      }
-    };
-  
-    window.onresize = initScroll;
-    window.onload = initScroll;
-  }    
+
+  const fadeTl = gsap.timeline()
+  .to('.js-title-1, .js-image-1', {
+    opacity: 0,
+    duration: 0.3
+  }, '+=1.2')
+  .to('.js-title-2, .js-image-2', {
+    opacity: 1,
+    duration: 0.3
+  }, '-=0.15')
+  .to('.js-title-2, .js-image-2', {
+    opacity: 0,
+    duration: 0.3
+  }, '+=2.3')
+  .to('.js-title-3, .js-image-3', {
+    opacity: 1,
+    duration: 0.3
+  }, '-=0.15')
+  .to('.js-title-3, .js-image-3', {
+    opacity: 1,
+    duration: 1
+  });
+
+  const scrollTl = gsap.timeline()
+  .to('.js-text-1', {
+    translateY: '-100%',
+    duration: 0.3
+  })
+  .to('.js-text-2', {
+    translateY: '-100%',
+    duration: 0.9
+  }, '-=0.25')
+  .to('.js-text-3', {
+    translateY: '0',
+    duration: 0.6
+  }, '-=0.5');
+
+  ScrollTrigger.create({
+    animation: fadeTl,
+    trigger: '.js-wrap-nosotros',
+    pin: true,
+    scrub: true,
+    start: 'top 50px',
+    end: 'bottom 50px',
+    markers: true,
+  })
+
+  ScrollTrigger.create({
+    animation: scrollTl,
+    trigger: '.js-wrap-nosotros',
+    pin: true,
+    scrub: true,
+    start: 'top 50px',
+    end: 'bottom 50px',
+    markers: true,
+  })
 }
 
 /**
@@ -329,7 +321,7 @@ barba.init({
     // Leave current page
     leave(data) {
       const done = this.async();
-      
+
       pageLeave();
       delay(600).then(() => {
         done();
@@ -347,13 +339,13 @@ barba.init({
           // Blue
           bgColor = '#79cadd';
           break;
-          
+
         case 'nosotros':
         case 'contacto':
           // Yellow
           bgColor = '#ffcd67';
           break;
-      
+
         case 'libros':
           // Red
           bgColor = '#eea78e';
@@ -371,7 +363,7 @@ barba.init({
           bgColor = '#ffffff';
           break;
       }
-      
+
       overlay(bgColor);
       delay(900).then(() => {
         done();
@@ -385,7 +377,7 @@ barba.init({
     once(data) {
       pageEnter();
     }
-  
+
   }]
 });
 

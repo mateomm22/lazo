@@ -16,42 +16,37 @@
 .nosotros-single {
   margin-bottom: 120px;
   overflow: hidden;
-  
+
   @include m768 {
     min-height: 90vh;
   }
-  
-  &--abs {
+
+  &--2,
+  &--3 {
     @include m768 {
       position: absolute;
       top: 0;
     }
-    
+
     .nosotros-single__title,
-    .nosotros-single__image,
-    .nosotros-single__text {
+    .nosotros-single__image{
       opacity: 1;
 
       @include m768 {
         opacity: 0;
       }
     }
+  }
 
-    .nosotros-single__title,
-    .nosotros-single__image {
-      left: 0;
-
-      @include m768 {
-        left: -100%;
-      }
-    }
-
+  &--2 {
     .nosotros-single__text {
-      right: 0;
+      transform: translateY(120%);
+    }
+  }
 
-      @include m768 {
-        right: -100%;
-      }
+  &--3 {
+    .nosotros-single__text {
+      transform: translateY(175%);
     }
   }
 }
