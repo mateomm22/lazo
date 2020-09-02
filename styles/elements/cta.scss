@@ -64,3 +64,13 @@
     background-color: #222;
   }
 }
+
+.btn--white {
+  border: 1px solid $lazo-black;
+  background-color: white;
+  color: $lazo-black;
+
+  &:hover {
+    background-color: #fafafa;
+  }
+}

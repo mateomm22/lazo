@@ -1,13 +1,15 @@
 <div id="nosotros" data-barba="container" data-barba-namespace="nosotros">
     <div class="animated"></div>
+
+    {% assign nosotros = page.metafields.nosotros %}
+    
     <div class="main-hero hero--nosotros">
         <div class="container">
             <div class="row v-center">
                 <div class="col-md-6">
                     <div class="main-hero-content">
                         <h1 class="title title--white title--big">
-                            Somos una editorial 
-                            de libros informativos que resaltan y rescatan historias sobre Colombia.
+                            {{ nosotros.nosotros_hero }}   
                         </h1>
                     </div>
                 </div>
@@ -30,107 +32,104 @@
             <div class="wrap-nosotros js-wrap-nosotros">
                 <div class="nosotros-single">
                     <div class="row between">
-                        <div class="col-md-4 col-lg-5">
-                            <div class="nosotros-single__title js-title-1">
-                                <h2 class="title title--white">
-                                    Vivimos obsesionados.
-                                </h2>
-                            </div>
-                            <div class="nosotros-single__image js-image-1">
-                                <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/obsesionados.png?v=1595806604" alt="">
+                        <div class="col-lg-5">
+                            <div class="js-nosotros-left">
+                                <div class="nosotros-single__intro nosotros-single__intro--first js-nosotros-1">
+                                    <div class="nosotros-single__title js-title-1">
+                                        <h2 class="title title--white">
+                                            {{ nosotros.title_1 }}   
+                                        </h2>
+                                    </div>
+                                    <div class="nosotros-single__image js-image-1">
+                                        <img src="{{ nosotros.img_1 }}" alt="{{ nosotros.title_1 }}">
+                                    </div>
+                                </div>
+                                <div class="nosotros-single__intro js-nosotros-2">
+                                    <div class="nosotros-single__title js-title-2">
+                                        <h2 class="title title--white">
+                                            {{ nosotros.title_2 }}  
+                                        </h2>
+                                    </div>
+                                    <div class="nosotros-single__image js-image-2">
+                                        <img src="{{ nosotros.img_2 }}" alt="{{ nosotros.title_2 }}">
+                                    </div>
+                                </div>
+                                <div class="nosotros-single__intro js-nosotros-3">
+                                    <div class="nosotros-single__title js-title-3">
+                                        <h2 class="title title--white">
+                                            {{ nosotros.title_3 }}  
+                                        </h2>
+                                    </div>
+                                    <div class="nosotros-single__image js-image-3">
+                                        <img src="{{ nosotros.img_3 }}" alt="{{ nosotros.title_3 }}">
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-7 col-lg-6">
+                        <div class="col-lg-6">
                             <div class="nosotros-single__text js-text-1">
-                                <p>
-                                    Investigamos y transformamos información y datos en narraciones y libros ilustrados. Le damos un lugar a la información escondida y acompañamos a los lectores en su descubrimiento del mundo. 
-                                </p>
-                                <p>
-                                    Nos emociona nacer en Colombia y tener ante nosotros universos infinitos por explorar y enlazar. Cada libro representa un viaje a un lugar distinto y en cada uno buscamos responder diversas preguntas sobre nuestro país. 
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="nosotros-single nosotros-single--abs">
-                    <div class="row between">
-                        <div class="col-md-4 col-lg-5">
-                            <div class="nosotros-single__title js-title-2">
                                 <h2 class="title title--white">
-                                    Creemos que la curiosidad nos mantiene vivos.
+                                    {{ nosotros.title_1 }}  
                                 </h2>
+                                <div>
+                                    {{ nosotros.text_1 }}  
+                                </div>
                             </div>
-                            <div class="nosotros-single__image js-image-2">
-                                <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/curiosos.png?v=1595806604" alt="">
-                            </div>
-                        </div>
-                        <div class="col-md-7 col-lg-6">
                             <div class="nosotros-single__text js-text-2">
-                                <p>
-                                    Creemos en las historias bien contadas y en que los libros informativos jamás pueden ser aburridos. 
-                                </p>
-                                <p>
-                                    Creemos en las historias colombianas, en su talento local y 
-                                    en las voces de cada región. 
-                                </p>    
-                                <p>
-                                    Creemos que la literatura infantil 
-                                    y juvenil tiene múltiples lectores,
-                                    y que los libros ilustrados son un mundo abierto para todas las edades: niños, jóvenes, adultos y todos aquellos adultos con alma 
-                                    de niños.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="nosotros-single nosotros-single--abs">
-                    <div class="row between">
-                        <div class="col-md-4 col-lg-5">
-                            <div class="nosotros-single__title js-title-3">
                                 <h2 class="title title--white">
-                                    Creemos que leer no se trata solo de palabras.
+                                    {{ nosotros.title_2 }}  
                                 </h2>
+                                <div>
+                                    {{ nosotros.text_2 }} 
+                                </div>
                             </div>
-                            <div class="nosotros-single__image js-image-3">
-                                <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/2-rojo_2x_8dbb702c-05b0-4fdf-89d9-804e8effe76e.png?v=1586025255" alt="">
-                            </div>
-                        </div>
-                        <div class="col-md-7 col-lg-6">
                             <div class="nosotros-single__text js-text-3">
-                                <p>
-                                    Creemos que leer se trata también de imágenes. Creemos en el poder de las ilustraciones, y por supuesto, en la belleza del libro álbum.  
-                                </p>
-                                <p>
-                                    Creemos que la lectura es un lazo que se construye en familia, y que cuando está unido encuentra infinitos caminos.     
-                                </p>
+                                <h2 class="title title--white">
+                                    {{ nosotros.title_3 }}  
+                                </h2>
+                                <div>
+                                    {{ nosotros.text_3 }} 
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="wave wave--red"><path class="js-wave" d=""/></svg>
+    </div>
+
+    <div class="somos-lazo">
+        <div class="container">
+            <div class="text">
+                <p>
+                    Somos Lazo Libros y les contamos Colombia a los niños.
+                </p>
+            </div>
+        </div>
+
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="wave wave--red"><path class="js-wave" d="M 0 49.308 C 276.9997 39.8989 276.9997 39.8989 553.9997 44.6035 C 830.9997 49.308 830.9997 49.308 1107.9997 36.5442 C 1384.9997 23.7802 1384.9997 23.7802 1661.9997 27.9453 C 1938.9997 32.1105 1938.9997 32.1105 2215.9997 36.5442 L 2215.9997 3288.2497 L 0 3288.2497 Z"/></svg>  
     </div>
 
     <div class="wrap-marquee marquee--nosotros">
-        <div class="marquee-line"></div>
-        <div class="marquee-text">
-            <p>CONOCE NUESTROS LIBROS</p>
-            <span>&bull;</span>
-            <p>CONOCE NUESTROS LIBROS</p>
-            <span>&bull;</span>
-            <p>CONOCE NUESTROS LIBROS</p>
-            <span>&bull;</span>
-            <p>CONOCE NUESTROS LIBROS</p>
-            <span>&bull;</span>
-            <p>CONOCE NUESTROS LIBROS</p>
-            <span>&bull;</span>
-            <p>CONOCE NUESTROS LIBROS</p>
-            <span>&bull;</span>
-            <p>CONOCE NUESTROS LIBROS</p>
-            <span>&bull;</span>
-        </div>
-        <div class="marquee-line"></div>
+        <a href="/pages/libros">
+            <div class="marquee-line"></div>
+            <div class="marquee-text">
+                <p>CONOCE NUESTROS LIBROS</p>
+                <span>&bull;</span>
+                <p>CONOCE NUESTROS LIBROS</p>
+                <span>&bull;</span>
+                <p>CONOCE NUESTROS LIBROS</p>
+                <span>&bull;</span>
+                <p>CONOCE NUESTROS LIBROS</p>
+                <span>&bull;</span>
+                <p>CONOCE NUESTROS LIBROS</p>
+                <span>&bull;</span>
+                <p>CONOCE NUESTROS LIBROS</p>
+                <span>&bull;</span>
+                <p>CONOCE NUESTROS LIBROS</p>
+                <span>&bull;</span>
+            </div>
+            <div class="marquee-line"></div>
+        </a>
     </div>
 </div>

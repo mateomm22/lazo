@@ -19,10 +19,6 @@
     }
   }
 
-  .boletin-right {
-    display: flex;
-  }
-
   .boletin-eyebrow {
     color: white;
     font-size: 13px;
@@ -40,38 +36,54 @@
     @include font;
   }
 
-  input {
-    width: calc(100% - 200px);
-    display: inline-block;
-    height: 50px;
-    background-color: $lazo-black;
-    color: white !important;
-    border: 0px;
-    border-bottom: 1px white solid;
-    font-size: 20px;
-    opacity: 1;
-    padding-left: 12px;
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    
+    input {
+      flex: 1;
+      display: inline-block;
+      height: 50px;
+      background-color: $lazo-black;
+      color: white !important;
+      border: 0px;
+      border-bottom: 1px white solid;
+      font-size: 20px;
+      opacity: 1;
+      padding-left: 0;
+      margin-right: 40px;
+      margin-bottom: 20px;
+  
+      @include font;
+    }
+  
+    input::placeholder,
+    input::-webkit-input-placeholder,
+    input:-ms-input-placeholder {
+      color: #e4e4e4 !important;
+      font-size: 20px;
+      opacity: 1;
+      letter-spacing: 1px;
+  
+      @include font;
+    }
+  
+    button {
+      width: 160px;
+      display: inline-block;
+      height: 50px;
+      font-size: 15px;
+      text-transform: uppercase;
+  
+      @include font;
+    }
 
-    @include font;
-  }
-
-  input::placeholder,
-  input::-webkit-input-placeholder,
-  input:-ms-input-placeholder {
-    color: white !important;
-    font-size: 20px;
-    opacity: 1;
-
-    @include font;
-  }
-
-  button {
-    width: 160px;
-    display: inline-block;
-    height: 50px;
-    margin-left: 40px;
-    font-size: 15px;
-
-    @include font;
+    .thankyou {
+      color: $lazo-blue;
+      display: block;
+      flex: 1 100%;
+      margin-top: 5px;
+    }
   }
 }

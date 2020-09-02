@@ -6,6 +6,7 @@
     position: relative;
     margin-bottom: 48px;
     display: flex;
+    align-items: center;
 
     .footer-img {
       position: relative;
@@ -38,20 +39,24 @@
       }
     }
 
+    ul {
+      padding-left: 0;
+    }
+
     li {
       list-style-type: none;
       margin: 16px 0;
-      font-family: neue-haas-unica, sans-serif;
-      font-weight: 400;
       font-size: 18px;
+
+      @include font;
     }
 
     a {
       text-decoration: none;
-      color: black;
-      font-family: neue-haas-unica, sans-serif;
-      font-weight: 400;
+      color: $lazo-black;
       font-size: 18px;
+      
+      @include font;
     }
   }
 

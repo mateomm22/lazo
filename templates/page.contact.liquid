@@ -1,39 +1,26 @@
-{% comment %}
-{% form 'contact' %}
-  {% if form.posted_successfully? %} Thank you for your contact {% endif %}
-  {{ form.errors | default_errors }}
-  <label for="ContactFormName">name</label>
-  <input type="text" id="ContactFormName" name="contact[name]">
-  <label for="ContactFormEmail">email</label>
-  <input type="email" id="ContactFormEmail" name="contact[email]">
-  <label for="ContactFormPhone">phone</label>
-  <input type="tel" id="ContactFormPhone" name="contact[phone]">
-  <label for="ContactFormMessage">message</label>
-  <textarea rows="10" id="ContactFormMessage" name="contact[body]"></textarea>
-  <input type="submit" value="send">
-{% endform %} {% endcomment %}
-
-
 <div id="contacto" data-barba="container" data-barba-namespace="contacto">
     <div class="animated"></div>
+    
+    {% assign contacto = page.metafields.contacto %}
+
     <div class="main-hero hero--contacto">
         <div class="container">
             <div class="row v-center">
                 <div class="col-md-6">
                     <div class="main-hero-content">
                         <h1 class="title title--big title--white">
-                            Nos encanta estar cerca a nuestros lectores y a todas las mentes curiosas que han llegado hasta acá.
+                            {{ contacto.hero_contacto }} 
                         </h1>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="main-hero-img">
-                        <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/contacto.gif?v=1595806566" alt="">
+                        <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/contacto-color.gif?v=1596752490" alt="">
                     </div>
                 </div>
             </div>
             <div class="hero-link">
-                <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/hero-arrow.svg?v=1585454452" alt="">
+                <i class="icon-arrow-down"></i>
                 <span>SCROLL</span>
             </div>
         </div>
@@ -49,7 +36,7 @@
                     <div class="form-social">
                         <h3>SÍGUENOS</h3>
                         <div class="form-social-icons">
-                            <a href="">
+                            <a href="https://www.instagram.com/lazo_libros/" target="_blank">
                                 <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/instagram-white.svg?v=1586535617" alt="">
                             </a>
                             <a href="">
@@ -60,18 +47,28 @@
                 </div>
                 <div class="col-md-6">
                     <div class="contacto-form">
-                        <form action="">
-                            <input type="text" name="nombre" placeholder="Nombre completo">
-                            <input type="email" name="email" placeholder="Email">
-                            <textarea name="mensaje" placeholder="Escribe tu mensaje"></textarea>
-                            <button type="submit">ENVIAR MENSAJE</button>
-                        </form>
+                        {% form 'contact' %}
+                            <input id="contact_tags" name="contact[tags]" type="hidden" value="contacto" />
+                            <input type="text" id="ContactFormName" name="contact[name]" placeholder="Tu nombre completo">
+                            <input type="email" id="ContactFormEmail" name="contact[email]" placeholder="Tu correo">
+                            <textarea rows="10" id="ContactFormMessage" name="contact[body]" placeholder="Escribe tu mensaje"></textarea>
+                            {{ form.errors | default_errors }}
+                            <button type="submit">
+                                ENVIAR MENSAJE
+                                <i class="icon-arrow-up-right"></i>
+                            </button>
+                            {% if form.posted_successfully? %} 
+                                <p class="thankyou">
+                                    Gracias por ponerte en contacto con nosotros 
+                                </p>
+                            {% endif %}
+                        {% endform %}
                     </div>
                 </div>
             </div>
         </div>
         
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="wave wave--white"><path class="js-wave" d=""/></svg>
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="wave wave--white"><path class="js-wave" d="M 0 49.308 C 276.9997 39.8989 276.9997 39.8989 553.9997 44.6035 C 830.9997 49.308 830.9997 49.308 1107.9997 36.5442 C 1384.9997 23.7802 1384.9997 23.7802 1661.9997 27.9453 C 1938.9997 32.1105 1938.9997 32.1105 2215.9997 36.5442 L 2215.9997 3288.2497 L 0 3288.2497 Z"/></svg>
     </div>
 
     <div id="contacto-info">
@@ -79,60 +76,54 @@
             <div class="row between">
                 <div class="col-md-5">
                     <div class="contacto-info-left"">
-                        <svg class="svg-1" x="0px" y="0px" viewBox="0 0 467 488">
-                            <mask id="shape-mask-2">
-                                <g id="Grupo_94" transform="translate(6581.892 -10135.987)">
-                                    <path class="mask-path-2" fill="#D3D3D3" d="M-6159.6,10462.3c0,0-113.1,150.2-21.1,153.8C-6082.4,10611.7-6126.5,10408.4-6159.6,10462.3z"/>
-                                    <path class="mask-path-2" fill="#D3D3D3" d="M-6319.9,10143.9c0,0-238.4-22.5-227.1,159.9c-14.2,93.1-62,213.4,0,264.1s110.7,31.1,210.6,36.4
-                                        c66,0,95.9-26,114.5-148.6C-6186.1,10387.2-6142.9,10159-6319.9,10143.9z"/>
-                                </g>
+                        <svg class="svg-1" x="0px" y="0px" viewBox="0 0 955.9 991.2">
+                            <mask id="shape-mask-4">
+                                <path class="mask-path-4" fill="#ffffff" d="M389.6,989.7c-82.1,10.9-171-40.6-226.6-95.8C101.3,832.4,62.7,751.4,38.4,668.8C20.7,608.7,10.1,546.6,4,484.3c-4.3-44.1-5.8-88.6-1.2-132.8c9.7-93.2,50.1-187.3,131.1-239.6c81.6-52.7,179.9-78.3,273.4-100.2C473.8-3.8,548.7-7.7,608.6,23.7c39.3,20.6,68,54.4,91.4,89.4c23.5,35.4,42.6,73.2,69.6,106.8c28.5,35.4,63.8,65.9,97.1,97.7c56.3,53.8,114.2,114.6,77.9,197.5c-14.3,32.8-39.1,60-66.1,83.5c-112.4,98-260.7,160.3-347.5,285.8c-27.1,39.2-59.3,78.2-105,96C414.1,985,402,988.1,389.6,989.7"/>
                             </mask>
-                            <image width="100%" height="100%" preserveAspectRatio="xMidYMid slice" xlink:href="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/paula-guerra-arjona.jpg?v=1594255611" mask="url(#shape-mask-2)"></image>
+                            <path class="mask-path-4" fill="#DE4939" d="M648.3,849c-8.7,13.9-14.8,29.6-17.7,45.9c-4.7,26.2,6.3,51.1,31.2,61.5c33.1,13.9,74.3-1.7,102.8-19.5c24.9-15.6,45.9-37,63.3-60.7c5.4-7.3,10.5-15,12.8-23.8c6.3-23.7-14.3-41.9-33.6-51c-31.9-15-70.3-15.6-102.6-1.6C681.1,810.1,661.6,827.6,648.3,849"/> 
+                            <image width="100%" height="100%" preserveAspectRatio="xMidYMid slice" xlink:href="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/paula-guerra-arjona.jpg?v=1594255611" mask="url(#shape-mask-4)"></image>
                         </svg>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="contacto-info-right">
                         <span class="role">
-                            EDITORA DE LAZO LIBROS
+                            {{ contacto.rol }} 
                         </span>
                         <h3 class="title title--big">
-                            Paula <br>
-                            Guerra
+                            {{ contacto.nombre }} 
                         </h3>
-                        <p>
-                            ¡Hola! Fundé Lazo Libros con el sueño de agrupar y rescatar historias sobre Colombia bajo un mismo sello editorial. Soy Comunicadora Social de la Universidad Javeriana con énfasis en Periodismo y Producción Editorial. Hice la Especialización en Literatura Infantil y Juvenil en la misma universidad, y justo ahí nació la idea de contarle Colombia a los niños a través de libros ilustrados de no ficción. Vivo orgullosa de mi país y de todas las historias que lo conforman. Me encanta viajar, montar a caballo y si no estoy haciendo alguna de las anteriores, estoy leyendo o visitando librerías.
-                        </p>
-                        <p>
-                            Formemos juntos un lazo de experiencias.
-                        </p>
-                        <a href="">pguerra@lazolibros.com</a>
+                        <div>
+                            {{ contacto.bio }} 
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="wave wave--blue"><path class="js-wave" d=""/></svg>
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="wave wave--blue"><path class="js-wave" d="M 0 49.308 C 276.9997 39.8989 276.9997 39.8989 553.9997 44.6035 C 830.9997 49.308 830.9997 49.308 1107.9997 36.5442 C 1384.9997 23.7802 1384.9997 23.7802 1661.9997 27.9453 C 1938.9997 32.1105 1938.9997 32.1105 2215.9997 36.5442 L 2215.9997 3288.2497 L 0 3288.2497 Z"/></svg>
     </div>
 
     <div class="wrap-marquee marquee--contact">
-        <div class="marquee-line"></div>
-        <div class="marquee-text">
-            <p>CONOCE NUESTROS LIBROS</p>
-            <span>&bull;</span>
-            <p>CONOCE NUESTROS LIBROS</p>
-            <span>&bull;</span>
-            <p>CONOCE NUESTROS LIBROS</p>
-            <span>&bull;</span>
-            <p>CONOCE NUESTROS LIBROS</p>
-            <span>&bull;</span>
-            <p>CONOCE NUESTROS LIBROS</p>
-            <span>&bull;</span>
-            <p>CONOCE NUESTROS LIBROS</p>
-            <span>&bull;</span>
-            <p>CONOCE NUESTROS LIBROS</p>
-            <span>&bull;</span>
-        </div>
-        <div class="marquee-line"></div>
+        <a href="/pages/libros">
+            <div class="marquee-line"></div>
+            <div class="marquee-text">
+                <p>CONOCE NUESTROS LIBROS</p>
+                <span>&bull;</span>
+                <p>CONOCE NUESTROS LIBROS</p>
+                <span>&bull;</span>
+                <p>CONOCE NUESTROS LIBROS</p>
+                <span>&bull;</span>
+                <p>CONOCE NUESTROS LIBROS</p>
+                <span>&bull;</span>
+                <p>CONOCE NUESTROS LIBROS</p>
+                <span>&bull;</span>
+                <p>CONOCE NUESTROS LIBROS</p>
+                <span>&bull;</span>
+                <p>CONOCE NUESTROS LIBROS</p>
+                <span>&bull;</span>
+            </div>
+            <div class="marquee-line"></div>
+        </a>
     </div>
 </div>

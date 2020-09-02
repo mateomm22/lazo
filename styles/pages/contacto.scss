@@ -13,9 +13,9 @@
 
   h3 {
     color: $lazo-black;
-    font-family: neue-haas-unica, sans-serif;
     font-size: 14px;
-    font-weight: 400;
+
+    @include font;
   }
 
   .form-social-icons {
@@ -38,16 +38,24 @@
     background-color: transparent;
     border: 0;
     border-bottom: 1px $lazo-black solid;
-    padding: 0 16px;
-    font-family: neue-haas-unica, sans-serif;
+    padding: 0;
     font-size: 14px;
     margin-bottom: 15px;
+
+    @include font;
+
+    &:focus {
+      outline: 0;
+      border-width: 2px;
+    }
+
   
     &::placeholder {
-      font-family: neue-haas-unica, sans-serif;
       font-size: 14px;
       letter-spacing: 2px;
       color: rgba($lazo-black, 0.5);
+
+      @include font;
     }
   }
 
@@ -61,18 +69,51 @@
   button {
     margin-top: 24px;
     border: none;
-    background-color: black;
+    background-color: $lazo-black;
     width: 200px;
     height: 50px;
     color: white;
-    font-family: neue-haas-unica, sans-serif;
     font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+
+    @include font;
+
+    &:hover {
+      background-color: #151515;
+    }
+
+    &:focus {
+      outline: 0;
+    }
+
+    i {
+      display: inline-block;
+      margin-left: 15px;
+      font-size: 18px;
+    }
+  }
+
+  .thankyou {
+    color: white;
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin-top: 25px;
+  }
+
+  .errors {
+    font-size: 14px;
+    color: $lazo-red;
+
+    ul {
+      list-style: none;
+    }
   }
 } 
 
 #contacto-info {
   position: relative;
-  padding: 120px 0;
+  padding: 120px 0 200px;
 }
 
 .contacto-info-left {
@@ -86,8 +127,9 @@
 
 .contacto-info-right {
   span {
-    font-family: neue-haas-unica, sans-serif;
     font-size: 16px;
+
+    @include font;
   }
 
   .title {
@@ -103,25 +145,34 @@
   }
 
   p {
-    font-family: neue-haas-unica, sans-serif;
     font-size: 20px;
     line-height: 30px;
-    font-weight: 400;
-    padding-top: 24px;
+
+    @include font;
   }
   
   a {
-    font-family: neue-haas-unica, sans-serif;
     font-size: 20px;
-    font-weight: 400;
     padding-top: 24px; 
     display: block;
     color: $lazo-black;
     text-decoration: underline;
+    
+    @include font;
   }
-  
 }
 
 .marquee--contact {
   background-color: $lazo-blue;
+}
+
+/**
+* Google Captcha
+*/
+.grecaptcha-badge {
+  z-index: 5;
+}
+// Verification page
+.shopify-challenge__container {
+  padding: 100px 0;
 }

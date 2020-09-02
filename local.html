@@ -1,4 +1,5 @@
 <html>
+
 <head>
     <title>Lazo Libros</title>
     <meta charset="utf-8">
@@ -14,9 +15,10 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.1/ScrollTrigger.min.js"></script>
-    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/85188/jquery.wavify.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/ScrollTrigger.min.js"></script>
+    <script src="https://rawgit.com/peacepostman/wavify/master/wavify.js"></script>
+    <script src="https://rawgit.com/peacepostman/wavify/master/jquery.wavify.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
 </head>
 
@@ -26,7 +28,8 @@
             <div class="row">
                 <div class="main-nav__logo">
                     <a href="/">
-                        <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/lazo-logo.svg?v=1585452340" alt="">
+                        <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/lazo-logo.svg?v=1585452340"
+                            alt="">
                     </a>
                 </div>
                 <div class="main-nav__menu js-main-menu">
@@ -44,7 +47,8 @@
                 </div>
                 <div class="main-nav__cart">
                     <a href="/cart">
-                        <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/shopping-cart.svg?v=1585453527" alt="">
+                        <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/shopping-cart.svg?v=1585453527"
+                            alt="">
                     </a>
                 </div>
                 <div class="main-nav__icon">
@@ -57,242 +61,224 @@
     </nav>
 
     <main role="main">
-        <div id="nosotros" data-barba="container" data-barba-namespace="nosotros">
+        <div id="single-blog" data-barba="container" data-barba-namespace="single-blog">
             <div class="animated"></div>
-            <div class="main-hero hero--nosotros">
+
+            <div class="blog-header">
                 <div class="container">
-                    <div class="row v-center">
-                        <div class="col-md-6">
-                            <div class="main-hero-content">
-                                <h1 class="title title--white title--big">
-                                    Somos una editorial
-                                    de libros informativos que resaltan y rescatan historias sobre Colombia.
-                                </h1>
+                    <div class="row center">
+                        <div class="col-md-3">
+                            <div class="blog-author">
+                                <span>
+                                    Escrito por
+                                </span>
+                                <strong>
+                                    Contra Studio
+                                </strong>
+                                <div class="date">
+                                    <span>
+                                        2020-04-09 22:31:53 -0400
+                                    </span>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="main-hero-img">
-                                <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/1-rojo_2x_74e7879c-0055-4419-b13a-0d486940c511.png?v=1586025255" alt="">
+                        <div class="col-md-7">
+                            <div class="blog-intro">
+                                <h1 class="title">¿Quién ilustró el libro?</h1>
                             </div>
                         </div>
-                    </div>
-                    <div class="hero-link">
-                        <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/hero-arrow.svg?v=1585454452" alt="">
-                        <span>SCROLL</span>
                     </div>
                 </div>
             </div>
 
-            <div id="nosotros-sections">
-                <div class="js-nosotros-trigger"></div>
+            <div class="blog-content">
                 <div class="container">
-                    <div class="wrap-nosotros js-wrap-nosotros">
-                        <div class="nosotros-single">
-                            <div class="row between">
-                                <div class="col-md-4 col-lg-5">
-                                    <div class="nosotros-single__title js-title-1">
-                                        <h2 class="title title--white">
-                                            Vivimos obsesionados.
-                                        </h2>
-                                    </div>
-                                    <div class="nosotros-single__image js-image-1">
-                                        <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/1-rojo_2x_74e7879c-0055-4419-b13a-0d486940c511.png?v=1586025255" alt="">
-                                    </div>
-                                </div>
-                                <div class="col-md-7 col-lg-6">
-                                    <div class="nosotros-single__text js-text-1">
-                                        <p>
-                                            Investigamos y transformamos información y datos en narraciones y libros ilustrados. Le damos un lugar a la información escondida y acompañamos a los lectores en su descubrimiento del mundo.
-                                        </p>
-                                        <p>
-                                            Nos emociona nacer en Colombia y tener ante nosotros universos infinitos por explorar y enlazar. Cada libro representa un viaje a un lugar distinto y en cada uno buscamos responder diversas preguntas sobre nuestro país.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="nosotros-single nosotros-single--2">
-                            <div class="row between">
-                                <div class="col-md-4 col-lg-5">
-                                    <div class="nosotros-single__title js-title-2">
-                                        <h2 class="title title--white">
-                                            Creemos que la curiosidad nos mantiene vivos.
-                                        </h2>
-                                    </div>
-                                    <div class="nosotros-single__image js-image-2">
-                                        <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/4-Rojo_2x_3217d954-4c1a-4a27-ac7c-691a07e717d1.png?v=1586025256" alt="">
-                                    </div>
-                                </div>
-                                <div class="col-md-7 col-lg-6">
-                                    <div class="nosotros-single__text js-text-2">
-                                        <p>
-                                            Creemos en las historias bien contadas y en que los libros informativos jamás pueden ser aburridos.
-                                        </p>
-                                        <p>
-                                            Creemos en las historias colombianas, en su talento local y
-                                            en las voces de cada región.
-                                        </p>
-                                        <p>
-                                            Creemos que la literatura infantil
-                                            y juvenil tiene múltiples lectores,
-                                            y que los libros ilustrados son un mundo abierto para todas las edades: niños, jóvenes, adultos y todos aquellos adultos con alma
-                                            de niños.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="nosotros-single nosotros-single--3">
-                            <div class="row between">
-                                <div class="col-md-4 col-lg-5">
-                                    <div class="nosotros-single__title js-title-3">
-                                        <h2 class="title title--white">
-                                            Creemos que leer no se trata solo de palabras.
-                                        </h2>
-                                    </div>
-                                    <div class="nosotros-single__image js-image-3">
-                                        <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/2-rojo_2x_8dbb702c-05b0-4fdf-89d9-804e8effe76e.png?v=1586025255" alt="">
-                                    </div>
-                                </div>
-                                <div class="col-md-7 col-lg-6">
-                                    <div class="nosotros-single__text js-text-3">
-                                        <p>
-                                            Creemos que leer se trata también de imágenes. Creemos en el poder de las ilustraciones, y por supuesto, en la belleza del libro álbum.
-                                        </p>
-                                        <p>
-                                            Creemos que la lectura es un lazo que se construye en familia, y que cuando está unido encuentra infinitos caminos.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="row center">
+                        <div class="col-md-10">
+                            <p>Aliquam in bibendum mauris. Sed vitae erat vel velit blandit pharetra vitae nec ante.
+                                Cras at est augue. Cras ut interdum elit. Ut malesuada a urna sit amet blandit. Nullam
+                                nunc lorem, aliquam at eros laoreet, feugiat bibendum ligula. Aenean congue, massa id
+                                aliquet semper, ligula ante tristique nulla, quis posuere dui purus vel urna. Nullam
+                                varius, magna nec egestas convallis, orci ex tempus quam, id finibus arcu ipsum
+                                fringilla purus. Aenean dapibus suscipit eleifend. Aliquam vel ipsum eu lorem hendrerit
+                                iaculis vitae ut lorem. Suspendisse ullamcorper dolor faucibus sem auctor consequat. Ut
+                                luctus posuere auctor. Sed non molestie metus.</p>
+                            <p>&nbsp;</p>
+                            <p><img src="//cdn.shopify.com/s/files/1/0367/2417/9081/files/Ciclo-vida_2x_b6b593a1-f69f-4d1c-94ca-b01d6bee9e1f.png?v=1586646788"
+                                    alt=""></p>
+                            <p>&nbsp;</p>
+                            <p><span>Vestibulum nibh orci, ultricies sed mauris ut, scelerisque commodo leo. Fusce ut
+                                    lectus non justo ullamcorper viverra. Phasellus condimentum varius lobortis. Class
+                                    aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+                                    himenaeos. Nulla luctus id lectus et mattis. Praesent ac augue at mauris
+                                    sollicitudin sodales. Proin ac elit in lorem consectetur posuere vehicula ut dui.
+                                    Nulla vel convallis tellus. Pellentesque urna sapien, vehicula ut auctor vel,
+                                    elementum nec risus. Fusce eget augue egestas, porta neque ornare, vestibulum sem.
+                                    In viverra porttitor porta. Sed eu molestie nisl. Sed rutrum tristique diam. Integer
+                                    augue purus, viverra in porta fringilla, eleifend sit amet leo. Curabitur ut ante ac
+                                    massa rhoncus dignissim id nec nunc.</span></p>
                         </div>
                     </div>
                 </div>
             </div>
 
 
-            <div class="wrap-marquee marquee--nosotros">
-                <div class="marquee-line"></div>
-                <div class="marquee-text">
-                    <p>CONOCE NUESTROS LIBROS</p>
-                    <span>&bull;</span>
-                    <p>CONOCE NUESTROS LIBROS</p>
-                    <span>&bull;</span>
-                    <p>CONOCE NUESTROS LIBROS</p>
-                    <span>&bull;</span>
-                    <p>CONOCE NUESTROS LIBROS</p>
-                    <span>&bull;</span>
-                    <p>CONOCE NUESTROS LIBROS</p>
-                    <span>&bull;</span>
-                    <p>CONOCE NUESTROS LIBROS</p>
-                    <span>&bull;</span>
-                    <p>CONOCE NUESTROS LIBROS</p>
-                    <span>&bull;</span>
+            <div class="blog-comments">
+                <div class="container">
+                    <div class="row center">
+                        <div class="col-md-10">
+                            
+                            <h2>0 comments</h2>
+                            
+                            <div class="form-comments">
+                                <form method="post" action="/blogs/lazo-blog/quien-ilustro-el-libro/comments#comment_form" id="comment_form" accept-charset="UTF-8" class="comment-form"><input type="hidden" name="form_type" value="new_comment"><input type="hidden" name="utf8" value="✓">
+                                    
+                                    <label for="CommentAuthor">name</label>
+                                    <input type="text" name="comment[author]" id="CommentAuthor" placeholder="name" value="" autocapitalize="words">
+        
+                                    <label for="CommentEmail">email</label>
+                                    <input type="email" name="comment[email]" id="CommentEmail" placeholder="email" value="" autocorrect="off" autocapitalize="off">
+        
+                                    <label for="CommentBody">message</label>
+                                    <textarea name="comment[body]" id="CommentBody" placeholder="message"></textarea>
+        
+                                    <input type="submit" value="post">
+                                </form>
+                            </div>
+                            
+                        </div>
+                    </div>
                 </div>
-                <div class="marquee-line"></div>
+
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="wave wave--red"><path class="js-wave-test2"></path></svg>
+
             </div>
+
+
+            <div class="wrap-marquee marquee--blog">
+                <a href="/pages/libros">
+                    <div class="marquee-line"></div>
+                    <div class="marquee-text">
+                        <p>CONOCE NUESTROS LIBROS</p>
+                        <span>•</span>
+                        <p>CONOCE NUESTROS LIBROS</p>
+                        <span>•</span>
+                        <p>CONOCE NUESTROS LIBROS</p>
+                        <span>•</span>
+                        <p>CONOCE NUESTROS LIBROS</p>
+                        <span>•</span>
+                        <p>CONOCE NUESTROS LIBROS</p>
+                        <span>•</span>
+                        <p>CONOCE NUESTROS LIBROS</p>
+                        <span>•</span>
+                        <p>CONOCE NUESTROS LIBROS</p>
+                        <span>•</span>
+                    </div>
+                    <div class="marquee-line"></div>
+                </a>
+            </div>
+
         </div>
+    </main>
 
-        </main>
-
-        <div class="boletin">
-            <div class="container">
-                <div class="row v-center">
-                    <div class="col-lg-6">
-                        <div class="boletin-left">
-                            <span class="boletin-eyebrow">INSCRÍBETE AL BOLETÍN</span>
-                            <h3 class="boletin-title">
-                                Formemos juntos un lazo de experiencia.
-                            </h3>
-                        </div>
+    <div class="boletin">
+        <div class="container">
+            <div class="row v-center">
+                <div class="col-lg-6">
+                    <div class="boletin-left">
+                        <span class="boletin-eyebrow">INSCRÍBETE AL BOLETÍN</span>
+                        <h3 class="boletin-title">
+                            Formemos juntos un lazo de experiencia.
+                        </h3>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="boletin-right">
-                            <input type="text" placeholder="Tu correo electrónico">
-                            <button> INSCRIBIRME</button>
-                        </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="boletin-right">
+                        <input type="text" placeholder="Tu correo electrónico">
+                        <button> INSCRIBIRME</button>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="footer">
-            <div class="container">
-                <div class="footer-top">
-                    <div class="footer-img">
-                        <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/footer-logo.svg?v=1585887136" alt="">
-                    </div>
-                    <div class="footer-social">
-                        <a href="">
-                            <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/instagram.svg?v=1585887136" alt="">
-                        </a>
-                        <a href="">
-                            <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/youtube.svg?v=1585887135" alt="">
-                        </a>
-                    </div>
+    <div class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-img">
+                    <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/footer-logo.svg?v=1585887136"
+                        alt="">
                 </div>
-                <div class="footer-links">
-                    <div class="row">
-                        <div class="col-sm-6 col-md-4">
-                            <div class="footer-col">
-                                <h4>LAZO LIBROS</h4>
-                                <ul>
-                                    <li>
-                                        <a href="">Inicio</a>
-                                    </li>
-                                    <li>
-                                        <a href="">Nosotros</a>
-                                    </li>
-                                    <li>
-                                        <a href="">Libros</a>
-                                    </li>
-                                    <li>
-                                        <a href="">Blog</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <div class="footer-col">
-                                <h4>CONTACTO</h4>
-                                <ul>
-                                    <li>
-                                        <a href="">pguerra@lazolibros.com</a>
-                                    </li>
-                                    <li>+(57) 316 527 3114</li>
-                                    <li>Bogotá - CO</li>
-                                    <li>Hablemos</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <div class="footer-col">
-                                <h4>SOPORTE</h4>
-                                <ul>
-                                    <li>
-                                        <a href="">Envíos y devoluciones</a>
-                                    </li>
-                                    <li>
-                                        <a href="">Privacidad</a>
-                                    </li>
-                                    <li>
-                                        <a href="">Términos y condiciones</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-bottom">
-                    <span class="bottom-left">© Lazo libros 2020</span>
-                    <span class="bottom-right">Website por @contra</span>
+                <div class="footer-social">
+                    <a href="">
+                        <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/instagram.svg?v=1585887136"
+                            alt="">
+                    </a>
+                    <a href="">
+                        <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/youtube.svg?v=1585887135"
+                            alt="">
+                    </a>
                 </div>
             </div>
+            <div class="footer-links">
+                <div class="row">
+                    <div class="col-sm-6 col-md-4">
+                        <div class="footer-col">
+                            <h4>LAZO LIBROS</h4>
+                            <ul>
+                                <li>
+                                    <a href="">Inicio</a>
+                                </li>
+                                <li>
+                                    <a href="">Nosotros</a>
+                                </li>
+                                <li>
+                                    <a href="">Libros</a>
+                                </li>
+                                <li>
+                                    <a href="">Blog</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="footer-col">
+                            <h4>CONTACTO</h4>
+                            <ul>
+                                <li>
+                                    <a href="">pguerra@lazolibros.com</a>
+                                </li>
+                                <li>+(57) 316 527 3114</li>
+                                <li>Bogotá - CO</li>
+                                <li>Hablemos</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="footer-col">
+                            <h4>SOPORTE</h4>
+                            <ul>
+                                <li>
+                                    <a href="">Envíos y devoluciones</a>
+                                </li>
+                                <li>
+                                    <a href="">Privacidad</a>
+                                </li>
+                                <li>
+                                    <a href="">Términos y condiciones</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span class="bottom-left">© Lazo libros 2020</span>
+                <span class="bottom-right">Website por @contra</span>
+            </div>
         </div>
+    </div>
 
+    <script src="assets/application.min.js" type="text/javascript"></script>
 
-
-        <script src="assets/application.min.js" type="text/javascript"></script>
-
-    </body>
-
+</body>

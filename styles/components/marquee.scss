@@ -7,12 +7,31 @@
     padding: 80px 0 120px;
   }
 
+  &:hover {
+    cursor: pointer;
+
+    .marquee-text {
+      animation-play-state: paused;
+    }
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+
+    &,
+    &:hover,
+    &:visited {
+      color: $lazo-black;
+    }
+  }
+
   .marquee-line {
     margin: 24px auto;
     max-width: 1280px;
     width: 100%;
     height: 1px;
-    background-color: black;
+    background-color: $lazo-black;
     overflow: hidden;
     display: block;
     box-sizing: border-box;
@@ -31,6 +50,8 @@
     text-transform: uppercase;
     font-family: neue-haas-unica, sans-serif;
     font-size: 40px;
+    cursor: pointer;
+    color: $lazo-black;
   }
 
   span {

@@ -1,26 +1,18 @@
 <div id="producto" data-barba="container" data-barba-namespace="producto">
     <div class="animated"></div>
+
+    {% assign product_fields = product.metafields.producto %}
     
     <div class="product-content">
         <div class="container">
             <div class="row">
                 <div class="col-md-7">
                     <div class="product-images">
-                        <div class="single-product-image">
-                            <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Image_4_2x_144f1779-b9fc-4b72-b832-f62aafa86e31.png?v=1586558243" alt="" class="img-responsive">
-                        </div>
-                        <div class="single-product-image">
-                            <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Image_4_2x_144f1779-b9fc-4b72-b832-f62aafa86e31.png?v=1586558243" alt="" class="img-responsive">
-                        </div>
-                        <div class="single-product-image">
-                            <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Image_4_2x_144f1779-b9fc-4b72-b832-f62aafa86e31.png?v=1586558243" alt="" class="img-responsive">
-                        </div>
-                        <div class="single-product-image">
-                            <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Image_4_2x_144f1779-b9fc-4b72-b832-f62aafa86e31.png?v=1586558243" alt="" class="img-responsive">
-                        </div>
-                        <div class="single-product-image">
-                            <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Image_4_2x_144f1779-b9fc-4b72-b832-f62aafa86e31.png?v=1586558243" alt="" class="img-responsive">
-                        </div>
+                        {% for image in product.images %}
+                            <div class="single-product-image">
+                                <img src="{{ image | img_url: 'master' }}" alt="" class="img-responsive">
+                            </div>
+                        {% endfor %}
                     </div>
                 </div>
                 <div class="col-md-5">
@@ -38,8 +30,8 @@
                                     1
                                 </span>
                                 <div class="controls">
-                                    <span class="remove js-remove"></span>
-                                    <span class="add js-add"></span>
+                                    <span class="icon-minus js-remove"></span>
+                                    <span class="icon-plus js-add"></span>
                                 </div>
                             </div>
 
@@ -48,6 +40,16 @@
                             </p>
 
                             {% form "product", product %}
+
+                                <div class="custom">
+                                    <label for="destinatario">Nombre de quien recibe el libro</label>
+                                    <input id="destinatario" type="text" name="properties[Destinatario]">
+                                </div>
+                                
+                                <div class="custom">
+                                    <label for="mensaje">Mensaje</label>
+                                    <input id="mensaje" type="text" name="properties[Mensaje]">
+                                </div>
                               
                                 <input hidden type="text" value="1" name="quantity" id="quantity" />
                                 <input hidden type="text" name="id" value="{{ product.variants[0].id }}">
@@ -56,6 +58,29 @@
                                     Añadir al carrito
                                 </button>
                             {% endform %}
+                        </div>
+
+                        <div class="product-detail">
+                            <div class="single-detail js-product-detail">
+                                <h5>
+                                    Especificaciones
+                                    <i class="icon-plus"></i>
+                                    <i class="icon-minus"></i>
+                                </h5>
+                                <div class="single-detail__content js-content">
+                                    {{ product_fields.specs }}
+                                </div>
+                            </div>
+                            <div class="single-detail js-product-detail">
+                                <h5>
+                                    Observaciones
+                                    <i class="icon-plus"></i>
+                                    <i class="icon-minus"></i>
+                                </h5>
+                                <div class="single-detail__content js-content">
+                                    {{ product_fields.observaciones }}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

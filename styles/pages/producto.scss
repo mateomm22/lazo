@@ -17,6 +17,7 @@
 
 .product-form {
   padding-top: 50px;
+  margin-bottom: 30px;
 
   .cantidad {
     border: 1px solid $lazo-black;
@@ -28,45 +29,16 @@
     margin-bottom: 10px;
 
     .controls {
-      padding: 8px 0;
+      padding: 11px 0;
       height: 100%;
 
       span {
         position: relative;
         display: inline-block;
-        width: 27px;
-        height: 100%;
-        margin-left: 20px;
+        margin-left: 15px;
         cursor: pointer;
-      }
-    }
-
-    .remove,
-    .add {
-      &:before {
-        content: '';
-        background-color: $lazo-black;
-        display: block;
-        height: 1px;
-        width: 100%;
-        position: absolute;
-        top: 50%;
-        left: 0;
-        transform: translateY(-50%);
-      }
-    }
-
-    .add {
-      &:after {
-        content: '';
-        display: block;
-        background-color: $lazo-black;
-        width: 1px;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
+        font-size: 25px;
+        line-height: 0.9;
       }
     }
   }
@@ -75,6 +47,72 @@
     font-size: 18px;
     margin-bottom: 15px;
   }
+
+  .custom {
+    margin-bottom: 15px;
+    width: 100%;
+
+    label {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 3px;
+    }
+
+    input {
+      width: 100%;
+      height: 30px;
+      border: 0;
+      border-bottom: 1px solid $lazo-black;
+      
+      &:focus {
+        outline: 0;
+      }
+    }
+  }
+}
+
+.product-detail {
+  border-top: 1px solid $lazo-black;
+}
+
+.single-detail {
+  border-bottom: 1px solid $lazo-black;
+  padding: 10px 0;
+  
+  h5 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+
+    i {
+      font-size: 18px;
+    }
+
+    .icon-minus {
+      display: none;
+    }
+  }
+
+  &.active {
+    h5 {
+      .icon-plus {
+        display: none;
+      }
+
+      .icon-minus {
+        display: block;
+      }
+    }
+  }
+
+  &__content {
+    display: none;
+    padding: 15px 0 0;
+  } 
 }
 
 .marquee--producto {

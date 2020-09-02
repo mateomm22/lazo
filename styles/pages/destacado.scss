@@ -1,64 +1,75 @@
 .destacado-buy-bar {
   width: 100%;
-  height: 50px;
-  background-color: $lazo-black;
+  height: 68px;
   position: fixed;
   bottom: 0;
   z-index: 100;
-  color: white;
-  text-align: center;
-  font-family: neue-haas-unica, sans-serif;
-  font-size: 18px;
-  font-weight: 500;
-  padding-top: 12px;
-  text-decoration: none;
+  padding-top: 20px;
+  
+  a {
+    display: block;
+    background-color: $lazo-black;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding: 5px 0 16px;
+    font-size: 18px;
+    
+    @include font;
+    font-weight: 500;
+  }
 }
 
-#destacado-hero {
-  width: 100%;
+.hero--destacado {
   height: 100%;
-  background-image: url('https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Group_120_2x_30c5a5c3-e850-4151-8203-2ba0569e5ed8.png?v=1586539257');
   background-position: right;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  text-align: center;
+  padding-bottom: 100px;
 
   .container {
-    position: relative;
-    min-height: calc(100vh - 138px);
-    padding-top: 20vh;
+    text-align: center;
 
     .title {
       max-width: 650px;
       margin: 0 auto 40px;
+      text-align: center;
     }
 
-    span {
+  }
+  
+  .authors {
+    h6 {
+      font-weight: 400;
+      color: white;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }    
+
+    p {
       width: 100%;
       display: block;
       color: white;
-      font-size: 16px;
-      font-family: neue-haas-unica, sans-serif;
-      margin-bottom: 8px;
-      text-transform: uppercase;
+      font-size: 20px;
+      margin-bottom: 2px;
+      line-height: 1.5;
+
+      @include font;
     }
   }
 
   .hero-link {
-    position: absolute;
-    left: 20px;
-    bottom: 0;
     @include m768 {
-      bottom: 20px;
+      position: relative;
+      top: 100px;
     }
 
-    span {
-      font-size: 15px;
-      position: absolute;
-      top: 4px;
-      display: block;
-      left: 32px;
+    span,
+    i {
+      color: white;
     }
   }
 }
@@ -76,7 +87,7 @@
   .destacado-line {
     width: 120px;
     height: 1px;
-    background-color: black;
+    background-color: $lazo-black;
     display: block;
     margin: 30px 0;
   }
@@ -117,14 +128,29 @@
   }
 }
 
+.destacado-info-right {
+  p {
+    font-size: 25px;
+    line-height: 1.5;
+    font-weight: 400;
+  }
+}
+
 #destacado-slider {
-  padding: 100px 0;
+  padding-bottom: 100px;
 }
 
 .destacado-slider__slider {
+  
   .slide {
+    padding-bottom: 56.25%;
+    position: relative;
+
     img {
+      position: absolute;
       width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
 
@@ -132,33 +158,37 @@
     position: absolute;
     bottom: 20px;
     z-index: 2;
+    cursor: pointer;
 
-    &.slick-prev {
+    &--prev {
       left: 20px;
     }
 
-    &.slick-next {
+    &--next {
       right: 20px;
+    }
+
+    i {
+      font-size: 30px;
     }
   }
 }
 
 .destacado-slider__tabs {
   display: none;
-  
-  @include m576 {
-    display: flex;
-  }
 
   @include m768 {
-    justify-content: space-between;
+    display: flex;
+    justify-content: flex-start;
     flex-direction: column;
     height: 100%;
   } 
 
   .single-slider-tab {
+    position: relative;
     margin: 5px;
     opacity: 0.5;
+    padding-bottom: 56.25%;
     transition: all 0.3s ease-out;
     
     @include m768 {
@@ -167,26 +197,35 @@
 
     &.active {
       opacity: 1;
-      padding: 3px 4px;
       border: 1px solid $lazo-black;
     }
 
     img {
       display: block;
       margin: 0;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
 }
 
 
-#destacado-pictures {
-  max-width: 1500px;
-  margin: 0 auto;
-
+.single-picture {
   img {
     width: 100%;
   }
 }
+
+.single-picture--container {
+  padding: 60px 0;
+
+  @include m768 {
+    padding: 80px 0;
+  }
+}
+
 
 #destacado-video {
   padding: 120px 0;
@@ -218,7 +257,7 @@
 }
 
 .autores-title {
-  padding-top: 120px;
+  padding: 120px 0 40px;
 }
 
 .single-autor {
@@ -233,44 +272,58 @@
 
 .single-autor-right {
   span {
-    font-family: neue-haas-unica, sans-serif;
     font-size: 16px;
+    text-transform: uppercase;
+
+    @include font;
   }
 
-  p {
-    font-family: neue-haas-unica, sans-serif;
-    font-size: 20px;
-    line-height: 30px;
-    font-weight: 400;
+  div {
     padding-top: 24px;
+
+    p {
+      font-size: 20px;
+      line-height: 30px;
+      margin-bottom: 1em;
+
+      @include font;
+    }
   }
 
   a {
-    font-family: neue-haas-unica, sans-serif;
     font-size: 20px;
-    font-weight: 400;
     padding-top: 24px;
     display: block;
     color: $lazo-black;
     text-decoration: none;
+
+    @include font;
   }
 }
 
 #destacado-colaboradores {
+  padding-top: 60px;
+
   span {
     display: block;
     margin-bottom: 20px;
-    font-family: neue-haas-unica, sans-serif;
+    text-transform: uppercase;
     font-size: 16px;
+
+    @include font;
   }
 }
 
 .colaboradores-content {
-  padding-bottom: 40px;
+  padding-bottom: 60px;
+
+  @include m768 {
+    padding-bottom: 100px;
+  }
 }
 
 .colaborador {
-  padding: 24px 20px 0 0;
+  padding-top: 24px;
   margin-bottom: 30px;
 
   img,
@@ -290,10 +343,11 @@
 
   h4 {
     font-family: neue-haas-unica, sans-serif;
-    font-size: 27px;
+    font-size: 24px;
     line-height: 30px;
     font-weight: 500;
     padding-top: 24px;
+    margin-bottom: 10px;
   }
 
   p {
@@ -317,13 +371,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
 
   a {
     font-family: neue-haas-unica, sans-serif;
     font-size: 15px;
     text-decoration: none;
-    color: black;
+    color: $lazo-black;
   }
 }
 

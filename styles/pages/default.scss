@@ -1,0 +1,19 @@
+.hero--page {
+  background-color: $lazo-light-red;
+  width: 100%;
+  position: relative;
+  padding: 80px;
+  min-height: auto;
+
+  @include m768 {
+    padding: 120px 20px;
+  }
+
+  .main-hero-content {
+    text-align: left;
+  }
+}
+
+.wrap-page {
+  padding: 40px 0 100px;
+}

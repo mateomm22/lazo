@@ -4,6 +4,15 @@
   position: relative;
   display: flex;
   align-items: center;
+  padding-top: 50px;
+
+  @media (max-height: 800px) {
+    align-items: flex-start;
+  }
+
+  @include m768 {
+    padding-top: 0;
+  }
 
   .container {
     position: relative;
@@ -23,7 +32,6 @@
     display: none;
     position: relative;
     left: 15px;
-    margin-top: 30px;
     opacity: 1;
 
     @include m768 {

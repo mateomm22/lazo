@@ -58,3 +58,19 @@
 .title--white {
 	color: white;
 }
+
+// Content text
+p {
+	font-size: 16px;
+	line-height: 1.8;
+	color: $lazo-black;
+}
+
+ul {
+	padding-left: 25px;
+	color: $lazo-black;
+
+	li {
+		margin-bottom: 10px;
+	}
+}

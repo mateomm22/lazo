@@ -1,29 +1,37 @@
 <div id="single-blog" data-barba="container" data-barba-namespace="single-blog">
     <div class="animated"></div>
-    <div id="blog-header">
+    <div class="blog-header">
         <div class="container">
             <div class="row center">
                 <div class="col-md-3">
                     <div class="blog-author">
-                        Escrito por
+                        <span>
+                            Escrito por
+                        </span>
                         <strong>
                             {{ article.author }}
                         </strong>
                         <span>
-                            {{ article.created_at }}
+                            {{ article.published_at | date: format: 'date' }}
                         </span>
                     </div>
                 </div>
                 <div class="col-md-7">
                     <div class="blog-intro">
                         <h1 class="title">{{ article.title }}</h1>
+
+                        <div class="intro">
+                            <p>
+                                {{ article.metafields.post.intro }}
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div id="blog-content">
+    <div class="blog-content">
         <div class="container">
             <div class="row center">
                 <div class="col-md-10">
@@ -33,61 +41,82 @@
         </div>
     </div>
 
-    {% assign number_of_comments = article.comments_count %}
-    {% if comment and comment.created_at %}
-        {% assign number_of_comments = article.comments_count %}
-    {% endif %}
+    <div class="blog-comments">
+        <div class="container">
+            <div class="row center">
+                <div class="col-md-10">
+                    {% assign number_of_comments = article.comments_count %}
+                    {% if comment and comment.created_at %}
+                        {% assign number_of_comments = article.comments_count %}
+                    {% endif %}
 
-    {% if blog.comments_enabled? %}
-        <h2>{{ number_of_comments }} comments</h2>
-        {% paginate article.comments by 5 %}
-            {% for comment in article.comments %}
-                <div>
-                <div>{{ comment.content }}</div>
-                {{ comment.author }} @ {{ comment.created_at }}
+                    {% if blog.comments_enabled? %}
+                        <h2>{{ number_of_comments }} comentarios</h2>
+                        {% paginate article.comments by 5 %}
+                            {% for comment in article.comments %}
+                                <div>
+                                <div>{{ comment.content }}</div>
+                                {{ comment.author }} @ {{ comment.created_at }}
+                                </div>
+                            {% endfor %}
+                            {% if paginate.pages > 1 %}
+                                {{ paginate | default_pagination }}
+                            {% endif %}
+                        {% endpaginate %}
+
+                        <div class="form-comments">
+                            {% form 'new_comment', article %}
+                                {{ form.errors | default_errors }}
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <input type="text" name="comment[author]" id="CommentAuthor" placeholder="Tu nombre completo" value="{{ form.author }}" autocapitalize="words">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="email" name="comment[email]" id="CommentEmail" placeholder="Tu correo" value="{{ form.email }}" autocorrect="off" autocapitalize="off">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <textarea name="comment[body]" id="CommentBody"placeholder="Escribe tu comentario">{{ form.body }}</textarea>
+                                    </div>
+                                </div>
+
+
+                                <button type="submit">
+                                    ENVIAR COMENTARIO
+                                    <i class="icon-arrow-up-right"></i>
+                                </button>
+                            {% endform %}
+                        </div>
+                    {% endif %}
                 </div>
-            {% endfor %}
-            {% if paginate.pages > 1 %}
-                {{ paginate | default_pagination }}
-            {% endif %}
-        {% endpaginate %}
-
-        <div>
-        {% form 'new_comment', article %}
-            {{ form.errors | default_errors }}
-            <label for="CommentAuthor">name</label>
-            <input type="text" name="comment[author]" id="CommentAuthor" placeholder="name" value="{{ form.author }}" autocapitalize="words">
-
-            <label for="CommentEmail">email</label>
-            <input type="email" name="comment[email]" id="CommentEmail" placeholder="email" value="{{ form.email }}" autocorrect="off" autocapitalize="off">
-
-            <label for="CommentBody">message</label>
-            <textarea name="comment[body]" id="CommentBody" placeholder="message">{{ form.body }}</textarea>
-
-            <input type="submit" value="post">
-        {% endform %}
+            </div>
         </div>
-    {% endif %}
+        
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="wave wave--red"><path class="js-wave" d="M 0 49.308 C 276.9997 39.8989 276.9997 39.8989 553.9997 44.6035 C 830.9997 49.308 830.9997 49.308 1107.9997 36.5442 C 1384.9997 23.7802 1384.9997 23.7802 1661.9997 27.9453 C 1938.9997 32.1105 1938.9997 32.1105 2215.9997 36.5442 L 2215.9997 3288.2497 L 0 3288.2497 Z"/></svg>
+    </div>
 
     <div class="wrap-marquee marquee--blog">
-        <div class="marquee-line"></div>
-        <div class="marquee-text">
-            <p>CONOCE NUESTROS LIBROS</p>
-            <span>&bull;</span>
-            <p>CONOCE NUESTROS LIBROS</p>
-            <span>&bull;</span>
-            <p>CONOCE NUESTROS LIBROS</p>
-            <span>&bull;</span>
-            <p>CONOCE NUESTROS LIBROS</p>
-            <span>&bull;</span>
-            <p>CONOCE NUESTROS LIBROS</p>
-            <span>&bull;</span>
-            <p>CONOCE NUESTROS LIBROS</p>
-            <span>&bull;</span>
-            <p>CONOCE NUESTROS LIBROS</p>
-            <span>&bull;</span>
-        </div>
-        <div class="marquee-line"></div>
+        <a href="/pages/libros">
+            <div class="marquee-line"></div>
+            <div class="marquee-text">
+                <p>CONOCE NUESTROS LIBROS</p>
+                <span>&bull;</span>
+                <p>CONOCE NUESTROS LIBROS</p>
+                <span>&bull;</span>
+                <p>CONOCE NUESTROS LIBROS</p>
+                <span>&bull;</span>
+                <p>CONOCE NUESTROS LIBROS</p>
+                <span>&bull;</span>
+                <p>CONOCE NUESTROS LIBROS</p>
+                <span>&bull;</span>
+                <p>CONOCE NUESTROS LIBROS</p>
+                <span>&bull;</span>
+                <p>CONOCE NUESTROS LIBROS</p>
+                <span>&bull;</span>
+            </div>
+            <div class="marquee-line"></div>
+        </a>
     </div>
 
 </div>

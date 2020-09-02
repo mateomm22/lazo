@@ -3,26 +3,37 @@
     
     {% assign destacado = page.metafields.destacado %}
 
-    <a href="{{ shop.url }}/products/{{ destacado.producto }}" class="destacado-buy-bar">
-        COMPRAR LIBRO
-    </a>
-    <div id="destacado-hero">
+    <div class="destacado-buy-bar">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="wave wave--black wave--small wave--top"><path class="js-wave--small" d="M 0 5.0293 C 158.2855 6.5024 158.2855 6.5024 316.5712 5.7658 C 474.8569 5.0293 474.8569 5.0293 633.1426 7.3574 C 791.4284 9.6859 791.4284 9.6859 949.7141 9.3834 C 1107.9998 9.0809 1107.9998 9.0809 1266.2855 11.3078 C 1424.5712 13.5345 1424.5712 13.5345 1582.8569 12.622 C 1741.1426 11.7095 1741.1426 11.7095 1899.4284 12.9791 C 2057.7141 14.2482 2057.7141 14.2482 2215.9998 10.3921 L 2215.9998 14520.6998 L 0 14520.6998 Z"></path></svg>
+        <a href="{{ shop.url }}/products/{{ destacado.producto }}">
+            COMPRAR LIBRO
+        </a>
+    </div>
+
+    <div class="main-hero hero--destacado" style="background-image: url({{ destacado.hero_bg }});">
         <div class="container">
             <h1 class="title title--xbig title--white">{{ page.title }}</h1>
-
-            {% for author in destacado['author'] %}
-                <span>
-                    {{ author }}
-                </span>
-            {% endfor %}
+            
+            {% if destacado.author %}
+                <div class="authors">
+                    <h6>
+                        Autores
+                    </h6>
+                    {% for author in destacado.author %}
+                        <p>
+                            {{ author }}
+                        </p>
+                    {% endfor %}
+                </div>
+            {% endif %}
 
             <div class="hero-link">
-                <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/hero-arrow.svg?v=1585454452" alt="">
+                <i class="icon-arrow-down"></i>
                 <span>SCROLL</span>
             </div>
         </div>
         
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="wave wave--white"><path class="js-wave" d=""/></svg>
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="wave wave--white"><path class="js-wave2"' %} d="M 0 44.7343 C 166.1999 39.2494 166.1999 39.2494 332.3999 41.9919 C 498.5999 44.7343 498.5999 44.7343 664.7999 36.7402 C 830.9999 28.746 830.9999 28.746 997.1999 30.3675 C 1163.3999 31.989 1163.3999 31.989 1329.5999 24.5586 C 1495.7999 17.1282 1495.7999 17.1282 1661.9999 33.5904 L 1661.9999 3627.7699 L 0 3627.7699 Z"></path></svg>
     </div>
 
     <div id="destacado-info">
@@ -31,10 +42,10 @@
                 <div class="col-md-5">
                     <div class="destacado-info-left">
                         <h3 class="title title--small">
-                            El fascinante viaje que hacen todos los años las ballenas jorobadas de la Antártida al Pacífico colombiano.
+                            {{ destacado.titulo_intro }}
                         </h3>
                         <div class="destacado-line"></div>
-                        {% for caracteristica in destacado['caracteristicas'] %}
+                        {% for caracteristica in destacado.caracteristicas %}
                             <div class="destacado-detail">
                                 {{ caracteristica }}
                             </div>
@@ -46,9 +57,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="destacado-info-right">
-                        <p>
-                            “Esta es una invitación para que hagamos un viaje. No necesitamos morral ni zapatos. Tan solo los ojos bien abiertos. Veremos a las acróbatas más gigantescas del océano y con ellas llegaremos a donde todo comenzó, a donde ellas nacieron y quizá nosotros también. Ellas nadan lento, nunca tienen afán. De igual forma podemos pasar las páginas de este libro: tomarnos el tiempo que sea necesario para ir desde las glaciares aguas de la Antártida hasta las cálidas costas del Pacífico. Aquí empieza la fascinante migración de las yubartas. El vuelo de las jorobadas”.
-                        </p>
+                        {{ destacado.text_intro }}
                     </div>
                 </div>
             </div>
@@ -60,56 +69,44 @@
             <div class="row">
                 <div class="col-md-10">
                     <div class="destacado-slider__slider js-destacado-slider">
-                        <div class="slide">
-                            <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Image_4_2x_144f1779-b9fc-4b72-b832-f62aafa86e31.png?v=1586558243" alt="" class="img-responsive">
-                        </div>
-                        <div class="slide">
-                            <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Image_4_2x_144f1779-b9fc-4b72-b832-f62aafa86e31.png?v=1586558243" alt="" class="img-responsive">
-                        </div>
-                        <div class="slide">
-                            <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Image_4_2x_144f1779-b9fc-4b72-b832-f62aafa86e31.png?v=1586558243" alt="" class="img-responsive">
-                        </div>
-                        <div class="slide">
-                            <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Image_4_2x_144f1779-b9fc-4b72-b832-f62aafa86e31.png?v=1586558243" alt="" class="img-responsive">
-                        </div>
-                        <div class="slide">
-                            <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Image_4_2x_144f1779-b9fc-4b72-b832-f62aafa86e31.png?v=1586558243" alt="" class="img-responsive">
-                        </div>
+                        {% for slide in destacado.slider %}
+                            <div class="slide">
+                                <img src="{{ slide }}" alt="" class="img-responsive">
+                            </div>
+                        {% endfor %}
                     </div>
                 </div>
                 <div class="col-md-2">
                     <div class="destacado-slider__tabs">
-                        <div class="single-slider-tab js-slider-tab active" data-slide-to="0">
-                            <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Image_4_2x_144f1779-b9fc-4b72-b832-f62aafa86e31.png?v=1586558243" alt="" class="img-responsive">
-                        </div>
-                        <div class="single-slider-tab js-slider-tab" data-slide-to="1">
-                            <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Image_4_2x_144f1779-b9fc-4b72-b832-f62aafa86e31.png?v=1586558243" alt="" class="img-responsive">
-                        </div>
-                        <div class="single-slider-tab js-slider-tab" data-slide-to="2">
-                            <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Image_4_2x_144f1779-b9fc-4b72-b832-f62aafa86e31.png?v=1586558243" alt="" class="img-responsive">
-                        </div>
-                        <div class="single-slider-tab js-slider-tab" data-slide-to="3">
-                            <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Image_4_2x_144f1779-b9fc-4b72-b832-f62aafa86e31.png?v=1586558243" alt="" class="img-responsive">
-                        </div>
-                        <div class="single-slider-tab js-slider-tab" data-slide-to="4">
-                            <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Image_4_2x_144f1779-b9fc-4b72-b832-f62aafa86e31.png?v=1586558243" alt="" class="img-responsive">
-                        </div>
+                        {% for slide in destacado.slider %}
+                            {% if forloop.first == true %}
+                                <div class="single-slider-tab js-slider-tab active" data-slide-to="{{ forloop.index0 }}">
+                                    <img src="{{ slide }}" alt="" class="img-responsive">
+                                </div>
+                            {% else %}
+                                <div class="single-slider-tab js-slider-tab" data-slide-to="{{ forloop.index0 }}">
+                                    <img src="{{ slide }}" alt="" class="img-responsive">
+                                </div>
+                            {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div id="destacado-pictures">
-        <div class="single-picture">
-            <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Group_65_2x_c4234d71-e134-4175-9802-432335800787.png?v=1586646721" alt="">
+    <div class="single-picture">
+        <img src="{{ destacado.img_full }}" alt="">
+    </div>
+
+    <div class="single-picture single-picture--container">
+        <div class="container">
+            <img src="{{ destacado.img_margen }}" alt="">
         </div>
-        <div class="single-picture">
-            <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Group_120as_2x_ca467ebb-edda-47fb-9be7-bc5d97a1dac5.png?v=1586646840" alt="">
-        </div>
-        <div class="single-picture">
-            <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Ciclo-vida_2x_b6b593a1-f69f-4d1c-94ca-b01d6bee9e1f.png?v=1586646788" alt="">
-        </div>
+    </div>
+
+    <div class="single-picture">
+        <img src="{{ destacado.img_full2 }}" alt="">
     </div>
 
     <div id="destacado-video">
@@ -121,7 +118,7 @@
     </div>
 
     <div id="destacado-banner">
-        <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Mask_Group_16_2x_450d93c8-631d-4485-ba8a-3fe14e77420f.png?v=1586647609" alt="">
+        <img src="{{ destacado.img_leyendo }}" alt="">
     </div>
 
     <div id="destacado-autores">
@@ -130,297 +127,383 @@
                 <div class="col-sm-10 col-md-6">
                     <div class="autores-title">
                         <h2 class="title title--big">
-                            Este libro fue hecho por un grupo de personas que aman a las ballenas.
+                            {{ destacado.titulo_autores }}
                         </h2>
                     </div>
                 </div>
             </div>
 
-            <div class="single-autor">
-                <div class="row v-center">
-                    <div class="col-md-4 col-lg-5">
-                        <div class="single-autor-left">
-                            <svg class="svg-1" x="0px" y="0px" viewBox="0 0 467 488">
-                                <mask id="shape-mask-2">
-                                    <g id="Grupo_94" transform="translate(6581.892 -10135.987)">
-                                        <path class="mask-path-2" fill="#D3D3D3" d="M-6159.6,10462.3c0,0-113.1,150.2-21.1,153.8C-6082.4,10611.7-6126.5,10408.4-6159.6,10462.3z"/>
-                                        <path class="mask-path-2a" fill="#D3D3D3" d="M-6319.9,10143.9c0,0-238.4-22.5-227.1,159.9c-14.2,93.1-62,213.4,0,264.1s110.7,31.1,210.6,36.4
-                                            c66,0,95.9-26,114.5-148.6C-6186.1,10387.2-6142.9,10159-6319.9,10143.9z"/>
-                                    </g>
-                                </mask>
-                                <image width="100%" height="100%" preserveAspectRatio="xMidYMid slice" xlink:href="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/juliana.jpg?v=1594255611" mask="url(#shape-mask-2)"></image>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="col-md-7 col-lg-6">
-                        <div class="single-autor-right">
-                            <span class="role">
-                                LO ESCRIBIÓ
-                            </span>
-                            <h3 class="title title--big">
-                                Juliana Muñoz Toro
-                            </h3>
-                            <p>
-                                Vivimos obsesionados. Investigamos y transformamos información y datos en narraciones y libros ilustrados. Le damos un lugar a la información escondida y acompañamos a los lectores en su descubrimiento del mundo. 
-                                <br /><br />
-                                Nos emociona nacer en Colombia y tener ante nosotros universos infinitos por explorar y enlazar. Cada libro representa un viaje a un lugar distinto y en cada uno buscamos responder diversas preguntas sobre nuestro país. 
-                            </p>
-                            <a href="">@juliana.mt</a>
+            {% if destacado.nombre_autor_1 %}
+                <div class="single-autor">
+                    <div class="row">
+                        {% if destacado.img_autor_1 %}
+                            <div class="col-md-4 col-lg-5">
+                                <div class="single-autor-left">
+                                    <svg class="svg-1" x="0px" y="0px" viewBox="0 0 974.1 897.2">
+                                        <mask id="shape-mask-2">
+                                            <g>
+                                                <path class="mask-path-2" fill="#ffffff" d="M870.6,441.2c-35.7,44.8-74,87.9-100.4,139.1c-26.5,51.4-41.9,106.6-61.8,160.8c-21.1,57.6-57.1,124.4-119.7,143.4c-68.9,20.9-142.3,18.8-213.1,11.6c-72.2-7.3-145.3-20.1-209.5-54c-95.9-50.6-136-139.1-155.9-241.3C-6,518.1-1.5,432.1,13.7,349.5c14.5-78.8,36.9-158.9,85.9-223.8c46-61,102.3-107.8,180.1-118.5c71.1-9.8,142.5,6.1,213.6,6.6c95,0.6,190.9-21.2,284.9,0.7C850,31.3,919.4,74.9,949,142.5C995.4,248.4,935.9,359.3,870.6,441.2"/>
+                                            </g>
+                                        </mask>
+                                        <path class="mask-path-2" fill="#eda68b" d="M927.3,565.3c-13.9-9.8-30.8-15.4-47.4-13c-40.8,5.9-61,49.7-66.5,85.9c-7.5,49.5-17.4,100.1-43.4,143.6c-14.2,23.7-42.4,59.4-19.4,86.5c15.6,18.4,46.3,14.2,66.9,8.9c32.8-8.5,62.8-26.5,86.9-50c64.4-62.7,108.4-183,32-254.5C933.5,570.1,930.5,567.6,927.3,565.3"/>
+                                        <image width="100%" height="100%" preserveAspectRatio="xMidYMid slice" xlink:href="{{ destacado.img_autor_1 }}" mask="url(#shape-mask-2)"></image>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="col-md-7 col-lg-6">
+                        {% else %}
+                            <div class="col-md-10 col-lg-8">
+                        {% endif %}
+                            <div class="single-autor-right">
+                                <span class="role">
+                                    {{ destacado.rol_autor_1 }}
+                                </span>
+                                <h3 class="title title--big">
+                                    {{ destacado.nombre_autor_1 }}
+                                </h3>
+                                <div>
+                                    {{ destacado.content_autor_1 }}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            {% endif %}
 
-            <div class="single-autor">
-                <div class="row v-center">
-                    <div class="col-md-4 col-lg-5">
-                        <div class="single-autor-left">
-                            <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Group_94_2x_17f835fa-5aca-48e5-a60b-8ad9117a652d.png?v=1586648997" alt="">
-                        </div>
-                    </div>
-                    <div class="col-md-7 col-lg-6">
-                        <div class="single-autor-right">
-                            <span class="role">
-                                LO ILUSTRÓ
-                            </span>
-                            <h3 class="title title--big">
-                                Dipacho
-                            </h3>
-                            <p>
-                                Trabaja como autor e ilustrador de libros infantiles, su trabajo ha sido publicado por editoriales del mundo hispano y en Francia, Italia y Brasil. Ha obtenido reconocimientos como el premio «A la orilla del viento» del FCE, mención de honor en la bienal de ilustración de Bratislava, premio CJ de Korea, White Ravens de Alemania, Mención de honor del Banco del libro, lista de honor de la IBBY, Seleccionado para exposición en feria de Bolonia, entre otros. Si fuera una ballena…
-                            </p>
-                            <a href="">@dipacho</a>
+            {% if destacado.nombre_autor_2 %}
+                <div class="single-autor">
+                    <div class="row">
+                        {% if destacado.img_autor_2 %}
+                            <div class="col-md-4 col-lg-5">
+                                <div class="single-autor-left">
+                                    <svg class="svg-1" x="0px" y="0px" viewBox="0 0 977.9 974.8">
+                                        <mask id="shape-mask-3">
+                                            <g>
+                                                <path class="mask-path-3" fill="#ffffff" d="M347.5,32C231.8,72.7,127.7,155.3,69.4,262.5C-4.2,397.5-18.1,562.1,22.1,709.7C53,822.9,147,962.9,272.9,914.4c41-15.8,71.9-50.6,102.5-83.1c54.9-58.2,124.3-95.8,205.4-90.4c43.4,2.8,86.8,12.1,130,10c137.9-6.5,246.3-127.9,262-271C988.7,335.5,894.8,170.3,784,86.2C682.7,9.3,543.6-11.2,420.1,12.3C395.6,17,371.3,23.6,347.5,32"/>
+                                            </g>
+                                        </mask>
+                                        <path class="mask-path-3" fill="#79cadd" d="M809.1,858.5c-15.6,12.5-33.1,23-44.4,29.3c-67.1,37.4-140.5,65.6-216.1,80.9c-46.8,9.5-98.3,4.8-112.7-39.1C416.6,871.4,491.9,818,553,813.3c35.4-2.8,68.9,7.3,103.2,12.1c32.7,4.6,60.9,1.3,92-12c22.6-9.6,60.5-35.6,84.7-22.4c7.5,4.1,10.7,12.5,9.9,20.6C841.1,830.1,824.5,846.1,809.1,858.5"/>
+                                        <image width="100%" height="100%" preserveAspectRatio="xMidYMid slice" xlink:href="{{ destacado.img_autor_2 }}" mask="url(#shape-mask-3)"></image>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="col-md-7 col-lg-6">
+                        {% else %}
+                            <div class="col-md-10 col-lg-8">
+                        {% endif %}
+                            <div class="single-autor-right">
+                                <span class="role">
+                                    {{ destacado.rol_autor_2 }}
+                                </span>
+                                <h3 class="title title--big">
+                                    {{ destacado.nombre_autor_2 }}
+                                </h3>
+                                <div>
+                                    {{ destacado.content_autor_2 }}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            {% endif %}
+
+            {% if destacado.nombre_autor_3 %}
+                <div class="single-autor">
+                    <div class="row">
+                        {% if destacado.img_autor_3 %}
+                            <div class="col-md-4 col-lg-5">
+                                <div class="single-autor-left">
+                                    <svg class="svg-1" x="0px" y="0px" viewBox="0 0 974.1 897.2">
+                                        <mask id="shape-mask-2">
+                                            <g>
+                                                <path class="mask-path-2" fill="#ffffff" d="M870.6,441.2c-35.7,44.8-74,87.9-100.4,139.1c-26.5,51.4-41.9,106.6-61.8,160.8c-21.1,57.6-57.1,124.4-119.7,143.4c-68.9,20.9-142.3,18.8-213.1,11.6c-72.2-7.3-145.3-20.1-209.5-54c-95.9-50.6-136-139.1-155.9-241.3C-6,518.1-1.5,432.1,13.7,349.5c14.5-78.8,36.9-158.9,85.9-223.8c46-61,102.3-107.8,180.1-118.5c71.1-9.8,142.5,6.1,213.6,6.6c95,0.6,190.9-21.2,284.9,0.7C850,31.3,919.4,74.9,949,142.5C995.4,248.4,935.9,359.3,870.6,441.2"/>
+                                            </g>
+                                        </mask>
+                                        <path class="mask-path-2" fill="#fee399" d="M927.3,565.3c-13.9-9.8-30.8-15.4-47.4-13c-40.8,5.9-61,49.7-66.5,85.9c-7.5,49.5-17.4,100.1-43.4,143.6c-14.2,23.7-42.4,59.4-19.4,86.5c15.6,18.4,46.3,14.2,66.9,8.9c32.8-8.5,62.8-26.5,86.9-50c64.4-62.7,108.4-183,32-254.5C933.5,570.1,930.5,567.6,927.3,565.3"/>
+                                        <image width="100%" height="100%" preserveAspectRatio="xMidYMid slice" xlink:href="{{ destacado.img_autor_3 }}" mask="url(#shape-mask-2)"></image>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="col-md-7 col-lg-6">
+                        {% else %}
+                            <div class="col-md-10 col-lg-8">
+                        {% endif %}
+                            <div class="single-autor-right">
+                                <span class="role">
+                                    {{ destacado.rol_autor_3 }}
+                                </span>
+                                <h3 class="title title--big">
+                                    {{ destacado.nombre_autor_3 }}
+                                </h3>
+                                <div>
+                                    {{ destacado.content_autor_3 }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+
+            {% if destacado.nombre_autor_4 %}
+                <div class="single-autor">
+                    <div class="row">
+                        {% if destacado.img_autor_4 %}
+                            <div class="col-md-4 col-lg-5">
+                                <div class="single-autor-left">
+                                    <svg class="svg-1" x="0px" y="0px" viewBox="0 0 977.9 974.8">
+                                        <mask id="shape-mask-3">
+                                            <g>
+                                                <path class="mask-path-3" fill="#ffffff" d="M347.5,32C231.8,72.7,127.7,155.3,69.4,262.5C-4.2,397.5-18.1,562.1,22.1,709.7C53,822.9,147,962.9,272.9,914.4c41-15.8,71.9-50.6,102.5-83.1c54.9-58.2,124.3-95.8,205.4-90.4c43.4,2.8,86.8,12.1,130,10c137.9-6.5,246.3-127.9,262-271C988.7,335.5,894.8,170.3,784,86.2C682.7,9.3,543.6-11.2,420.1,12.3C395.6,17,371.3,23.6,347.5,32"/>
+                                            </g>
+                                        </mask>
+                                        <path class="mask-path-3" fill="#1a1919" d="M809.1,858.5c-15.6,12.5-33.1,23-44.4,29.3c-67.1,37.4-140.5,65.6-216.1,80.9c-46.8,9.5-98.3,4.8-112.7-39.1C416.6,871.4,491.9,818,553,813.3c35.4-2.8,68.9,7.3,103.2,12.1c32.7,4.6,60.9,1.3,92-12c22.6-9.6,60.5-35.6,84.7-22.4c7.5,4.1,10.7,12.5,9.9,20.6C841.1,830.1,824.5,846.1,809.1,858.5"/>
+                                        <image width="100%" height="100%" preserveAspectRatio="xMidYMid slice" xlink:href="{{ destacado.img_autor_4 }}" mask="url(#shape-mask-3)"></image>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="col-md-7 col-lg-6">
+                        {% else %}
+                            <div class="col-md-10 col-lg-8">
+                        {% endif %}
+                            <div class="single-autor-right">
+                                <span class="role">
+                                    {{ destacado.rol_autor_4 }}
+                                </span>
+                                <h3 class="title title--big">
+                                    {{ destacado.nombre_autor_4 }}
+                                </h3>
+                                <div>
+                                    {{ destacado.content_autor_4 }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
         </div>
     </div>
 
     <div id="destacado-colaboradores">
         <div class="container">
             <div class="colaboradores-investigadores">
-                <span>INVESTIGADORES</span>
+                <span>
+                    {{ destacado.titulo_investigadores }}
+                </span>
                 <div class="colaboradores-content">
                     <div class="row">
-                        <div class="col-sm-6 col-md-4 col-lg-3">
-                            <div class="colaborador">
-                                <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Group_93_2x_aa1707ac-03de-434f-8530-2869c07ed064.png?v=1586537641" alt="">
-                                <h4>Natalia Botero</h4>
-                                <p>(Bióloga, profesora de la Universidad Javeriana y directora de la Fundación Macuáticos dedicada a la investigación y conservación de cetáeos en el Golfo de Tribugá). </p>
+                        {% if destacado.nombre_inv_1 %}
+                            <div class="col-md-6 col-lg-4">
+                                <div class="colaborador">
+                                    <img src="{{ destacado.img_inv_1 }}" alt="">
+                                    <h4>
+                                        {{ destacado.nombre_inv_1 }}
+                                    </h4>
+                                    <div>
+                                        {{ destacado.content_inv_1 }}
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4 col-lg-3">
-                            <div class="colaborador">
-                                <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Group_93_2x_aa1707ac-03de-434f-8530-2869c07ed064.png?v=1586537641" alt="">
-                                <h4>Susana Caballero</h4>
-                                <p>Bióloga, profesora e investigador de la Universidad de los Andes</p>
+                        {% endif %}
+                        
+                        {% if destacado.nombre_inv_2 %}
+                            <div class="col-md-6 col-lg-4">
+                                <div class="colaborador">
+                                    <img src="{{ destacado.img_inv_2 }}" alt="">
+                                    <h4>
+                                        {{ destacado.nombre_inv_2 }}
+                                    </h4>
+                                    <div>
+                                        {{ destacado.content_inv_2 }}
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4 col-lg-3">
-                            <div class="colaborador">
-                                <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Group_93_2x_aa1707ac-03de-434f-8530-2869c07ed064.png?v=1586537641" alt="">
-                                <h4>Lilián Flórez</h4>
-                                <p>Bióloga, investigadora y directora y fundadora de la Fundación Yubarta, dedicada al estudio y la conservación de las ballenas en Colombia
-                                </p>
+                        {% endif %}
+
+                        {% if destacado.nombre_inv_3 %}
+                            <div class="col-md-6 col-lg-4">
+                                <div class="colaborador">
+                                    <img src="{{ destacado.img_inv_3 }}" alt="">
+                                    <h4>
+                                        {{ destacado.nombre_inv_3 }}
+                                    </h4>
+                                    <div>
+                                        {{ destacado.content_inv_3 }}
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        {% endif %}
+
+                        {% if destacado.nombre_inv_4 %}
+                            <div class="col-md-6 col-lg-4">
+                                <div class="colaborador">
+                                    <img src="{{ destacado.img_inv_4 }}" alt="">
+                                    <h4>
+                                        {{ destacado.nombre_inv_4 }}
+                                    </h4>
+                                    <div>
+                                        {{ destacado.content_inv_4 }}
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
                     </div>
                 </div>
             </div>
             <div class="colaboradores-editorial">
-                <span>EQUIPO EDITORIAL</span>
+                <span>
+                    {{ destacado.titulo_editores }}
+                </span>
                 <div class="colaboradores-content">
                     <div class="row">
-                        <div class="col-sm-6 col-md-4 col-lg-3">
-                            <div class="colaborador">
-                                <svg class="svg-1" x="0px" y="0px" viewBox="0 0 519 480">
-                                    <mask id="shape-mask">
-                                        <path class="mask-path" fill="#D3D3D3" d="M355.8,53.1c0,0-130.5-53.6-196.1,45.9c-19,30-35,54-52,84C91,212.4,31.3,259.2,87.5,346s126.7,100.5,214.6,105.1c58.1,0,170.3,7.4,208.5-103.1C517.2,318.7,546.1,154.6,355.8,53.1z"/>
-                                        <path class="mask-path" fill="#D3D3D3" d="M36.6,128.3c47.6,5.4,64.1-10.6,79-33.7c8.5-16,28.3-47.3-16.3-84.5C18.3-19.6-10.9,122.8,36.6,128.3z"/>
-                                    </mask>
-                                    <image width="100%" height="100%" preserveAspectRatio="xMidYMid slice" xlink:href="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/paula-guerra-arjona.jpg?v=1594255611" mask="url(#shape-mask)"></image>
-                                </svg>
-                                <h4>Paula Guerra</h4>
-                                <p>Editora</p>
+
+                        {% if destacado.nombre_editor_1 %}
+                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                <div class="colaborador">
+                                    <img src="{{ destacado.img_editor_1 }}" alt="">
+                                    <h4>
+                                        {{ destacado.nombre_editor_1 }}
+                                    </h4>
+                                    <div>
+                                        {{ destacado.content_editor_1 }}
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4 col-lg-3">
-                            <div class="colaborador">
-                                <svg class="svg-1" x="0px" y="0px" viewBox="0 0 519 480">
-                                    <mask id="shape-mask">
-                                        <path class="mask-path" fill="#D3D3D3" d="M355.8,53.1c0,0-130.5-53.6-196.1,45.9c-19,30-35,54-52,84C91,212.4,31.3,259.2,87.5,346s126.7,100.5,214.6,105.1c58.1,0,170.3,7.4,208.5-103.1C517.2,318.7,546.1,154.6,355.8,53.1z"/>
-                                        <path class="mask-path" fill="#D3D3D3" d="M36.6,128.3c47.6,5.4,64.1-10.6,79-33.7c8.5-16,28.3-47.3-16.3-84.5C18.3-19.6-10.9,122.8,36.6,128.3z"/>
-                                    </mask>
-                                    <image width="100%" height="100%" preserveAspectRatio="xMidYMid slice" xlink:href="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/natalia-mustafa.jpg?v=1594255607" mask="url(#shape-mask)"></image>
-                                </svg>
-                                <h4>Natalia Mustafá</h4>
-                                <p>Directora de Arte</p>
+                        {% endif %}
+
+                        {% if destacado.nombre_editor_2 %}
+                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                <div class="colaborador">
+                                    <img src="{{ destacado.img_editor_2 }}" alt="">
+                                    <h4>
+                                        {{ destacado.nombre_editor_2 }}
+                                    </h4>
+                                    <div>
+                                        {{ destacado.content_editor_2 }}
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4 col-lg-3">
-                            <div class="colaborador">
-                                <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Group_93_2x_aa1707ac-03de-434f-8530-2869c07ed064.png?v=1586537641" alt="">
-                                <h4>Andrés Álvarez</h4>
-                                <p>Diagramador</p>
+                        {% endif %}
+
+                        {% if destacado.nombre_editor_3 %}
+                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                <div class="colaborador">
+                                    <img src="{{ destacado.img_editor_3 }}" alt="">
+                                    <h4>
+                                        {{ destacado.nombre_editor_3 }}
+                                    </h4>
+                                    <div>
+                                        {{ destacado.content_editor_3 }}
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4 col-lg-3">
-                            <div class="colaborador">
-                                <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Group_93_2x_aa1707ac-03de-434f-8530-2869c07ed064.png?v=1586537641" alt="">
-                                <h4>Inés Rocha</h4>
-                                <p>Correctora de estilo</p>
+                        {% endif %}
+
+                        {% if destacado.nombre_editor_4 %}
+                            <div class="col-sm-6 col-md-4 col-lg-3">
+                                <div class="colaborador">
+                                    <img src="{{ destacado.img_editor_4 }}" alt="">
+                                    <h4>
+                                        {{ destacado.nombre_editor_4 }}
+                                    </h4>
+                                    <div>
+                                        {{ destacado.content_editor_4 }}
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        {% endif %}
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div id="destacado-blog">
-        <div class="container">
-            <div class="destacado-blog-top">
-                <h2 class="title title--big">Artículos relacionados</h2>
-                <a href="" class="cta">
-                    <span>VER MÁS</span>
-                    {% include 'cta-line' %}
-                </a>
-            </div>
-            <div class="destacado-blog-content">
-                <div class="row">
-                    <div class="col-sm-6 col-md-4">
-                        <div class="blog-card">
-                            <a href="">
-                                <div class="blog-card__image">
-                                    <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/homepage-blog.png?v=1585619013" alt="">
-                                </div>
-                                <div class="blog-card__tag">EDITORIAL</div>
-                                <div class="blog-card__text">
-                                    <h3 class="title title--small">¿Quién escribió el libro?</h3>
-                                    <p>Aliquam in bibendum mauris. Sed vitae erat vel velit blandit pharetra vitae nec ante. Cras at est augue. Cras ut interdum elit. Ut malesuada.</p>
-                                    <div class="blog-card__link">
-                                        <div class="cta">
-                                            <span>LEER MÁS</span>
-                                            {% include 'cta-line' %}
+    {% if destacado.related %}
+        <div id="destacado-blog">
+            <div class="container">
+                <div class="destacado-blog-top">
+                    <h2 class="title title--big">Artículos relacionados</h2>
+                    <a href="{{ blogs.lazo-blog.url }}" class="cta">
+                        <span>VER MÁS</span>
+                        {% include 'cta-line' %}
+                    </a>
+                </div>
+                <div class="destacado-blog-content">
+                    <div class="row">
+                        {% assign all_posts = destacado.related | split: "|" %}
+
+                        {% for article in all_posts %}
+                            <div class="col-sm-6 col-md-4">
+                                <div class="blog-card">
+                                    <a href="{{ articles[article].url }}">
+                                        <div class="blog-card__image">
+                                            <img src="{{ articles[article].image.src | img_url: 'grande' }}" alt="{{ articles[article].title }}">
                                         </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4">
-                        <div class="blog-card">
-                            <a href="">
-                                <div class="blog-card__image">
-                                    <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/homepage-blog.png?v=1585619013" alt="">
-                                </div>
-                                <div class="blog-card__tag">EDITORIAL</div>
-                                <div class="blog-card__text">
-                                    <h3 class="title title--small">¿Quién escribió el libro?</h3>
-                                    <p>Aliquam in bibendum mauris. Sed vitae erat vel velit blandit pharetra vitae nec ante. Cras at est augue. Cras ut interdum elit. Ut malesuada.</p>
-                                    <div class="blog-card__link">
-                                        <div class="cta">
-                                            <span>LEER MÁS</span>
-                                            {% include 'cta-line' %}
+                                        <div class="blog-card__tag">
+                                            {{ articles[article].tags }}
                                         </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4">
-                        <div class="blog-card">
-                            <a href="">
-                                <div class="blog-card__image">
-                                    <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/homepage-blog.png?v=1585619013" alt="">
-                                </div>
-                                <div class="blog-card__tag">EDITORIAL</div>
-                                <div class="blog-card__text">
-                                    <h3 class="title title--small">¿Quién escribió el libro?</h3>
-                                    <p>Aliquam in bibendum mauris. Sed vitae erat vel velit blandit pharetra vitae nec ante. Cras at est augue. Cras ut interdum elit. Ut malesuada.</p>
-                                    <div class="blog-card__link">
-                                        <div class="cta">
-                                            <span>LEER MÁS</span>
-                                            {% include 'cta-line' %}
+                                        <div class="blog-card__text">
+                                            <h3 class="title title--small">
+                                                {{ articles[article].title }}
+                                            </h3>
+                                            {% if articles[article].excerpt.size > 0 %}
+                                                <p>
+                                                    {{ articles[article].excerpt }}
+                                                </p>
+                                            {% else %}
+                                                <p>
+                                                    {{ articles[article].content | strip_html | truncatewords: 50 }}
+                                                </p>
+                                            {% endif %}
+                                            <div class="blog-card__link">
+                                                <div class="cta">
+                                                    <span>LEER MÁS</span>
+                                                    {% include 'cta-line' %}
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
-                            </a>
-                        </div>
+                            </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
+            
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="wave wave--yellow2"><path class="js-wave" d="M 0 49.308 C 276.9997 39.8989 276.9997 39.8989 553.9997 44.6035 C 830.9997 49.308 830.9997 49.308 1107.9997 36.5442 C 1384.9997 23.7802 1384.9997 23.7802 1661.9997 27.9453 C 1938.9997 32.1105 1938.9997 32.1105 2215.9997 36.5442 L 2215.9997 3288.2497 L 0 3288.2497 Z"/></svg> 
         </div>
-        
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="wave wave--yellow2"><path class="js-wave" d=""/></svg> 
-    </div>
+    {% endif %}
 
     <div class="wrap-marquee marquee--destacado">
-        <div class="marquee-line"></div>
-        <div class="marquee-text">
-            <p>NOSOTROS</p>
-            <span>&bull;</span>
-            <p>SOMOS LAZO</p>
-            <span>&bull;</span>
-            <p>NOSOTROS</p>
-            <span>&bull;</span>
-            <p>SOMOS LAZO</p>
-            <span>&bull;</span>
-            <p>NOSOTROS</p>
-            <span>&bull;</span>
-            <p>SOMOS LAZO</p>
-            <span>&bull;</span>
-            <p>NOSOTROS</p>
-            <span>&bull;</span>
-            <p>SOMOS LAZO</p>
-            <span>&bull;</span>
-            <p>NOSOTROS</p>
-            <span>&bull;</span>
-            <p>SOMOS LAZO</p>
-            <span>&bull;</span>
-            <p>NOSOTROS</p>
-            <span>&bull;</span>
-            <p>SOMOS LAZO</p>
-            <span>&bull;</span>
-        </div>
-        <div class="marquee-line"></div>
+        <a href="/pages/nosotros">
+            <div class="marquee-line"></div>
+            <div class="marquee-text">
+                <p>NOSOTROS</p>
+                <span>&bull;</span>
+                <p>SOMOS LAZO</p>
+                <span>&bull;</span>
+                <p>NOSOTROS</p>
+                <span>&bull;</span>
+                <p>SOMOS LAZO</p>
+                <span>&bull;</span>
+                <p>NOSOTROS</p>
+                <span>&bull;</span>
+                <p>SOMOS LAZO</p>
+                <span>&bull;</span>
+                <p>NOSOTROS</p>
+                <span>&bull;</span>
+                <p>SOMOS LAZO</p>
+                <span>&bull;</span>
+                <p>NOSOTROS</p>
+                <span>&bull;</span>
+                <p>SOMOS LAZO</p>
+                <span>&bull;</span>
+                <p>NOSOTROS</p>
+                <span>&bull;</span>
+                <p>SOMOS LAZO</p>
+                <span>&bull;</span>
+            </div>
+            <div class="marquee-line"></div>
+        </a>
     </div>
 
 </div>
-
-
-{% comment %} {% assign current_variant = product.selected_or_first_available_variant %}
-{% assign featured_image = current_variant.featured_image | default: product.featured_image %}
-<img src="{{ featured_image | img_url: 'large' }}" alt="{{ featured_image.alt | escape }}" id="ProductPhotoImg">
-{% for image in product.images %}
-  <a href="{{ image.src | img_url: 'large' }}">
-    <img src="{{ image.src | img_url: 'compact' }}" alt="{{ image.alt | escape }}">
-  </a>
-{% endfor %}
-<h1>{{ product.title }}</h1>
-<form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
-  <select name="id" id="productSelect">
-    {% for variant in product.variants %}
-      {% if variant.available %}
-        <option value="{{ variant.id }}">
-          {{ variant.title }} - {{ variant.price | money_with_currency }}
-        </option>
-      {% else %}
-        <option disabled="disabled">
-          {{ variant.title }} - sold out
-        </option>
-      {% endif %}
-    {% endfor %}
-  </select>
-  {{ current_variant.price | money }}
-  <label for="Quantity">quantity</label>
-  <input type="number" id="Quantity" name="quantity" value="1" min="1">
-  <button type="submit" name="add" id="AddToCart">Add to cart</button>
-</form>
-<div>{{ product.description }}</div>
- {% endcomment %}
-
-
-
-

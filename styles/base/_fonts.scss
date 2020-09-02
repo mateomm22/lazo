@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('https://cdn.shopify.com/s/files/1/0367/2417/9081/files/icomoon.eot?v=1596390402');
-  src:  url('https://cdn.shopify.com/s/files/1/0367/2417/9081/files/icomoon.eot?v=1596390402#iefix') format('embedded-opentype'),
-    url('https://cdn.shopify.com/s/files/1/0367/2417/9081/files/icomoon.ttf?v=1596390403') format('truetype'),
-    url('https://cdn.shopify.com/s/files/1/0367/2417/9081/files/icomoon.woff?v=1596390402') format('woff'),
-    url('https://cdn.shopify.com/s/files/1/0367/2417/9081/files/icomoon.svg?v=1596390403') format('svg');
+  src:  url('https://cdn.shopify.com/s/files/1/0367/2417/9081/files/icomoon.eot?v=1597617410');
+  src:  url('https://cdn.shopify.com/s/files/1/0367/2417/9081/files/icomoon.eot?v=1597617410#iefix') format('embedded-opentype'),
+    url('https://cdn.shopify.com/s/files/1/0367/2417/9081/files/icomoon.ttf?v=1597617410') format('truetype'),
+    url('https://cdn.shopify.com/s/files/1/0367/2417/9081/files/icomoon.woff?v=1597617410') format('woff'),
+    url('https://cdn.shopify.com/s/files/1/0367/2417/9081/files/icomoon.svg?v=1597617410') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -45,6 +45,15 @@
 }
 .icon-mail:before {
   content: "\e906";
+}
+.icon-minus:before {
+  content: "\e907";
+}
+.icon-plus:before {
+  content: "\e908";
+}
+.icon-trash:before {
+  content: "\e909";
 }
 .icon-facebook:before {
   content: "\ea91";

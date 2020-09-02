@@ -2,24 +2,13 @@
   background-color: $lazo-light-red;
   width: 100%;
   position: relative;
-  padding: 80px;
+  padding: 10vh 20px;
   min-height: auto;
-
-  @include m768 {
-    padding: 120px 20px;
-  }
-
-  .main-hero-content {
-    text-align: left;
-  }
 }
 
-.wrap-cart {
-  padding: 40px 0 100px;
-}
 
 .cart-labels {
-  @include m768 {
+  @include m992 {
     display: none;
   }
 
@@ -34,7 +23,7 @@
   h4 {
     display: block;
 
-    @include m768 {
+    @include m992 {
       display: none;
     }
   }
@@ -49,22 +38,46 @@
       display: none;
       font-size: 16px;
       
-      @include m768 {
+      @include m992 {
         display: block;
       }
     }
   }
 }
 
+.single-cart-product {
+  margin-bottom: 30px;
+
+  .row {
+    align-items: flex-start;
+
+    @include m992 {
+      align-items: center;
+    }
+  }
+
+  span {
+    color: $lazo-black;
+    letter-spacing: 1px;
+  }
+}
+
 .cart-product {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  margin-bottom: 20px;
+
+  @include m992 {
+    margin-bottom: 0;
+  }
 
   img {
     width: 150px;
   }
 
   .cart-product__info {
+    margin-left: 20px;
+
     .cta {
       display: table;
     }
@@ -75,14 +88,64 @@
     font-weight: 400;
     margin-bottom: 7px;
     text-decoration: none;
-    color: black;
+    color: $lazo-black;
     letter-spacing: 2px;
   }
 }
 
-.cart-product__actions {
-  .btn {
-    font-size: 12px;
-    padding: 5px 10px;
+.cart-quantity {
+  .cantidad {
+    border: 1px solid $lazo-black;
+    display: flex;
+    width: 110px;
+    height: 45px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5px;
+    margin-bottom: 10px;
+
+    .remove,
+    .add {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      font-size: 25px;
+      line-height: 0.9;
+    }
+  }
+}
+
+.total-price {
+  display: none;
+
+  @include m576 {
+    display: block;
+    text-align: right;
+  }
+}
+
+.cart-footer {
+  border-top: 1px solid $lazo-black;
+  padding: 20px 0;
+
+  h5 {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  span {
+    display: block;
+    text-align: right;
+  }
+}
+
+.cart-actions {
+  text-align: right;
+
+  button {
+    width: 100%;
+    max-width: 190px;
   }
 }

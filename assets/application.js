@@ -43,33 +43,47 @@ function initScripts() {
    * ·······  Waves
    * ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
    **/
-
   if($('.js-wave').length > 0) {
-    $('.js-wave').wavify({
-      height: 20,
-      bones: 4,
-      amplitude: 30,
-      speed: .15
+    gsap.timeline({repeat: -1, yoyo: true})
+    .to('.js-wave', {
+      attr: {
+        d: "M 0 21.3034 C 276.9997 32.5146 276.9997 32.5146 553.9997 26.909 C 830.9997 21.3034 830.9997 21.3034 1107.9997 35.3411 C 1384.9997 49.3786 1384.9997 49.3786 1661.9997 43.6539 C 1938.9997 37.9291 1938.9997 37.9291 2215.9997 35.3411 L 2215.9997 3288.2497 L 0 3288.2497 Z"
+      },
+      duration: 4,
     });
   }
 
   if($('.js-wave2').length > 0) {
-    $('.js-wave2').wavify({
-      height: 20,
-      bones: 5,
-      amplitude: 25,
-      speed: .13
+    gsap.timeline({repeat: -1, yoyo: true})
+    .to('.js-wave2', {
+      attr: {
+        d: "M 0 20.6549 C 166.1999 27.5699 166.1999 27.5699 332.3999 24.1123 C 498.5999 20.6549 498.5999 20.6549 664.7999 29.7873 C 830.9999 38.9196 830.9999 38.9196 997.1999 36.1792 C 1163.3999 33.439 1163.3999 33.439 1329.5999 41.5986 C 1495.7999 49.7583 1495.7999 49.7583 1661.9999 33.0001 L 1661.9999 3627.7699 L 0 3627.7699 Z"
+      },
+      duration: 4,
     });
   }
 
-  if($('.js-wave--small').length > 0) {
-    $('.js-wave--small').wavify({
-      height: 5,
-      bones: 7,
-      amplitude: 8,
-      speed: .13
+  if($('.js-wave2a').length > 0) {
+    gsap.timeline({repeat: -1, yoyo: true})
+    .to('.js-wave2a', {
+      attr: {
+        d: "M 0 20.6549 C 166.1999 27.5699 166.1999 27.5699 332.3999 24.1123 C 498.5999 20.6549 498.5999 20.6549 664.7999 29.7873 C 830.9999 38.9196 830.9999 38.9196 997.1999 36.1792 C 1163.3999 33.439 1163.3999 33.439 1329.5999 41.5986 C 1495.7999 49.7583 1495.7999 49.7583 1661.9999 33.0001 L 1661.9999 3627.7699 L 0 3627.7699 Z"
+      },
+      duration: 5,
     });
   }
+  
+  // Boton comprar
+  if($('.js-wave--small').length > 0) {
+    gsap.timeline({repeat: -1, yoyo: true})
+    .to('.js-wave--small', {
+      attr: {
+        d: "M 0 12.9794 C 158.2857 12.0567 158.2857 12.0567 316.5714 12.5181 C 474.8571 12.9794 474.8571 12.9794 633.1428 11.1268 C 791.4285 9.2741 791.4285 9.2741 949.7143 9.1732 C 1108 9.0721 1108 9.0721 1266.2857 7.1739 C 1424.5714 5.2755 1424.5714 5.2755 1582.8571 5.6573 C 1741.1428 6.0391 1741.1428 6.0391 1899.4285 5.0244 C 2057.7143 4.0097 2057.7143 4.0097 2216 8.1448 L 2216 9482.2502 L 0 9482.2502 Z"
+      },
+      duration: 5,
+    });
+  }
+
 
   /**
    * ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
@@ -85,6 +99,8 @@ function initScripts() {
       slidesToShow: 1,
       slidesToScroll: 1,
       arrows: true,
+      prevArrow: '<div class="slick-arrow slick-arrow--prev"><i class="icon-arrow-left"></i></div>',
+      nextArrow: '<div class="slick-arrow slick-arrow--next"><i class="icon-arrow-right"></i></div>',
     });
 
 
@@ -105,6 +121,7 @@ function initScripts() {
    * ·······  Product page
    * ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
    **/
+  // Add to cart
   let productQuantity = 1;
 
   function updateQuantity() {
@@ -117,7 +134,7 @@ function initScripts() {
   });
 
   $('.js-remove').click(function() {
-    if (productQuantity > 0) {
+    if (productQuantity > 1) {
       productQuantity -= 1;
     }
     updateQuantity();
@@ -127,44 +144,112 @@ function initScripts() {
     document.getElementById("quantity").value = productQuantity;
   });
 
+  // Open specs and observations
+  $('.js-product-detail').click(function(){
+    $('.js-product-detail').not($(this)).find('.js-content').slideUp();
+    $(this).find('.js-content').slideToggle();
+
+    // change icon
+    $('.js-product-detail').not($(this)).removeClass('active');
+    $(this).toggleClass('active');
+  });
+
+
+  /**
+   * ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+   * ·······  Cart page
+   * ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+   **/
+  // Add to cart
+  let cartProductQuantity = parseInt($('.js-items').val());
+
+  function updateCartQuantity() {
+    $('.js-quantity-cart').text(cartProductQuantity);
+    $('.js-items').val(cartProductQuantity);
+  }
+
+  $('.js-add-cart').click(function() {
+    cartProductQuantity += 1;
+    updateCartQuantity();
+  });
+
+  $('.js-remove-cart').click(function() {
+    if (cartProductQuantity > 0) {
+      cartProductQuantity -= 1;
+    }
+    updateCartQuantity();
+  });
+
+  // $('.js-add-to-cart').click(function() {
+  //   document.getElementById("quantity").value = cartProductQuantity;
+  // });
+
 
   /**
    * ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
    * ·······  Mask svg effect
    * ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
    **/
-  gsap.timeline()
-  .to('.mask-path', {
-    rotate: '30deg',
-    scale: 1.02,
-    duration: 12,
-    transformOrigin:"50% 50%",
-    yoyo : true,
-    repeat: -1,
-    yoyoEase: "linear",
-  });
 
-  gsap.timeline()
-  .to('.mask-path-2', {
-    rotate: '-10deg',
-    scale: 1.02,
-    duration: 12,
-    transformOrigin:"50% 50%",
-    yoyo : true,
-    repeat: -1,
-    yoyoEase: "linear",
-  });
+  // Autores Shapes
+  if($('.mask-path-2').length > 0) {
+    gsap.timeline({
+      defaults: {
+        transformOrigin: "50% 50%",
+        yoyo: true,
+        repeat: -1,
+        yoyoEase: "linear"
+      }
+    })
+    .to('.mask-path-2', {
+      rotate: '-10deg',
+      duration: 8,
+    })
+    .to('.mask-path-2', {
+      scale: 0.95,
+      duration: 8,
+    }, '<');
+  }
 
-  gsap.timeline()
-  .to('.mask-path-2a', {
-    rotate: '-15deg',
-    scale: 1.02,
-    duration: 10,
-    transformOrigin:"50% 50%",
-    yoyo : true,
-    repeat: -1,
-    yoyoEase: "linear",
-  });
+  // Contact shape
+  if($('.mask-path-3').length > 0) {
+    gsap.timeline({
+      defaults: {
+        transformOrigin: "50% 50%",
+        yoyo: true,
+        repeat: -1,
+        yoyoEase: "linear"
+      }
+    })
+    .to('.mask-path-3', {
+      rotate: '12deg',
+      duration: 8,
+    })
+    .to('.mask-path-3', {
+      scale: 0.95,
+      duration: 6,
+    }, '<');
+  }
+
+  // Contact shape
+  if($('.mask-path-4').length > 0) {
+    gsap.timeline({
+      defaults: {
+        transformOrigin: "50% 50%",
+        yoyo: true,
+        repeat: -1,
+        yoyoEase: "linear"
+      }
+    })
+    .to('.mask-path-4', {
+      rotate: '10deg',
+      duration: 12,
+    })
+    .to('.mask-path-4', {
+      scale: 0.95,
+      duration: 6,
+    }, '<');
+  }
 }
 
 /**
@@ -178,58 +263,41 @@ function initNosotros() {
   const fadeTl = gsap.timeline()
   .to('.js-title-1, .js-image-1', {
     opacity: 0,
-    duration: 0.3
-  }, '+=1.2')
+    duration: 0.5
+  }, '+=2.5')
   .to('.js-title-2, .js-image-2', {
     opacity: 1,
-    duration: 0.3
+    duration: 0.5
   }, '-=0.15')
   .to('.js-title-2, .js-image-2', {
     opacity: 0,
-    duration: 0.3
+    duration: 0.5
   }, '+=2.3')
   .to('.js-title-3, .js-image-3', {
     opacity: 1,
-    duration: 0.3
+    duration: 0.5
   }, '-=0.15')
   .to('.js-title-3, .js-image-3', {
     opacity: 1,
     duration: 1
   });
 
-  const scrollTl = gsap.timeline()
-  .to('.js-text-1', {
-    translateY: '-100%',
-    duration: 0.3
-  })
-  .to('.js-text-2', {
-    translateY: '-100%',
-    duration: 0.9
-  }, '-=0.25')
-  .to('.js-text-3', {
-    translateY: '0',
-    duration: 0.6
-  }, '-=0.5');
+  
+  ScrollTrigger.matchMedia({
+    "(min-width: 992px)": function() {
+      ScrollTrigger.create({
+        animation: fadeTl,
+        trigger: '.js-wrap-nosotros',
+        pin: '.js-nosotros-left',
+        scrub: true,
+        start: 'top 35px',
+        end: '60% top',
+        toggleActions: "play complete resume reset",
+      });
+    }
+  });
 
-  ScrollTrigger.create({
-    animation: fadeTl,
-    trigger: '.js-wrap-nosotros',
-    pin: true,
-    scrub: true,
-    start: 'top 50px',
-    end: 'bottom 50px',
-    markers: true,
-  })
-
-  ScrollTrigger.create({
-    animation: scrollTl,
-    trigger: '.js-wrap-nosotros',
-    pin: true,
-    scrub: true,
-    start: 'top 50px',
-    end: 'bottom 50px',
-    markers: true,
-  })
+  
 }
 
 /**
@@ -334,7 +402,7 @@ barba.init({
 
       let bgColor;
       switch (data.next.namespace) {
-        case 'home':
+        case 'inicio':
         case 'blog':
           // Blue
           bgColor = '#79cadd';
@@ -371,19 +439,21 @@ barba.init({
     },
     // Enter new page
     enter(data) {
+      window.scrollTo(0, 0);
       pageEnter();
     },
     // If page is reloaded
     once(data) {
+      window.scrollTo(0, 0);
       pageEnter();
     }
 
   }]
 });
 
-barba.hooks.beforeEnter(() => {
-  window.scrollTo(0, 0);
-});
+// barba.hooks.beforeEnter(() => {
+//   window.scrollTo(0, 0);
+// });
 
 barba.hooks.after((data) => {
   switch (data.next.namespace) {

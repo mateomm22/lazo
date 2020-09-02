@@ -16,10 +16,8 @@
     
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.1/ScrollTrigger.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/ScrollTrigger.min.js"></script>
   <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/85188/jquery.wavify.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
 
@@ -68,7 +66,7 @@
 
     <main role="main">
         {{ content_for_layout }}
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="wave wave--black"><path class="js-wave2" d=""/></svg>
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="wave wave--black"><path class="js-wave2" d="M 0 44.7343 C 166.1999 39.2494 166.1999 39.2494 332.3999 41.9919 C 498.5999 44.7343 498.5999 44.7343 664.7999 36.7402 C 830.9999 28.746 830.9999 28.746 997.1999 30.3675 C 1163.3999 31.989 1163.3999 31.989 1329.5999 24.5586 C 1495.7999 17.1282 1495.7999 17.1282 1661.9999 33.5904 L 1661.9999 3627.7699 L 0 3627.7699 Z"></path></svg>
     </main>
 
     <div class="boletin">
@@ -86,13 +84,24 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="boletin-right">
-                        <input type="text" placeholder="Tu correo electrónico">
-                        <button> INSCRIBIRME</button>
+                        {% form 'customer' %}
+                            <input id="contact_tags" name="contact[tags]" type="hidden" value="newsletter" />
+
+                            <input id="contact_email" name="contact[email]" type="text" placeholder="Tu correo" />
+                            <button class="submit" type="submit">
+                                Inscribirme
+                            </button>
+                            {% if form.posted_successfully? %} 
+                                <p class="thankyou">
+                                    Gracias por suscribirte
+                                </p>
+                            {% endif %}
+                        {% endform %}
                     </div>
                 </div>
             </div>
         </div>
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="wave wave--white"><path class="js-wave" d=""/></svg>
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="wave wave--white"><path class="js-wave" d="M 0 49.308 C 276.9997 39.8989 276.9997 39.8989 553.9997 44.6035 C 830.9997 49.308 830.9997 49.308 1107.9997 36.5442 C 1384.9997 23.7802 1384.9997 23.7802 1661.9997 27.9453 C 1938.9997 32.1105 1938.9997 32.1105 2215.9997 36.5442 L 2215.9997 3288.2497 L 0 3288.2497 Z"/></svg> 
     </div>
 
     <div class="footer">
@@ -102,7 +111,7 @@
                 <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/logo-footer.gif?v=1596404964" alt="">
             </div>
             <div class="footer-social">
-            <a href="">
+            <a href="https://www.instagram.com/lazo_libros/" target="_blank">
                 <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/instagram.svg?v=1585887136" alt="">
             </a>
             <a href="">
@@ -143,12 +152,13 @@
                     <div class="footer-col">
                         <h4>SOPORTE</h4>
                         <ul>
-                            <li>
-                                <a href="">Privacidad</a>
-                            </li>
-                            <li>
-                                <a href="">Términos y condiciones</a>
-                            </li>
+                            {% for link in linklists.menu-soporte.links %}
+                                <li>
+                                    <a href="{{ link.url }}">
+                                        {{ link.title | escape }}
+                                    </a>
+                                </li>
+                            {% endfor %}
                         </ul>
                     </div>
                 </div>
