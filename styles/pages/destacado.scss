@@ -189,6 +189,7 @@
     margin: 5px;
     opacity: 0.5;
     padding-bottom: 56.25%;
+    cursor: pointer;
     transition: all 0.3s ease-out;
     
     @include m768 {
@@ -198,6 +199,10 @@
     &.active {
       opacity: 1;
       border: 1px solid $lazo-black;
+    }
+
+    &:hover {
+      opacity: 1;
     }
 
     img {
