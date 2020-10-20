@@ -21,9 +21,42 @@
   <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/85188/jquery.wavify.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
 
+    <style>
+        body {
+            overflow: hidden;
+        }
+        .cover {
+            width: 100%;
+            height: 100vh;
+            position: fixed;
+            background-color: black;
+            z-index: 9000;
+        }
+        .cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .cover-mobile {
+            display: none;
+        }
+        @media screen and (max-width: 600px) {
+            .cover-mobile {
+                display: block;
+            }
+            .cover-desktop {
+                display: none;
+            }
+        }
+    </style>
 
 </head>
 <body data-barba="wrapper">
+    <div class="cover">
+        <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Artboard_1_2x_43b89da6-bf6c-4fde-af6c-388097e11a05.png?v=1603159234" class="cover-desktop">
+        <img src="https://cdn.shopify.com/s/files/1/0367/2417/9081/files/Artboard_2_2x_8bca3028-4f2e-4289-b594-37da38c5a273.png?v=1603159251" class="cover-mobile">
+    </div>
+    
     <nav class="main-nav">
         <div class="container">
             <div class="row">

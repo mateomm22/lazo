@@ -57,6 +57,10 @@
   width: 100%;
   padding-top: 40px;
 
+  @include m768 {
+    padding-top: 0;
+  }
+
   @include m992 {
     display: block;
   }

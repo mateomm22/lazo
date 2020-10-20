@@ -47,6 +47,11 @@
   padding-top: 15px;
   font-size: 14px;
 
+  @include m1200 {
+    position: relative;
+    left: -15px;
+  }
+
   span {
     display: block;
     color: #999;
@@ -73,10 +78,21 @@
 .blog-content {
   p  {
     font-size: 18px;
+
+    @include m768 {
+      padding: 0 16%;
+    }
   }
 
   img {
     margin: 50px 0;
+
+    @include m768 {
+      position: relative;
+      left: -16%;
+      width: 132%;
+      max-width: 132%;
+    }
   }
 }
 

@@ -34,13 +34,14 @@
         width: 200px;
         height: 48px;
         padding: 10px;
-        border: 0;
+        border: 1px solid black;
         font-size: 16px;
         text-decoration: none;
         cursor: pointer;
-
+        transition: 0.3s all ease-in;
+        
         @include font;
-
+        
         i {
           display: inline-block;
           position: relative;
@@ -48,7 +49,18 @@
           color: white;
           font-size: 20px;
           top: 2px;
+          transition: 0.3s all ease-in;
         }
+
+        &:hover {
+          background: transparent;
+          color: black;
+
+          i{
+            color: black;
+          }
+        }
+
       }
     }
 

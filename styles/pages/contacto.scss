@@ -68,7 +68,7 @@
 
   button {
     margin-top: 24px;
-    border: none;
+    border: 1px solid $lazo-black;
     background-color: $lazo-black;
     width: 200px;
     height: 50px;
@@ -80,7 +80,8 @@
     @include font;
 
     &:hover {
-      background-color: #151515;
+      background: transparent;
+      color: black;
     }
 
     &:focus {

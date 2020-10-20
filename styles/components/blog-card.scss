@@ -13,10 +13,17 @@
     text-decoration: none;
     color: $lazo-black;
   }
+
+  &:hover {
+    .blog-card__image {
+      opacity: 0.7;
+    }
+  }
 }
 
 .blog-card__image {
   overflow: hidden;
+  transition: 0.3s all ease-in;
 
   img {
     width: 100%;
