@@ -68,14 +68,3 @@
     fill: $lazo-blue;
   }
 }
-
-// Animations
-@keyframes wave-animation {
-  0% { 
-    background-position: 0 0; 
-  }
-  
-  100% {
-    background-position: 1601px 0;
-  }
-}

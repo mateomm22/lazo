@@ -4,7 +4,7 @@
     {% assign destacado = page.metafields.destacado %}
 
     <div class="destacado-buy-bar">
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="wave wave--black wave--small wave--top"><path class="js-wave--small" d="M 0 5.6158 C 422.8883333333333 8.595 422.8883333333333 8.595 845.7766666666666 7.1055 C 1268.665 5.6158 1268.665 5.6158 1691.5533333333333 9.0961 C 2114.4416666666666 12.5761 2114.4416666666666 12.5761 2537.33 8.0695 L 2537.33 10084.8 L 0 10084.8 Z" fill="rgba(255,255,255, 0.20)"></path></svg>
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="wave wave--black wave--small wave--top js-wave--small"><path d="M0 10 L2500 10 L2500 80 L0 80 Z" /></svg>
         <a href="{{ shop.url }}/products/{{ destacado.producto }}">
             COMPRAR LIBRO
         </a>
@@ -33,7 +33,7 @@
             </div>
         </div>
         
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="wave wave--white"><path class="js-wave2" d="M 0 27.9875 C 422.8883333333333 26.9984 422.8883333333333 26.9984 845.7766666666666 27.4929 C 1268.665 27.9875 1268.665 27.9875 1691.5533333333333 26.0751 C 2114.4416666666666 24.1625 2114.4416666666666 24.1625 2537.33 26.8808 L 2537.33 4858.58 L 0 4858.58 Z"></path></svg>
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="wave wave--white js-wave2"><path d="M0 10 L2500 10 L2500 80 L0 80 Z" /></svg>
     </div>
 
     <div id="destacado-info">
@@ -95,19 +95,25 @@
         </div>
     </div>
 
-    <div class="single-picture">
-        <img src="{{ destacado.img_full }}" alt="">
-    </div>
-
-    <div class="single-picture single-picture--container">
-        <div class="container">
-            <img src="{{ destacado.img_margen }}" alt="">
+    {% if destacado.img_full %}
+        <div class="single-picture">
+            <img src="{{ destacado.img_full }}" alt="">
         </div>
-    </div>
+    {% endif %}
 
-    <div class="single-picture">
-        <img src="{{ destacado.img_full2 }}" alt="">
-    </div>
+    {% if destacado.img_margen %}
+        <div class="single-picture single-picture--container">
+            <div class="container">
+                <img src="{{ destacado.img_margen }}" alt="">
+            </div>
+        </div>
+    {% endif %}
+
+    {% if destacado.img_full2 %}
+        <div class="single-picture">
+            <img src="{{ destacado.img_full2 }}" alt="">
+        </div>
+    {% endif %}
 
     {% if destacado.video_destacado %}
         <div id="destacado-video">
@@ -123,9 +129,11 @@
         </div>
     {% endif %}
 
-    <div id="destacado-banner">
-        <img src="{{ destacado.img_leyendo }}" alt="">
-    </div>
+    {% if destacado.img_leyendo %}
+        <div id="destacado-banner">
+            <img src="{{ destacado.img_leyendo }}" alt="">
+        </div>
+    {% endif %}
 
     <div id="destacado-autores">
         <div class="container">
@@ -475,7 +483,7 @@
                 </div>
             </div>
             
-            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="wave wave--yellow2"><path class="js-wave" d="M 0 49.6473 C 422.8883 41.1901 422.8883 41.1901 845.7766 45.4188 C 1268.6649 49.6473 1268.6649 49.6473 1691.5533 37.5506 C 2114.4416 25.4538 2114.4416 25.4538 2537.3299 41.7879 L 2537.3299 3972.8999 L 0 3972.8999 Z"></path></svg> 
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="wave wave--yellow2 js-wave"><path d="M0 10 L2500 10 L2500 80 L0 80 Z" /></svg> 
         </div>
     {% endif %}
 

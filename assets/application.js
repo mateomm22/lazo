@@ -43,72 +43,67 @@ function initScripts() {
    * ·······  Waves
    * ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
    **/
-  if($('.js-wave').length > 0) {
-    gsap.timeline({repeat: -1, yoyo: true})
-    .to('.js-wave', {
-      attr: {
-        d: "M 0 20.6563 C 422.8883 30.1823 422.8883 30.1823 845.7766 25.4193 C 1268.6649 20.6563 1268.6649 20.6563 1691.5533 33.5292 C 2114.4416 46.4021 2114.4416 46.4021 2537.3299 29.2158 L 2537.3299 3972.8999 L 0 3972.8999 Z"
-      },
-      duration: 4,
-    });
+  if($('.js-wave').length > 0) {    
+    const waves1 = document.querySelectorAll('.js-wave');
 
-
-    // $('.js-wave').wavify({
-    //   height: 20,
-    //   amplitude: 30,
-    //   speed: .15
-    // });
+    waves1.forEach(wave => {
+      const warp = new Warp(wave);
+      let offset = 0;
+    
+      warp.interpolate(10);
+      warp.transform(([ x, y ]) => [ x, y, y ]);
+    
+      function animateWaves() {
+        warp.transform(([ x, y, oy ]) => [ x, oy + 4 * Math.sin(x / 90 + offset), oy ]);
+        offset -= 0.07;
+        requestAnimationFrame(animateWaves);
+      };
+    
+      animateWaves();
+    })
   }
 
   if($('.js-wave2').length > 0) {
-    gsap.timeline({repeat: -1, yoyo: true})
-    .to('.js-wave2', {
-      attr: {
-        d: "M 0 20.2069 C 422.8883333333333 22.4398 422.8883333333333 22.4398 845.7766666666666 21.3233 C 1268.665 20.2069 1268.665 20.2069 1691.5533333333333 23.1474 C 2114.4416666666666 26.0877 2114.4416666666666 26.0877 2537.33 22.174 L 2537.33 4858.58 L 0 4858.58 Z"
-      },
-      duration: 4,
-    });
 
-    // $('.js-wave2').wavify({
-    //   height: 20,
-    //   amplitude: 8,
-    //   speed: .13
-    // });
-  }
+    const waves2 = document.querySelectorAll('.js-wave2');
 
-  if($('.js-wave2a').length > 0) {
-    gsap.timeline({repeat: -1, yoyo: true})
-    .to('.js-wave2a', {
-      attr: {
-         d: "M 0 20.2069 C 422.8883333333333 22.4398 422.8883333333333 22.4398 845.7766666666666 21.3233 C 1268.665 20.2069 1268.665 20.2069 1691.5533333333333 23.1474 C 2114.4416666666666 26.0877 2114.4416666666666 26.0877 2537.33 22.174 L 2537.33 4858.58 L 0 4858.58 Z"
-      },
-      duration: 5,
-    });
-
-    // $('.js-wave2a').wavify({
-    //   height: 20,
-    //   amplitude: 8,
-    //   speed: .15
-    // });
+    waves2.forEach(wave => {
+      const warp = new Warp(wave);
+      let offset = 0;
+    
+      warp.interpolate(10);
+      warp.transform(([ x, y ]) => [ x, y, y ]);
+    
+      function animateWaves2() {
+        warp.transform(([ x, y, oy ]) => [ x, oy + 5 * Math.sin(x / 92 + offset), oy ]);
+        offset += 0.07;
+        requestAnimationFrame(animateWaves2);
+      };
+    
+      animateWaves2();
+    })
   }
   
   // Boton comprar
   if($('.js-wave--small').length > 0) {
-    gsap.timeline({repeat: -1, yoyo: true})
-    .to('.js-wave--small', {
-      attr: {
-        d: "M 0 12.8587 C 422.8883333333333 10.8638 422.8883333333333 10.8638 845.7766666666666 11.8612 C 1268.665 12.8587 1268.665 12.8587 1691.5533333333333 10.1074 C 2114.4416666666666 7.3561 2114.4416666666666 7.3561 2537.33 11.0534 L 2537.33 10084.8 L 0 10084.8 Z"
-      },
-      duration: 5,
-    });
+    const wavesSmall = document.querySelectorAll('.js-wave--small');
 
-    // $('.js-wave--small').wavify({
-    //   height: 5,
-    //   amplitude: 8,
-    //   speed: .13
-    // });
+    wavesSmall.forEach(wave => {
+      const warp = new Warp(wave);
+      let offset = 0;
+    
+      warp.interpolate(5);
+      warp.transform(([ x, y ]) => [ x, y, y ]);
+    
+      function animateWaves() {
+        warp.transform(([ x, y, oy ]) => [ x, oy + 2 * Math.sin(x / 90 + offset), oy ]);
+        offset += 0.07;
+        requestAnimationFrame(animateWaves);
+      };
+    
+      animateWaves();
+    })
   }
-
 
   /**
    * ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
