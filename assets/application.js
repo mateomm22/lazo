@@ -44,10 +44,9 @@ function initScripts() {
    * ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
    **/
   if($('.js-wave').length > 0) {    
-    const waves1 = document.querySelectorAll('.js-wave');
 
-    waves1.forEach(wave => {
-      const warp = new Warp(wave);
+    $('.js-wave').each(function(i, el){
+      const warp = new Warp(el);
       let offset = 0;
     
       warp.interpolate(10);
@@ -60,15 +59,12 @@ function initScripts() {
       };
     
       animateWaves();
-    })
+    });
   }
 
   if($('.js-wave2').length > 0) {
-
-    const waves2 = document.querySelectorAll('.js-wave2');
-
-    waves2.forEach(wave => {
-      const warp = new Warp(wave);
+    $('.js-wave2').each(function(i, el){
+      const warp = new Warp(el);
       let offset = 0;
     
       warp.interpolate(10);
@@ -86,9 +82,7 @@ function initScripts() {
   
   // Boton comprar
   if($('.js-wave--small').length > 0) {
-    const wavesSmall = document.querySelectorAll('.js-wave--small');
-
-    wavesSmall.forEach(wave => {
+    $('.js-wave--small').each(function(i, el){
       const warp = new Warp(wave);
       let offset = 0;
     

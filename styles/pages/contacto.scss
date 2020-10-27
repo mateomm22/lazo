@@ -1,5 +1,9 @@
 .hero--contacto {
   background-color: $lazo-dark-yellow;
+
+  .main-hero-content {
+    max-width: 640px;
+  }
 }
 
 #wrap-contacto-form {
