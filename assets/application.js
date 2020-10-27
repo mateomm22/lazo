@@ -71,7 +71,7 @@ function initScripts() {
       warp.transform(([ x, y ]) => [ x, y, y ]);
     
       function animateWaves2() {
-        warp.transform(([ x, y, oy ]) => [ x, oy + 5 * Math.sin(x / 92 + offset), oy ]);
+        warp.transform(([ x, y, oy ]) => [ x, oy + 4 * Math.sin(x / 92 + offset), oy ]);
         offset += 0.07;
         requestAnimationFrame(animateWaves2);
       };
@@ -89,13 +89,13 @@ function initScripts() {
       warp.interpolate(5);
       warp.transform(([ x, y ]) => [ x, y, y ]);
     
-      function animateWaves() {
+      function animateWavesSmall() {
         warp.transform(([ x, y, oy ]) => [ x, oy + 2 * Math.sin(x / 90 + offset), oy ]);
         offset += 0.07;
-        requestAnimationFrame(animateWaves);
+        requestAnimationFrame(animateWavesSmall);
       };
     
-      animateWaves();
+      animateWavesSmall();
     })
   }
 
@@ -477,6 +477,9 @@ barba.hooks.after((data) => {
       break;
     default:
       initScripts();
+      window.cancelAnimationFrame(animateWaves);
+      window.cancelAnimationFrame(animateWaves2);
+      window.cancelAnimationFrame(animateWavesSmall);
       break;
   }
 });
